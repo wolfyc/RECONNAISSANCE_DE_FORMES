@@ -1,4 +1,4 @@
-#include "myBmpGris.h"
+#include "myBmpGris.h"// this is the declaration
 // Constructeur et Destructeur
 /** Methode de creation d'une image Bmp "standard" (pas de LUT, pas d'alpha, codage sur 24 bits)
   * @param dimX nombre de lignes de l'image
