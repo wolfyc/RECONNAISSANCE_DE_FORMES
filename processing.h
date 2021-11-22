@@ -7,5 +7,20 @@
 #include <math.h>
 #include "myBmpGris.h"
 
+// Matrice de Vandermonde
+/** 
+  * @param dim dimxdim la dim de la mat
+  * @param pow_max l'ordre max de la mat
+  * @return une matrice de dimension dim
+  */
+double ** Vander_monde (int dim,int pow_max,double moy);
+
+double mom_geo (BmpImg img , int p , int q);
+
+double mom_geo_centre (BmpImg img,int p, int q);
+
+double ** mat_TriAntDiagSup(BmpImg img ,N);
+
+double ** coeff_legendre ();
 
 #endif
