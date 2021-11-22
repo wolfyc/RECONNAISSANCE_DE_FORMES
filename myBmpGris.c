@@ -2,7 +2,7 @@
 // Constructeur et Destructeur
 /** Methode de creation d'une image Bmp "standard" (pas de LUT, pas d'alpha, codage sur 24 bits)
   * @param dimX nombre de lignes de l'image
-  * @param dimY nombre de colonnes de l'image
+  * @param dimY nombre de colonnes de l'image .
   * @return une image prete a l'emploi (plans couleur a remplir)
   */
 BmpImg createBmpImg( char* str, int dimX, int dimY ) {
