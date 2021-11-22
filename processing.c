@@ -74,5 +74,6 @@ for ( p=0;p<n;p++){
 return mat_mom;
 }
 double ** coeff_legendre (){
+
 }
 
