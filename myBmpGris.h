@@ -2,7 +2,6 @@
 #define _myBmpGris_h_
 #include <stdlib.h>
 #include <stdio.h>
-typedef  unsigned long long int mat_data ;
 
 typedef struct BmpImg_s BmpImg;
 struct BmpImg_s {
