@@ -10,7 +10,7 @@ BmpImg createBmpImg( char* str, int dimX, int dimY ) {
     // 1) Dimensions et nom de l'image
     bmpImg.nomImg = str;
     bmpImg.dimX = dimX;
-    bmpImg.dimY = dimY;
+    bmpImg.dimY = dimY; .
     // 2) Differentes tailles de l'image
     bmpImg.bmpSize = 14; // octets
     bmpImg.dibSize = 56; // octets
