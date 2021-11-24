@@ -1,20 +1,31 @@
 #include "processing.h"
 
-double ** creer_mat (dim_x,dim_y){
-double **mat = malloc(dim_x*sizeof(double*));
-int i;
-for (i=0;i<dim_x;i++){
-    mat[i]=calloc(dim_y,sizeof(double));
+double ** creer_mat (int dim_x, int dim_y){ //tested OK
+    double **mat = malloc(dim_x*sizeof(double*));
+    int i;
+    for (i=0;i<dim_x;i++){
+        mat[i]=calloc(dim_y,sizeof(double));
+    }
+    return mat;
 }
-return mat;
+
+double ** creer_mat_diag (int dim){// tested Not OK
+    double **mat = malloc(dim*sizeof(double*));
+    int i;
+    for (i=0;i<dim;i++){
+        mat[i]=calloc(dim-i,sizeof(double));
+    }
+    return mat;
+    /*printing this matrice gives a square matrice !!?*/
 }
-double ** creer_mat_diag (int dim){
-double **mat = malloc(dim*sizeof(double*));
-int i,j;
-for (i=0;i<dim_x;i++){
-    mat[i]=calloc(dim-i,sizeof(double));
-}
-return mat;
+
+
+void freeMatrice(double ***mat, int dim_x){
+    for (int i = 0; i< dim_x;i++){
+        free(*mat[i]); //segmentation error
+    }
+    free(mat);
+    mat = NULL;
 }
 
 
