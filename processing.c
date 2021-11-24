@@ -9,22 +9,22 @@ double ** creer_mat (int dim_x, int dim_y){ //tested OK
     return mat;
 }
 
-double ** creer_mat_diag (int dim){// tested Not OK
+double ** creer_mat_diag (int dim){// tested OK
     double **mat = malloc(dim*sizeof(double*));
     int i;
     for (i=0;i<dim;i++){
         mat[i]=calloc(dim-i,sizeof(double));
     }
     return mat;
-    /*printing this matrice gives a square matrice !!?*/
+    
 }
 
 
-void freeMatrice(double ***mat, int dim_x){
+void freeMatrice(double **mat, int dim_x){  // Corrected
     for (int i = 0; i< dim_x;i++){
-        free(*mat[i]); //segmentation error
+        free(mat[i]); 
     }
-    free(mat);
+    free(mat);  
     mat = NULL;
 }
 
