@@ -60,9 +60,9 @@ return res;
 }
 double mom_geo_centre (BmpImg img,int p, int q, int n){
 double res;
-double omega = mom_geo(img,0,0);
-double x_bar = mom_geo(img,1,0)/omega;
-double y_bar = mom_geo(img,0,1)/omega;
+double omega = mom_geo(img,0,0,n);
+double x_bar = mom_geo(img,1,0,n)/omega;
+double y_bar = mom_geo(img,0,1,n)/omega;
 int x,y;
 double ** vanx_centre=Vander_monde(img.dimX,n,x_bar);
 double ** vany_centre=Vander_monde(img.dimY,n,y_bar);
@@ -72,19 +72,19 @@ for (x=0;x<img.dimX;x++){
                 res+=vanx_centre[x][p]*vany_centre[y][q]/pow(omega,(p+q+2)/2.) ; //point pour la conversion en float
             }
         }
-return res;
 }
-
+return res;}
 double ** mat_TriAntDiagSup(BmpImg img ,int n){
-double ** mat_mom = creer_mat_diag (int n);
+double ** mat_mom = creer_mat_diag (n);
 int p,q;
 for ( p=0;p<n;p++){
     for (q=p;q<n;q++){
-       matmom[p][q]=mom_geo_centre (img,p,q,n);
+       mat_mom[p][q]=mom_geo_centre (img,p,q,n);
     }
 }
 return mat_mom;
 }
 double ** coeff_legendre (){
+
 }
 
