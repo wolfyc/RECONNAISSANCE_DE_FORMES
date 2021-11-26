@@ -42,7 +42,7 @@ for (i=0;i<dim;i++){
 return van_m;
 }
 
-double mom_geo (BmpImg img , int p , int q, int n){
+double mom_geo (BmpImg img , int p , int q, int n){ // Tested
 int x,y;
 double res=0;
 double ** vanx=Vander_monde(img.dimX,n,0);
@@ -58,7 +58,7 @@ for (x=0;x<img.dimX;x++){
 return res;
 
 }
-double mom_geo_centre (BmpImg img,int p, int q, int n){
+double mom_geo_centre (BmpImg img,int p, int q, int n){ //
 double res;
 double omega = mom_geo(img,0,0,n);
 double x_bar = mom_geo(img,1,0,n)/omega;

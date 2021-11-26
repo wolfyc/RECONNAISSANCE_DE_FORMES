@@ -21,6 +21,8 @@ double mom_geo_centre (BmpImg img,int p, int q);
 
 double ** mat_TriAntDiagSup(BmpImg img ,N);
 
+void freeMatrice(double **mat, int dim_x);
+
 double ** coeff_legendre ();
 
 #endif
