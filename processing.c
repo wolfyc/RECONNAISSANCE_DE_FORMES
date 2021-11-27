@@ -58,8 +58,8 @@ for (x=0;x<img.dimX;x++){
 return res;
 
 }
-double mom_geo_centre (BmpImg img,int p, int q, int n){ //
-double res;
+double mom_geo_centre (BmpImg img,int p, int q, int n){ // Tested Ok
+double res=0.00; // correction res have not been initialized
 double omega = mom_geo(img,0,0,n);
 double x_bar = mom_geo(img,1,0,n)/omega;
 double y_bar = mom_geo(img,0,1,n)/omega;
@@ -74,7 +74,7 @@ for (x=0;x<img.dimX;x++){
         }
 }
 return res;}
-double ** mat_TriAntDiagSup(BmpImg img ,int n){
+double ** mat_TriAntDiagSup(BmpImg img ,int n){ //Tested Ok
 double ** mat_mom = creer_mat_diag (n);
 int p,q;
 for ( p=0;p<n;p++){
