@@ -29,19 +29,19 @@ double ** creer_mat_diago (int dim){// tested OK 2.0
 }
 
 
-void freeMatrice(double ***mat, int dim_x){  //Corrected
+void freeMatrice(double ***mat, int dim_x){  //Corrected 2.0
     for (int i = 0; i< dim_x;i++){
         free((*mat)[i]);
     }
     free(*mat);
     *mat = NULL;
-    if ((*mat)==NULL) printf( "Functions succesfully Freed");
+    if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
 
 
 
-double ** Vander_monde (int dim,int pow_max,double moy){ // tested OK
+double ** Vander_monde (int dim,int pow_max,double moy){ // tested OK 2.0
 double ** van_m=creer_mat (dim,pow_max);
 int i , j;
 for (i=0;i<dim;i++){
@@ -52,7 +52,7 @@ for (i=0;i<dim;i++){
 return van_m;
 }
 
-double mom_geo (BmpImg img , int p , int q, int n){ // Tested
+double mom_geo (BmpImg img , int p , int q, int n){ // Tested 2.0
 int x,y;
 double res=0;
 double ** vanx=Vander_monde(img.dimX,n,0);
@@ -68,7 +68,7 @@ for (x=0;x<img.dimX;x++){
 return res;
 
 }
-double mom_geo_centre (BmpImg img,int p, int q, int n){ // Tested Ok
+double mom_geo_centre (BmpImg img,int p, int q, int n){ // Tested Ok 2.0
 double res=0.00; // correction res have not been initialized
 double omega = mom_geo(img,0,0,n);
 double x_bar = mom_geo(img,1,0,n)/omega;
@@ -84,7 +84,7 @@ for (x=0;x<img.dimX;x++){
         }
 }
 return res;}
-double ** mat_TriAntDiagSup(BmpImg img ,int n){ //Tested Ok
+double ** mat_TriAntDiagSup(BmpImg img ,int n){ //Tested Ok 2.0
 double ** mat_mom = creer_mat_anti_diag (n);
 int p,q;
 for ( p=0;p<n;p++){
@@ -118,7 +118,7 @@ for (x=1;x<=n;x++ ){
     return a;
 }
 */
-double coeff (int x, int i){
+double coeff (int x, int i){ // Tested OK 2.0
 if (x==0 && i==0) {return 1;}
 else { if (x==1 && i==0){return 0 ;}
 else { if (x!=1 && i==0) {return ((-((double)x-1)/(double)x)*coeff(x-2,0));}
@@ -127,7 +127,7 @@ else {return (((2*((double)x-1)+1)/x)* coeff(x-1,i-1)+(-((double)x-1)/(double)x)
 }}}}
 
 
-double ** coeff_legendre (int n ){
+double ** coeff_legendre (int n ){ // Tested OK 2.0
 double ** a= creer_mat_diago(n+1);
 int x,i;
 for (x=0;x<=n;x++ ){
@@ -140,7 +140,7 @@ for (x=0;x<=n;x++ ){
     return a;
 }
 
-double P(double x,int n ){
+double P(double x,int n ){ // OK OK 2.0
 int i ;
 double poly =0.00;
 double ** a= coeff_legendre ( n );
