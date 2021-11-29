@@ -32,12 +32,10 @@ double ** creer_mat_diago (int dim){// tested OK 2.0
 void freeMatrice(double ***mat, int dim_x){  //Corrected
     for (int i = 0; i< dim_x;i++){
         free((*mat)[i]);
-        printf( "%d\n", i );
     }
     free(*mat);
-    printf( "free( mat)\n");
     *mat = NULL;
-    printf( "mat == null\n");
+    if ((*mat)==NULL) printf( "Functions succesfully Freed");
 }
 
 
