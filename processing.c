@@ -29,7 +29,7 @@ double ** creer_mat_diago (int dim){// tested OK 2.0
 }
 
 
-void freeMatrice(double ***mat, int dim_x){  // Corrected
+void freeMatrice(double ***mat, int dim_x){  //Corrected
     for (int i = 0; i< dim_x;i++){
         free((*mat)[i]);
         printf( "%d\n", i );
