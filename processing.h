@@ -15,11 +15,11 @@
   */
 double ** Vander_monde (int dim,int pow_max,double moy);
 
-double mom_geo (BmpImg img , int p , int q, int n );
+double mom_geo (BmpImg img, int p, int q, int n );
 
 double mom_geo_centre (BmpImg img,int p, int q, int n);
 
-double ** mat_TriAntDiagSup(BmpImg img ,int n);
+double ** mat_TriAntDiagSup(BmpImg img,int n);
 
 
 // Liberation de memoire alloqué dinamiquement
@@ -35,8 +35,8 @@ double ** coeff_legendre (int n);
 
 // Matrice diagonale
 /**
-  * @param dim dimension de la matrice 
-  * 
+  * @param dim dimension de la matrice
+  *
   * @return une matrice de dimension diagonale dim
   */
 
@@ -48,7 +48,7 @@ double ** creer_mat_anti_diag (int dim);
 
 double Poly_Leg(double x, int n);
 
-double Norm_Const(int p , int q);
+double Norm_Const(int p, int q);
 
 
 
