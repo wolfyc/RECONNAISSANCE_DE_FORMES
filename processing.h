@@ -46,7 +46,7 @@ double ** creer_mat (int dim_x, int dim_y) ;
 
 double ** creer_mat_anti_diag (int dim);
 
-
+double Poly_Leg(double x, int n);
 
 
 
