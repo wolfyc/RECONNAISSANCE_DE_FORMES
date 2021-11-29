@@ -29,7 +29,7 @@ double ** creer_mat_diago (int dim){// tested OK 2.0
 }
 
 
-void freeMatrice(double ***mat, int dim_x){  // Corrected
+void freeMatrice(double ***mat, int dim_x){  //Corrected
     for (int i = 0; i< dim_x;i++){
         free((*mat)[i]);
         printf( "%d\n", i );
@@ -141,15 +141,6 @@ for (x=0;x<=n;x++ ){
 }
     return a;
 }
-/*double Pn(double x, int n){
-    if(n==0){
-        return 1;
-    }else if(n==1){
-        return x ;
-    }else{
-        return (double)((2*n-1)*x*Pn(x,n-1)-(n-1)*Pn(x,n-2))/n;
-    }
-}*/
 
 double P(double x,int n ){
 int i ;
