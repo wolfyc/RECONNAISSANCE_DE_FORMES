@@ -24,7 +24,7 @@ double ** mat_TriAntDiagSup(BmpImg img ,int n);
 
 // Liberation de memoire alloqué dinamiquement
 /**
-  * @param **mat notre matrice
+  * @param ***mat notre matrice
   * @param dim_x dimension de la matrice
   * @return une matrice de dimension diagonale dim
   */
