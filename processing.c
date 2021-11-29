@@ -119,7 +119,7 @@ for (x=1;x<=n;x++ ){
     }
     return a;
 }
-double Pn(double x, int n){
+double Poly_Leg(double x, int n){
     if(n==0){
         return 1;
     }else if(n==1){
