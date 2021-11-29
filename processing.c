@@ -16,15 +16,15 @@ double ** creer_mat_diag (int dim){// tested OK
         mat[i]=calloc(dim-i,sizeof(double));
     }
     return mat;
-    
+
 }
 
 
-void freeMatrice(double **mat, int dim_x){  // Corrected 
+void freeMatrice(double **mat, int dim_x){  // Corrected
     for (int i = 0; i< dim_x;i++){
-        free(mat[i]); 
+        free(mat[i]);
     }
-    free(mat);  
+    free(mat);
     mat = NULL;
 }
 
@@ -78,7 +78,7 @@ double ** mat_TriAntDiagSup(BmpImg img ,int n){ //Tested Ok
 double ** mat_mom = creer_mat_diag (n);
 int p,q;
 for ( p=0;p<n;p++){
-    for (q=p;q<n;q++){
+    for (q=0;q<n-p;q++){
        mat_mom[p][q]=mom_geo_centre (img,p,q,n);
     }
 }
