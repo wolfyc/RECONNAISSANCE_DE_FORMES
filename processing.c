@@ -153,6 +153,12 @@ for (i=0;i<=n;i++){
 }
 return poly;
 }
+double Norm_Const(int p , int q){
+double C;
+C=(2*p + 1)*(2*q + 1)/(4.);
+
+return C;
+}
 
 
 

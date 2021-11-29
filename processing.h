@@ -48,6 +48,8 @@ double ** creer_mat_anti_diag (int dim);
 
 double Poly_Leg(double x, int n);
 
+double Norm_Const(int p , int q);
+
 
 
 #endif
