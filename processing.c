@@ -101,22 +101,35 @@ double ** a= creer_mat_diago(n);
 int x,i;
 a[0][0]=1;
 a[1][0]=0;
+printf(" les moments de legendre \n" );
 for (x=1;x<=n;x++ ){
     if(x>1){
-        a[x][0] = ((-x+1)/x)*a[x-2][0]; //generation de la premiere colonne.
+        a[x][0] = (-((double)x-1)/(double)x)*a[x-2][0]; //generation de la premiere colonne.
+
     }
     for (i=1;i<=x;i++){
         if (i >= x-1){
-            a[x][i] = ((2*(x-1)+1)/x)* a[x-1][i-1]; //i >= x-1;
+            a[x][i] = ((2*((double)x-1)+1)/(double)x)* a[x-1][i-1]; //i >= x-1;
         }
         else{
-                a[x][i] = (((2*(x-1)+1)/x)* a[x-1][i-1])+((-x+1)/x)*a[x-2][i];//sinon
+                a[x][i] = (((2*((double)x-1)+1)/x)* a[x-1][i-1])+(-((double)x-1)/(double)x)*a[x-2][i];//Sinon
             }
 
         }
     }
     return a;
 }
+double Pn(double x, int n){
+    if(n==0){
+        return 1;
+    }else if(n==1){
+        return x ;
+    }else{
+        return (double)((2*n-1)*x*Pn(x,n-1)-(n-1)*Pn(x,n-2))/n;
+    }
+}
+
+
 
 
 
