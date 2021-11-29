@@ -21,15 +21,31 @@ double mom_geo_centre (BmpImg img,int p, int q, int n);
 
 double ** mat_TriAntDiagSup(BmpImg img ,int n);
 
-void freeMatrice(double **mat, int dim_x);
+
+// Liberation de memoire alloqué dinamiquement
+/**
+  * @param ***mat notre matrice
+  * @param dim_x dimension de la matrice
+  * @return une matrice de dimension diagonale dim
+  */
+void freeMatrice(double ***mat, int dim_x);
+
 
 double ** coeff_legendre (int n);
+
+// Matrice diagonale
+/**
+  * @param dim dimension de la matrice 
+  * 
+  * @return une matrice de dimension diagonale dim
+  */
 
 double ** creer_mat_diago (int dim);
 
 double ** creer_mat (int dim_x, int dim_y) ;
 
 double ** creer_mat_anti_diag (int dim);
+
 
 
 
