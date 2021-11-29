@@ -8,7 +8,7 @@
 #include "myBmpGris.h"
 
 // Matrice de Vandermonde
-/** 
+/**
   * @param dim dimxdim la dim de la mat
   * @param pow_max l'ordre max de la mat
   * @return une matrice de dimension dim
@@ -23,6 +23,8 @@ double ** mat_TriAntDiagSup(BmpImg img ,int n);
 
 void freeMatrice(double **mat, int dim_x);
 
-double ** coeff_legendre ();
+double ** coeff_legendre (int n);
+
+double ** creer_mat_diago (int dim);
 
 #endif

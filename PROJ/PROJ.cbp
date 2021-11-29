@@ -31,9 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="../myBmpGris.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../myBmpGris.h" />
+		<Unit filename="../processing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../processing.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -9,11 +9,20 @@ double ** creer_mat (int dim_x, int dim_y){ //tested OK
     return mat;
 }
 
-double ** creer_mat_diag (int dim){// tested OK
+double ** creer_mat_anti_diag (int dim){// tested OK
     double **mat = malloc(dim*sizeof(double*));
     int i;
     for (i=0;i<dim;i++){
         mat[i]=calloc(dim-i,sizeof(double));
+    }
+    return mat;
+
+}
+double ** creer_mat_diago (int dim){// tested OK
+    double **mat = malloc(dim*sizeof(double*));
+    int i;
+    for (i=0;i<dim;i++){
+        mat[i]=calloc(i+1,sizeof(double));
     }
     return mat;
 
@@ -75,7 +84,7 @@ for (x=0;x<img.dimX;x++){
 }
 return res;}
 double ** mat_TriAntDiagSup(BmpImg img ,int n){ //Tested Ok
-double ** mat_mom = creer_mat_diag (n);
+double ** mat_mom = creer_mat_anti_diag (n);
 int p,q;
 for ( p=0;p<n;p++){
     for (q=0;q<n-p;q++){
@@ -84,7 +93,26 @@ for ( p=0;p<n;p++){
 }
 return mat_mom;
 }
-double ** coeff_legendre (){
+double ** coeff_legendre (int n ){
+double ** Matleg= creer_mat_diago(n);
+int x;
+a[0][0]=1;
+a[1][0]=0;
+for (x=1;x<=n;x++ ){
+    if(x>1){
+        a[x][0] = ((-x+1)/x)*a[x-2][0]; //generation de la premiere colonne.
+    }
+    for (i=1;i<=x;i++){
+        if (i >= x-1){
+            a[x][i] = ((2*(x-1)+1)/x)* a[x-1][i-1]; //i >= x-1;
+        }
+        else{
+                a[x][i] = (((2*(x-1)+1)/x)* a[x-1][i-1])+((-x+1)/x)*a[x-2][i];//sinon
+            }
+
+        }
+    }
+}
 
 }
 
