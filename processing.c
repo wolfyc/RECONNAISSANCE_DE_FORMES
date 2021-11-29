@@ -96,7 +96,7 @@ for ( p=0;p<n;p++){
 }
 return mat_mom;
 }
-double ** coeff_legendre (int n ){
+/*double ** coeff_legendre (int n ){
 double ** a= creer_mat_diago(n);
 int x,i;
 a[0][0]=1;
@@ -119,7 +119,29 @@ for (x=1;x<=n;x++ ){
     }
     return a;
 }
-double Pn(double x, int n){
+*/
+double coeff (int x, int i){
+if (x==0 && i==0) {return 1;}
+else { if (x==1 && i==0){return 0 ;}
+else { if (x!=1 && i==0) {return ((-((double)x-1)/(double)x)*coeff(x-2,0));}
+else {if (i>= x-1){return (((2*((double)x-1)+1)/(double)x)* coeff(x-1,i-1)); }
+else {return (((2*((double)x-1)+1)/x)* coeff(x-1,i-1)+(-((double)x-1)/(double)x)*coeff(x-2,i));}
+}}}}
+
+
+double ** coeff_legendre (int n ){
+double ** a= creer_mat_diago(n+1);
+int x,i;
+for (x=0;x<=n;x++ ){
+    for (i=0;i<=x;i++){
+        a[x][i]=coeff(x,i);
+        printf("%f \t" , a[x][i]);
+    }
+    printf("\n");
+}
+    return a;
+}
+/*double Pn(double x, int n){
     if(n==0){
         return 1;
     }else if(n==1){
@@ -127,6 +149,18 @@ double Pn(double x, int n){
     }else{
         return (double)((2*n-1)*x*Pn(x,n-1)-(n-1)*Pn(x,n-2))/n;
     }
+}*/
+
+double P(double x,int n ){
+int i ;
+double poly =0.00;
+double ** a= coeff_legendre ( n );
+printf("ok all ");
+for (i=0;i<=n;i++){
+        poly+= a[n][i]*pow(x,i);
+        printf("%f \n" , poly);
+}
+return poly;
 }
 
 
