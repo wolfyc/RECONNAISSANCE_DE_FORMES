@@ -1,5 +1,5 @@
 #include "processing.h"
-
+//creation de matrice rectangulaire.
 double ** creer_mat (int dim_x, int dim_y){ //tested OK
     double **mat = malloc(dim_x*sizeof(double*));
     int i;
@@ -8,7 +8,7 @@ double ** creer_mat (int dim_x, int dim_y){ //tested OK
     }
     return mat;
 }
-
+//creation matrice anti diago pour moment centrées normé
 double ** creer_mat_anti_diag (int dim){// tested OK
     double **mat = malloc(dim*sizeof(double*));
     int i;
@@ -94,8 +94,8 @@ for ( p=0;p<n;p++){
 return mat_mom;
 }
 double ** coeff_legendre (int n ){
-double ** Matleg= creer_mat_diago(n);
-int x;
+double ** a= creer_mat_diago(n);
+int x,i;
 a[0][0]=1;
 a[1][0]=0;
 for (x=1;x<=n;x++ ){
@@ -112,7 +112,8 @@ for (x=1;x<=n;x++ ){
 
         }
     }
+    return a;
 }
 
-}
+
 
