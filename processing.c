@@ -1,6 +1,6 @@
 #include "processing.h"
 //creation de matrice rectangulaire.
-double ** creer_mat (int dim_x, int dim_y){ //tested OK
+double ** creer_mat (int dim_x, int dim_y){ //tested OK 2.0
     double **mat = malloc(dim_x*sizeof(double*));
     int i;
     for (i=0;i<dim_x;i++){
@@ -9,16 +9,16 @@ double ** creer_mat (int dim_x, int dim_y){ //tested OK
     return mat;
 }
 //creation matrice anti diago pour moment centrées normé
-double ** creer_mat_anti_diag (int dim){// tested OK
+double ** creer_mat_anti_diag (int dim){// tested OK 2.0
     double **mat = malloc(dim*sizeof(double*));
     int i;
     for (i=0;i<dim;i++){
         mat[i]=calloc(dim-i,sizeof(double));
     }
     return mat;
-
 }
-double ** creer_mat_diago (int dim){// tested OK
+
+double ** creer_mat_diago (int dim){// tested OK 2.0
     double **mat = malloc(dim*sizeof(double*));
     int i;
     for (i=0;i<dim;i++){
@@ -29,12 +29,15 @@ double ** creer_mat_diago (int dim){// tested OK
 }
 
 
-void freeMatrice(double **mat, int dim_x){  // Corrected
+void freeMatrice(double ***mat, int dim_x){  // Corrected
     for (int i = 0; i< dim_x;i++){
-        free(mat[i]);
+        free((*mat)[i]);
+        printf( "%d\n", i );
     }
-    free(mat);
-    mat = NULL;
+    free(*mat);
+    printf( "free( mat)\n");
+    *mat = NULL;
+    printf( "mat == null\n");
 }
 
 
