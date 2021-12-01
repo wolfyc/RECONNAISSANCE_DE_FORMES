@@ -28,4 +28,5 @@ https://fr.wikipedia.org/wiki/Fonction_poids
 10 - le changement d'echelle: 
 X = x/a et Y = y/a on flip flop l'equation on aura l'equation (5)
 
-11- d'apres l'eq 3 et 5 on aura la 6.
+11- D'apres l'eq 3 et 5 on aura la 6.
+12- 
