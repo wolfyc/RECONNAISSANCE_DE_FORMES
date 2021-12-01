@@ -1,5 +1,5 @@
 #include "processing.h"
-//creation de matrice rectangulaire.
+/*//creation de matrice rectangulaire.
 double ** creer_mat (int dim_x, int dim_y)  //tested OK 2.0
 {
     double **mat = malloc(dim_x*sizeof(double*));
@@ -37,7 +37,8 @@ double ** creer_mat_diago (int dim) // tested OK 2.0
 
 void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
 {
-    for (int i = 0; i< dim_x; i++)
+    int i;
+    for ( i = 0; i< dim_x ; i++)
     {
         free((*mat)[i]);
     }
@@ -116,7 +117,7 @@ double ** mat_TriAntDiagSup(BmpImg img,int n)   //Tested Ok 2.0
         }
     }
     return mat_mom;
-}
+}*/
 /*double ** coeff_legendre (int n ){
 double ** a= creer_mat_diago(n);
 int x,i;
@@ -141,6 +142,7 @@ for (x=1;x<=n;x++ ){
     return a;
 }
 */
+/*
 double coeff (int x, int i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
@@ -204,6 +206,7 @@ double P(double x,int n )  // OK OK 2.0
     }
     return poly;
 }
+
 double Norm_Const(int p, int q)
 {
     double C;
@@ -211,7 +214,7 @@ double Norm_Const(int p, int q)
 
     return C;
 }
-
+*/
 
 
 
