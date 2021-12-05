@@ -18,16 +18,17 @@ double mom_geo (BmpImg img, int p, int q, int n)    // Tested 2.0
 
     }
     return res;
-
 }
-double mom_geo_centre (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
+
+double momentGeoCentreNorme (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
 {
-    double res=0.00; // correction res have not been initialized
+    double res=0.00; // correction res has not been initialized
     double omega = mom_geo(img,0,0,n);
     double x_bar = mom_geo(img,1,0,n)/omega;
     double y_bar = mom_geo(img,0,1,n)/omega;
     int x,y;
-    double ** vanx_centre=Vander_monde(img.dimX,n,x_bar);
+    // centralisation des cordonne
+    double ** vanx_centre=Vander_monde(img.dimX,n,x_bar); 
     double ** vany_centre=Vander_monde(img.dimY,n,y_bar);
     for (x=0; x<img.dimX; x++)
     {
@@ -41,6 +42,7 @@ double mom_geo_centre (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
     }
     return res;
 }
+
 double ** mat_TriAntDiagSup(BmpImg img,int n)   //Tested Ok 2.0
 {
     double ** mat_mom = creer_mat_anti_diag (n);
@@ -49,7 +51,7 @@ double ** mat_TriAntDiagSup(BmpImg img,int n)   //Tested Ok 2.0
     {
         for (q=0; q<n-p; q++)
         {
-            mat_mom[p][q]=mom_geo_centre (img,p,q,n);
+            mat_mom[p][q]=momentGeoCentreNorme (img,p,q,n);
         }
     }
     return mat_mom;
