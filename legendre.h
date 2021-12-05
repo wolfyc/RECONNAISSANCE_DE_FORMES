@@ -2,14 +2,27 @@
 #define LEGENDRE_H_INCLUDED
 #include "processing.h"
 #include "myBmpGris.h"
-// Matrice de Vandermonde
+// calculateur du coef de legendre
 /**
-  * @param dim dimxdim la dim de la mat
-  * @param pow_max l'ordre max de la mat
-  * @return une matrice de dimension dim
+  * @param x la valeur du coeff_legendre et sa position de ligne
+  * @param i l'ordre et la position dans la colonne de la matrice
+  * @return le coeff de legendre
   */
 double coeff (int x, int i);
+
+// calculateur du coef de legendre
+/**
+  * @param n la dimension de la matrice de legendre
+  * @return lune matrice de coeff de legendre
+  */
 double ** coeff_legendre (int n);
+
+// calculateur du coef de legendre
+/**
+  * @param x la valeur du coeff_legendre et sa position de ligne
+  * @param i l'ordre et la position dans la colonne de la matrice
+  * @return le coeff de legendre
+  */
 double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image 
 double ** lire_moments(char * filename );
 void ecrire_mom (char * filename ,double ** moments ,int n );

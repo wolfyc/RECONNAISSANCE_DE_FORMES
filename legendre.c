@@ -1,4 +1,5 @@
 #include "legendre.h"
+
 double coeff (int x, int i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
@@ -31,7 +32,6 @@ double coeff (int x, int i)  // Tested OK 2.0
         }
     }
 }
-
 
 double ** coeff_legendre (int n )  // Tested OK 2.0
 {
