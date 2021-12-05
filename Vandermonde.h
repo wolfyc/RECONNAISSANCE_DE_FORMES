@@ -2,7 +2,8 @@
 #define VANDERMONDE_H_INCLUDED
 #include "processing.h"
 #include "myBmpGris.h"
-// Matrice de Vandermonde avec la capa de centré un pixel
+// Matrice de Vandermonde pour reduire le coup de calcule des matrice 
+//avec la capa de centré un pixel
 /**
   * @param dim dimxdim la dim de la mat
   * @param pow_max l'ordre max de la mat
