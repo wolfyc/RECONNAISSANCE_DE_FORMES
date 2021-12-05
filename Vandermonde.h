@@ -6,7 +6,8 @@
 /**
   * @param dim dimxdim la dim de la mat
   * @param pow_max l'ordre max de la mat
-  * @return une matrice de dimension dim
+  * @param moy la translation des pixel ie pour centré les moment geo.
+  * @return une matrice de vandermonde de dimension dim
   */
 double ** Vander_monde (int dim,int pow_max,double moy);
 
