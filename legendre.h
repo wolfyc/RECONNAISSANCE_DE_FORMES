@@ -2,6 +2,12 @@
 #define LEGENDRE_H_INCLUDED
 #include "processing.h"
 #include "myBmpGris.h"
+// Matrice de Vandermonde
+/**
+  * @param dim dimxdim la dim de la mat
+  * @param pow_max l'ordre max de la mat
+  * @return une matrice de dimension dim
+  */
 double coeff (int x, int i);
 double ** coeff_legendre (int n);
 double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image 
