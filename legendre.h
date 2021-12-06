@@ -26,17 +26,64 @@ double ** coeff_legendre (int n);
   */
 double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image
 
-// lecture  des moment de legendre d'un fichier
+// lecture  des moment centres et normes à partir d'un fichier
 /**
   * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
+  * @return matrice de moment centrés et normés
+  */
+double ** lire_moments_centre_norme(char * filename,int * n  );
+// lecture  des moment de legendre à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
+double ** lire_moments_legendre(char * filename,int * n  );
+
+// lecture  des moment centres et normes à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n l'ordre des moments à ecrire dans le fichier
+  * @param momg matrice moment geomtique centrés normés
+  * @param leg matrice de poly de legendre
+  * @return sans retour
+  */
+void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n  );
+
+// lecture  des moment centres et normes à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
+  * @return matrice de moment de legendre
+  */
+<<<<<<< HEAD
 //double ** lire_moments(char * filename );
 //void ecrire_mom (char * filename ,double ** moments ,int n );
 Moments lire_moments (char * filename );
+=======
+>>>>>>> 685ab1cb4f22182d66f3a9dd62e656b4eca42b94
 double ** Moments_Legendre (BmpImg img, int n );
+// lecture  des moment centres et normes à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
+  * @return matrice de moment de legendre
+  */
 double Moment_Leg (BmpImg img,int p,int q, int n );
+// lecture  des moment centres et normes à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
+  * @return matrice de moment de legendre
+  */
 double Norm_Const(int p, int q);
+// lecture  des moment centres et normes à partir d'un fichier
+/**
+  * @param filename string of char
+  * @param n pointeur vers l'ordre des moments lu du fichiers
+  * @return matrice de moment de legendre
+  */
 double P(double x,int n );
 void afficher_moments (Moments mom );
 
