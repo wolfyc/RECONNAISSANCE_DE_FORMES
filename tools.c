@@ -1,4 +1,5 @@
 #include "tools.h"
+#include "myBmpGris.h"
 //creation de matrice rectangulaire.
 double ** creer_mat (int dim_x, int dim_y)  //tested OK 2.0
 {
@@ -10,7 +11,7 @@ double ** creer_mat (int dim_x, int dim_y)  //tested OK 2.0
     }
     return mat;
 }
-//creation matrice anti diago pour moment centrées normé
+//creation matrice anti diago pour moment centrï¿½es normï¿½
 double ** creer_mat_anti_diag (int dim) // tested OK 2.0
 {
     double **mat = malloc(dim*sizeof(double*));
@@ -45,4 +46,25 @@ void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
     free(*mat);
     *mat = NULL;
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
+}
+
+double** mat_img_rec (int dim_y,int dim_x,int n ){
+int p,q,i,j;
+double** mat_rec;
+mat_rec= creer_mat(dim_x,dim_y);
+
+for ( i = 0; i < dim_x; i++)
+    {
+    for ( j = 0; j < dim_y; j++)
+        {
+        for (p=0 ; p<n ; p++ )
+            {
+                for (q=0 ; q<p;q++)
+                    {
+                        mat_rec[i][j]= Moment_Leg(img,p-q,q,n)*P(i,p-q)*P(j,q); 
+                    }
+            }
+        }
+    }
+    return mat_rec ;
 }

@@ -28,4 +28,12 @@ double ** creer_mat (int dim_x, int dim_y) ;
   */
 double ** creer_mat_anti_diag (int dim);
 
+// Matrice image reconnaissance
+/**
+  * @param dim_y dimension de la matrice
+  * @param dim_x dimension de la matrice
+  * @param n dimension de la matrice
+  * @return une matrice de dimension dim_x * dim_y
+  */
+double** mat_img_rec (int dim_y,int dim_x,int n );
 #endif // TOOLS_H_INCLUDED
