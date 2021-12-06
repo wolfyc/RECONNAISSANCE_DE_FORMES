@@ -118,6 +118,7 @@ if ( fichier != NULL ) {
 else {printf("Error Opening File Please Fix the problem and retry");}
 fclose(fichier);
 }
+
 Moments lire_moments (char * filename ){
 int i , j;
 int n ;

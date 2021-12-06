@@ -49,7 +49,7 @@ double ** lire_moments_legendre(char * filename,int * n  );
   * @param leg matrice de poly de legendre
   * @return sans retour
   */
-void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n  );
+void ecrire_mom (char * filename , Moments mom  ) ;
 
 // lecture  des moment centres et normes à partir d'un fichier
 /**
@@ -57,7 +57,7 @@ void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n  );
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
- 
+
 //double ** lire_moments(char * filename );
 //void ecrire_mom (char * filename ,double ** moments ,int n );
 Moments lire_moments (char * filename );
