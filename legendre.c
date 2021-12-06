@@ -93,15 +93,23 @@ double ** Moments_Legendre (BmpImg img, int n ) // Tested OK
     }
     return mat ;
 }
-void ecrire_mom (char * filename ,double ** moments ,int n ) // Tested OK
+void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n ) // Tested OK
 {
 int i , j;
 FILE * fichier = fopen (filename,"w");
 if ( fichier != NULL ) {
     fprintf(fichier , "%d \n" , n);
+    fprintf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i< n ; i++ ){
         for (j=0 ; j<n-i ; j++){
-            fprintf(fichier , "%f " , moments[i][j]);
+            fprintf(fichier , "%f " , momg[i][j]);
+        }
+        fprintf(fichier, "\n");
+    }
+     fprintf(fichier , "Moments de Legendre : \n");
+    for (i=0 ; i< n ; i++ ){
+        for (j=0 ; j<n-i ; j++){
+            fprintf(fichier , "%f " , leg[i][j]);
         }
         fprintf(fichier, "\n");
     }
@@ -110,17 +118,39 @@ else {printf("Error Opening File Please Fix the problem and retry");}
 fclose(fichier);
 }
 
-double ** lire_moments(char * filename ){ // Tested OK 
-int n, i , j;
+double ** lire_moments_centre_norme(char * filename,int * n  ){ // Tested OK 
+int i , j;
 FILE * fichier = fopen (filename,"r");
 if ( fichier != NULL ) {
-fscanf(fichier , "%d \n" , &n);
-double ** mat = creer_mat_anti_diag(n);
-float tmp ; // Does not work without this temporary Variable
-for (i=0 ; i< n ; i++ ){
-    for (j=0 ; j<n-i ; j++){
-        fscanf(fichier , "%f" , &tmp);
-        mat[i][j]=tmp;
+fscanf(fichier , "%d \n" , n);
+double ** mat = creer_mat_anti_diag(*n);
+fscanf(fichier , "Moments geometrique centres, normes : \n");
+for (i=0 ; i< *n ; i++ ){
+    for (j=0 ; j<*n-i ; j++){
+        fscanf(fichier , "%lf" , &mat[i][j]);
+    }
+    fscanf(fichier, "\n");
+    }
+return mat ;
+}
+else {printf("Error Opening File Please Fix the problem and retry");
+fclose (fichier);
+
+
+return NULL ;
+}
+}
+
+double ** lire_moments_legendre(char * filename,int * n  ){ // Tested OK 
+int i , j;
+FILE * fichier = fopen (filename,"r");
+if ( fichier != NULL ) {
+fscanf(fichier , "%d \n" , n);
+double ** mat = creer_mat_anti_diag(*n);
+fscanf(fichier , "Moments de Legendre : \n");
+for (i=0 ; i< *n ; i++ ){
+    for (j=0 ; j<*n-i ; j++){
+        fscanf(fichier , "%lf" , &mat[i][j]);
     }
     fscanf(fichier, "\n");
     }

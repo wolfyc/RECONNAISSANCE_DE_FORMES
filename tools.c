@@ -48,9 +48,11 @@ void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-double** mat_img_rec (int dim_y,int dim_x,int n ){
-int p,q,i,j;
+double** mat_img_rec (char * filename,int dim_x,int dim_y ){
+int p,q,i,j,n;
 double** mat_rec;
+double** mom_leg;
+mom_leg=lire_moments(filename,&n);
 mat_rec= creer_mat(dim_x,dim_y);
 
 for ( i = 0; i < dim_x; i++)
@@ -61,7 +63,7 @@ for ( i = 0; i < dim_x; i++)
             {
                 for (q=0 ; q<p;q++)
                     {
-                        mat_rec[i][j]= Moment_Leg(img,p-q,q,n)*P(i,p-q)*P(j,q); 
+                        mat_rec[i][j]= mom_leg[i][j]*P(i,p-q)*P(j,q); 
                     }
             }
         }
