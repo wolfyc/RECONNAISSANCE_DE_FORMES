@@ -13,6 +13,11 @@
 #include "tools.h"
 #include "Vandermonde.h"
 
+typedef struct {
+    int n ;
+    double ** centres_norm;
+    double ** leg ;
+} Moments ;
 
 double P(double x, int n);
 

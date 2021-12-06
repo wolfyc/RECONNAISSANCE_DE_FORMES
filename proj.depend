@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1638799168 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\reconnaissance_de_formes\image_reconstruct.c
+
+1637782585 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\reconnaissance_de_formes\mybmpgris.c
+	"myBmpGris.h"
+
+1637782585 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\reconnaissance_de_formes\mybmpgris.h
+	<stdlib.h>
+	<stdio.h>
+

@@ -48,7 +48,7 @@ void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-double** mat_img_rec (char * filename,int dim_x,int dim_y ){
+/*double** mat_img_rec (char * filename,int dim_x,int dim_y ){ Not Finished 
 int p,q,i,j,n;
 double** mat_rec;
 double** mom_leg;
@@ -69,4 +69,18 @@ for ( i = 0; i < dim_x; i++)
         }
     }
     return mat_rec ;
+}*/
+
+Moments creer_moments(int n ){
+    Moments mom ;
+    mom.n = n ;
+    mom.centres_norm= creer_mat_anti_diag(n) ; 
+    mom.leg= creer_mat_anti_diag(n) ;
+    return mom ;
 }
+void Free_moments (Moments *mom ){
+ 
+    freeMatrice (&(mom->centres_norm),mom->n);
+    freeMatrice(&(mom->leg),mom->n);
+    mom->n=0 ; 
+} 

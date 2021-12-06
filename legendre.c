@@ -1,5 +1,6 @@
 #include "legendre.h"
 
+
 double coeff (int x, int i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
@@ -82,7 +83,7 @@ double Moment_Leg (BmpImg img,int p,int q, int n )  // Tested OK
     res*= c ;
     return res ;
 }
-double ** Moments_Legendre (BmpImg img, int n ) // Tested OK 
+double ** Moments_Legendre (BmpImg img, int n ) // Tested OK
 {
     double ** mat = creer_mat_anti_diag(n);
     int p,q;
@@ -93,32 +94,83 @@ double ** Moments_Legendre (BmpImg img, int n ) // Tested OK
     }
     return mat ;
 }
-void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n ) // Tested OK
+void ecrire_mom (char * filename , Moments mom  ) // Tested OK
 {
 int i , j;
 FILE * fichier = fopen (filename,"w");
 if ( fichier != NULL ) {
-    fprintf(fichier , "%d \n" , n);
+    fprintf(fichier , "%d \n" , mom.n);
     fprintf(fichier , "Moments geometrique centres, normes : \n");
-    for (i=0 ; i< n ; i++ ){
-        for (j=0 ; j<n-i ; j++){
-            fprintf(fichier , "%f " , momg[i][j]);
+    for (i=0 ; i< mom.n  ; i++ ){
+        for (j=0 ; j<mom.n-i ; j++){
+            fprintf(fichier , "%f " , mom.centres_norm[i][j]);
         }
         fprintf(fichier, "\n");
     }
      fprintf(fichier , "Moments de Legendre : \n");
-    for (i=0 ; i< n ; i++ ){
-        for (j=0 ; j<n-i ; j++){
-            fprintf(fichier , "%f " , leg[i][j]);
+    for (i=0 ; i< mom.n ; i++ ){
+        for (j=0 ; j<mom.n-i ; j++){
+            fprintf(fichier , "%f " , mom.leg[i][j]);
         }
         fprintf(fichier, "\n");
     }
 }
-else {printf("Error Opening File Please Fix the problem and retry");} 
+else {printf("Error Opening File Please Fix the problem and retry");}
 fclose(fichier);
 }
+Moments lire_moments (char * filename ){
+int i , j;
+int n ;
+Moments mom ;
+FILE * fichier = fopen (filename,"r");
+if ( fichier != NULL ) {
+fscanf(fichier , "%d \n" , n);
+mom = creer_moments(n);
+fscanf(fichier , "Moments geometrique centres, normes : \n");
+for (i=0 ; i< n ; i++ ){
+    for (j=0 ; j<n-i ; j++){
+        fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
+    }
+    fscanf(fichier, "\n");
+    }
+fscanf(fichier , "Moments de Legendre : \n");
+for (i=0 ; i< n ; i++ ){
+    for (j=0 ; j< n-i ; j++){
+        fscanf(fichier , "%lf" , &mom.leg[i][j]);
+    }
+    fscanf(fichier, "\n");
+    }
 
-double ** lire_moments_centre_norme(char * filename,int * n  ){ // Tested OK 
+}
+else {printf("Error Opening File Please Fix the problem and retry");
+fclose (fichier);
+}
+return mom  ;
+
+}
+void afficher_moments (Moments mom ){
+    printf("Moments geometrique centres, normes : \n");
+    for (int i = 0 ; i<mom.n ; i++ ){
+        for (int j =0;j<mom.n-i ; j++){
+            printf("%lf " ,mom.centres_norm[i][j]);
+        }
+        printf("\n");
+}
+printf("Moments de Legendre : \n");
+    for (int i = 0 ; i<mom.n ; i++ ){
+        for (int j =0;j<mom.n-i ; j++){
+            printf("%lf " ,mom.leg[i][j]);
+        }
+        printf("\n");
+}
+
+}
+
+
+
+
+/*
+double ** lire_moments_centre_norme(char * filename,int * n  ){ // Tested OK
 int i , j;
 FILE * fichier = fopen (filename,"r");
 if ( fichier != NULL ) {
@@ -141,7 +193,7 @@ return NULL ;
 }
 }
 
-double ** lire_moments_legendre(char * filename,int * n  ){ // Tested OK 
+double ** lire_moments_legendre(char * filename,int * n  ){ // Tested OK
 int i , j;
 FILE * fichier = fopen (filename,"r");
 if ( fichier != NULL ) {
@@ -163,10 +215,10 @@ fclose (fichier);
 return NULL ;
 }
 }
-
-double Dist_Euc (double ** mat1 , double **mat2 , int n ) {  // tested with moments calculated from same image 
-                                                             //except that one of them is saved and red (in/from) a file 
-int p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable 
+*/
+double Dist_Euc (double ** mat1 , double **mat2 , int n ) {  // tested with moments calculated from same image
+                                                             //except that one of them is saved and red (in/from) a file
+int p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
 double res = 0.00 ;                                          // in the function <lire_moments>
     for (p=0 ; p<n ; p++ ){
         for (q=0 ; q<n-p;q++){
