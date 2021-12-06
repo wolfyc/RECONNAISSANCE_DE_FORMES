@@ -31,9 +31,42 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="../Descriptif.pdf" />
+		<Unit filename="../P5 - Article (1).pdf" />
+		<Unit filename="../P_scalaire_fct_poids.pdf" />
+		<Unit filename="../README.md" />
+		<Unit filename="../Vandermonde.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../Vandermonde.h" />
+		<Unit filename="../image_reconstruct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../image_reconstruct.h" />
+		<Unit filename="../image_reconstruction.h" />
+		<Unit filename="../image_recontruction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../legendre.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../legendre.h" />
+		<Unit filename="../moment_geometrique.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../moment_geometrique.h" />
+		<Unit filename="../myBmpGris.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../myBmpGris.h" />
+		<Unit filename="../processing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../processing.h" />
+		<Unit filename="../tools.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../tools.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
