@@ -30,7 +30,8 @@ double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moment
   * @param filename string of char
   * @return matrice de moment de legendre
   */
-double ** lire_moments(char * filename );
+double ** lire_moments_centre_norme(char * filename,int * n  );
+double ** lire_moments_legendre(char * filename,int * n  );
 void ecrire_mom (char * filename ,double ** moments ,int n );
 double ** Moments_Legendre (BmpImg img, int n );
 double Moment_Leg (BmpImg img,int p,int q, int n );

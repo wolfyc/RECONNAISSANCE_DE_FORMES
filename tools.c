@@ -52,7 +52,7 @@ double** mat_img_rec (char * filename,int dim_x,int dim_y ){
 int p,q,i,j,n;
 double** mat_rec;
 double** mom_leg;
-mom_leg=lire_moments(filename,&n);
+mom_leg=lire_moments_legendre(filename,&n);
 mat_rec= creer_mat(dim_x,dim_y);
 
 for ( i = 0; i < dim_x; i++)
