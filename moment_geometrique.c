@@ -43,7 +43,7 @@ double momentGeoCentreNorme (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
     return res;
 }
 
-double ** mat_TriAntDiagSup(BmpImg img,int n)   //Tested Ok 2.0
+double ** mat_moments_centre_norme(BmpImg img,int n)   //Tested Ok 2.0
 {
     double ** mat_mom = creer_mat_anti_diag (n);
     int p,q;

@@ -27,6 +27,6 @@ double momentGeoCentreNorme (BmpImg img,int p, int q, int n);
   * @param n la dimension de la matrice
   * @return une matrice anti diagonale superieur des moments geometriques centrés et normés
   */
-double ** mat_TriAntDiagSup(BmpImg img,int n);
+double ** mat_moments_centre_norme(BmpImg img,int n);
 
 #endif // MOMENT_GEOMETRIQUE_H_INCLUDED

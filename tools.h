@@ -35,8 +35,14 @@ double ** creer_mat_anti_diag (int dim);
   * @param n dimension de la matrice
   * @return une matrice de dimension dim_x * dim_y
   */
-double** mat_img_rec (int dim_y,int dim_x,int n );
 
 Moments creer_moments(int n );
+
+
+
 void Free_moments (Moments *mom );
+
+
+
+double** mat_img_rec (char * filename,int dim_x,int dim_y );
 #endif // TOOLS_H_INCLUDED
