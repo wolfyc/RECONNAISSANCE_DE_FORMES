@@ -25,7 +25,11 @@ double ** coeff_legendre (int n);
   */
 double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image 
 
-
+// lecture  des moment de legendre d'un fichier
+/**
+  * @param filename string of char
+  * @return matrice de moment de legendre
+  */
 double ** lire_moments(char * filename );
 void ecrire_mom (char * filename ,double ** moments ,int n );
 double ** Moments_Legendre (BmpImg img, int n );
