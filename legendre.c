@@ -76,7 +76,7 @@ double Moment_Leg (BmpImg img,int p,int q, int n )  // Tested OK
     double c = Norm_Const(p, q);
     for (i=0 ; i<=p ; i++){
         for (j=0 ; j<=q; j++ ){
-            res += coeff (p,i)*coeff (q,j)*mom_geo_centre (img,p, q, n)   ;
+            res += coeff (p,i)*coeff (q,j)*mom_geo_centre (img,i, j, n)   ;
         }
     }
     res*= c ;
