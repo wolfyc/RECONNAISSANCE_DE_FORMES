@@ -48,11 +48,10 @@ void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-/*double** mat_img_rec (char * filename,int dim_x,int dim_y ){ Not Finished 
+double** mat_img_rec (char * filename,int dim_x,int dim_y ){ //Not Finished 
 int p,q,i,j,n;
 double** mat_rec;
-double** mom_leg;
-mom_leg=lire_moments_legendre(filename,&n);
+Moments mom=lire_moments(filename);
 mat_rec= creer_mat(dim_x,dim_y);
 
 for ( i = 0; i < dim_x; i++)
@@ -63,13 +62,13 @@ for ( i = 0; i < dim_x; i++)
             {
                 for (q=0 ; q<p;q++)
                     {
-                        mat_rec[i][j]= mom_leg[i][j]*P(i,p-q)*P(j,q); 
+                        mat_rec[i][j]= mom.leg[i][j]*P(i,p-q)*P(j,q); 
                     }
             }
         }
     }
     return mat_rec ;
-}*/
+}
 
 Moments creer_moments(int n ){
     Moments mom ;
@@ -83,4 +82,15 @@ void Free_moments (Moments *mom ){
     freeMatrice (&(mom->centres_norm),mom->n);
     freeMatrice(&(mom->leg),mom->n);
     mom->n=0 ; 
-} 
+}
+
+Moments get_mom(BmpImg img,int n)
+{
+
+    Moments mom = creer_moments(n) ;
+    mom.centres_norm=mat_moments_centre_norme(img,n);
+    mom.leg=Moments_Legendre(img,n);
+
+    return mom;
+}
+
