@@ -57,12 +57,11 @@ void ecrire_mom (char * filename ,double ** momg , double ** leg ,int n  );
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-<<<<<<< HEAD
+ 
 //double ** lire_moments(char * filename );
 //void ecrire_mom (char * filename ,double ** moments ,int n );
 Moments lire_moments (char * filename );
-=======
->>>>>>> 685ab1cb4f22182d66f3a9dd62e656b4eca42b94
+
 double ** Moments_Legendre (BmpImg img, int n );
 // lecture  des moment centres et normes à partir d'un fichier
 /**
