@@ -28,7 +28,7 @@ double ** creer_mat (int dim_x, int dim_y) ;
   */
 double ** creer_mat_anti_diag (int dim);
 
-// Matrice image reconnaissance
+// Matrice de reconstruction de l'image equation 12
 /**
   * @param dim_y dimension de la matrice
   * @param dim_x dimension de la matrice

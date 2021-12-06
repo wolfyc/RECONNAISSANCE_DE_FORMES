@@ -17,13 +17,15 @@ double coeff (int x, int i);
   */
 double ** coeff_legendre (int n);
 
-// calculateur du coef de legendre
+// calculateur distance euclidienne
 /**
-  * @param x la valeur du coeff_legendre et sa position de ligne
+  * @param mat1 la valeur du coeff_legendre et sa position de ligne
   * @param i l'ordre et la position dans la colonne de la matrice
   * @return le coeff de legendre
   */
 double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image 
+
+
 double ** lire_moments(char * filename );
 void ecrire_mom (char * filename ,double ** moments ,int n );
 double ** Moments_Legendre (BmpImg img, int n );
