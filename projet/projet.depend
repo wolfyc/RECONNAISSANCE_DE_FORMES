@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1638742457 source:/home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/moment_geometrique.c
+	"moment_geometrique.h"
+
+1638742809 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/moment_geometrique.h
+	"processing.h"
+	"myBmpGris.h"
+
+1638810445 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/processing.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"legendre.h"
+	"moment_geometrique.h"
+	"myBmpGris.h"
+	"tools.h"
+	"Vandermonde.h"
+
+1638809650 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/legendre.h
+	"processing.h"
+	"myBmpGris.h"
+
+1638659724 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/myBmpGris.h
+	<stdlib.h>
+	<stdio.h>
+
+1638808748 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/tools.h
+	"processing.h"
+	"myBmpGris.h"
+
+1638742998 /home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/Vandermonde.h
+	"processing.h"
+	"myBmpGris.h"
+
+1638659724 source:/home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/myBmpGris.c
+	"myBmpGris.h"
+
+1638740984 source:/home/wolfyc/Desktop/project/second/RECONNAISSANCE_DE_FORMES/Vandermonde.c
+	"Vandermonde.h"
+

@@ -12,12 +12,13 @@
 #include "myBmpGris.h"
 #include "tools.h"
 #include "Vandermonde.h"
-
-typedef struct {
+typedef struct moments Moments;
+struct moments {
     int n ;
     double ** centres_norm;
     double ** leg ;
-} Moments ;
+} ;
+
 
 double P(double x, int n);
 
