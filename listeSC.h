@@ -2,8 +2,9 @@
 #define _listeSC_h_
 
 	// Bibliotheques "standards"
-	#include "processing.h"
+	
 	// Bibliotheques personnelles (a completer si besoin)
+	#include "processing.h"
 	
 	/// Partie specifique a implementer (par les etudiants)	
 	/** Suppression d'une donnee dans la liste
@@ -15,7 +16,7 @@
 	  * @param d la donnee a afficher
 	  */
 	void afficherData( void *d );
-
+	
 
 
 	/// Partie generique deja implementee (par les enseignants)	
