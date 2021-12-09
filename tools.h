@@ -45,5 +45,10 @@ void Free_moments (Moments *mom );
 
 
 double** img_rec (char * filename,int dim_x,int dim_y );
+
+
 double pixel_rec (Moments mom ,double x_norm , double y_norm  );
+
+
+Moments get_mom(BmpImg img,int n);
 #endif // TOOLS_H_INCLUDED
