@@ -12,6 +12,7 @@
 #include "myBmpGris.h"
 #include "tools.h"
 #include "Vandermonde.h"
+#include "listeSC.h"
 typedef struct moments Moments;
 struct moments {
     int n ;
