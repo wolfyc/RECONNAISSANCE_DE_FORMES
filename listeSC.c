@@ -1,6 +1,6 @@
 #include "listeSC.h"
 
-	/// Partie specifique a implementer (par les etudiants)	
+	/// Partie specifique a implementer (par les etudiants)
 	/** Suppression d'une donnee dans la liste
 	  * @param d l'adresse de la donnee a supprimer
 	  */
@@ -8,19 +8,19 @@
 		// Comme p est un Point sans allocation dynamique,
 		// on ne fait rien dans cette fonction
 	}
-	
+
 	/** Affichage d'une donnee
 	  * @param d la donnee a afficher
 	  */
 	void afficherData( void *d ) {
 		//Point* pt = (Point*)d;	// Cast de d depuis void vers Point
-		
+
 	}
-	
-	
-	
-	
-	/// Partie generique deja implementee (par les enseignants)	
+
+
+
+
+	/// Partie generique deja implementee (par les enseignants)
 	// Constructeur et Destructeur
 	/** Creation d'une liste
 	  * @return une liste prete a l'emploi
@@ -45,7 +45,7 @@
 		// Tant que la liste n'est pas vide
 		while( liste->root != NULL )
 			suppr( liste, 0 );  // On supprime le premier element
-		
+
 		// On libere l'espace memoire occupe par la tete de liste
 		free( liste );
 		liste = NULL;
@@ -177,8 +177,8 @@
 			liste->length--;
 		}
 	}
-		
-	
+
+
 	// Methode d'affichage
 	/** Affichage d'une liste
 	  * @param liste la liste a afficher

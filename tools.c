@@ -1,6 +1,6 @@
 #include "tools.h"
-#include "myBmpGris.h"
 //creation de matrice rectangulaire.
+
 double ** creer_mat (int dim_x, int dim_y)  //tested OK 2.0
 {
     double **mat = malloc(dim_x*sizeof(double*));
@@ -10,6 +10,19 @@ double ** creer_mat (int dim_x, int dim_y)  //tested OK 2.0
         mat[i]=calloc(dim_y,sizeof(double));
     }
     return mat;
+}
+double ** Vander_monde (int dim,int pow_max,double moy)  // tested OK 2.0
+{
+    double ** van_m = creer_mat (dim,pow_max);
+    int i, j;
+    for (i=0; i<dim; i++)
+    {
+        for (j=0; j<pow_max; j++)
+        {
+            van_m[i][j] = pow(i-moy,j);
+        }
+    }
+    return van_m;
 }
 //creation matrice anti diago pour moment centr�es norm�
 double ** creer_mat_anti_diag (int dim) // tested OK 2.0
@@ -48,64 +61,44 @@ void freeMatrice(double ***mat, int dim_x)   //Corrected 2.0
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-double pixel_rec (Moments mom ,double x_norm , double y_norm  ){
-int p ,q;
-double res=0.00;
- for (p=0 ; p< mom.n ; p++ )
-{
-    for (q=0 ; q<mom.n-p ;q++)
-{
-        res += mom.leg[p][q]*P(x_norm,p)*P(y_norm,q);
 
 
-}
 
-
-}
-return res ;
-}
-
-double** img_rec (char * filename,int dim_x,int dim_y ){ //
-int x,y;
-double** mat;
-Moments mom=lire_moments(filename);
-afficher_moments(mom);
-mat= creer_mat(dim_x,dim_y);
-
-for ( x = 0; x < dim_x; x++)
-    {
-    for ( y = 0; y < dim_y; y++){
-
-        mat[x][y]= pixel_rec (mom,((double)x/dim_x), ((double)y/dim_y));
-
-       
-    }
-       
-    }
-    return mat ;
-}
 
 Moments creer_moments(int n ){
     Moments mom ;
     mom.n = n ;
-    mom.centres_norm= creer_mat_anti_diag(n) ; 
+    mom.centres_norm= creer_mat_anti_diag(n) ;
     mom.leg= creer_mat_anti_diag(n) ;
     return mom ;
 }
 void Free_moments (Moments *mom ){
- 
+
     freeMatrice (&(mom->centres_norm),mom->n);
     freeMatrice(&(mom->leg),mom->n);
-    mom->n=0 ; 
+    mom->n=0 ;
 }
 
 Moments get_mom(BmpImg img,int n)
 {
-
     Moments mom = creer_moments(n) ;
     mom.centres_norm=mat_moments_centre_norme(img,n);
-    mom.leg=Moments_Legendre(img,n);
+    mom.leg = Moments_Legendre(img,n);
 
     return mom;
+}
+
+double Dist_Euc (double ** mat1 , double **mat2 , int n ) {  // tested with moments calculated from same image
+                                                             //except that one of them is saved and red (in/from) a file
+int p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
+double res = 0.00 ;                                          // in the function <lire_moments>
+    for (p=0 ; p<n ; p++ ){
+        for (q=0 ; q<n-p;q++){
+            res+= pow(mat1[p][q]-mat2[p][q],2);
+        }
+    }
+res = sqrt (res);
+
+return res;
 }
 

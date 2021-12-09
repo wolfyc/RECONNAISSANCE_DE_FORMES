@@ -28,7 +28,7 @@ double momentGeoCentreNorme (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
     double y_bar = mom_geo(img,0,1,n)/omega;
     int x,y;
     // centralisation des cordonne
-    double ** vanx_centre=Vander_monde(img.dimX,n,x_bar); 
+    double ** vanx_centre=Vander_monde(img.dimX,n,x_bar);
     double ** vany_centre=Vander_monde(img.dimY,n,y_bar);
     for (x=0; x<img.dimX; x++)
     {

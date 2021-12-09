@@ -1,25 +1,25 @@
-#ifndef _listeSC_h_
-#define _listeSC_h_
-
+#ifndef LISTESC_H_INCLUDED
+#define LISTESC_H_INCLUDED
 	// Bibliotheques "standards"
-	
+
 	// Bibliotheques personnelles (a completer si besoin)
-	#include "processing.h"
-	
-	/// Partie specifique a implementer (par les etudiants)	
+#include "linkage.h"
+#include "tools.h"
+
+	/// Partie specifique a implementer (par les etudiants)
 	/** Suppression d'une donnee dans la liste
 	  * @param d l'adresse de la donnee a supprimer
 	  */
 	void freeData( void *d );
-	
+
 	/** Affichage d'une donnee
 	  * @param d la donnee a afficher
 	  */
 	void afficherData( void *d );
-	
 
 
-	/// Partie generique deja implementee (par les enseignants)	
+
+	/// Partie generique deja implementee (par les enseignants)
 	// Definition de la liste
 		// Definition des types
 	typedef struct Maille Maille;	// Element de la liste
@@ -47,7 +47,7 @@
 	  * @return une liste prete a l'emploi
 	  */
 	ListeSC* creerListe( int dataSize );
-	
+
 	/** Suppression d'une liste
 	  * @param liste la liste a supprimer
 	  */
@@ -60,13 +60,13 @@
 	  * @return 1 si le point courant a un successeur, O sinon
 	  */
 	int hasNext( ListeSC* liste );
-	
+
 	/** Acces au successeur d'un element d'une liste
 	  * @param liste la liste parcourue
 	  */
 	void getNext( ListeSC* liste );
 
-	
+
 	// Methodes d'ajout / de suppression d'element de la liste
 	/** Ajout d'un element dans une liste
 	  * @param liste la liste ou l'on veut ajouter un element
@@ -74,13 +74,13 @@
 	  * @param typeAjout type d'ajout (0: au debut, 1: au milieu, 2: en fin de liste)
 	  */
 	void ajout( ListeSC* liste, void *d, int typeAjout );
-	
+
 	/** Suppression d'un element dans une liste
 	  * @param liste la liste ou l'on veut supprimer un element
 	  * @param typeSuppr type de suppression (0: au debut, 1: au milieu, 2: en fin de liste)
 	  */
 	void suppr( ListeSC* liste, int typeSuppr );
-	
+
 
 	// Methode d'affichage
 	/** Affichage d'une liste
@@ -88,4 +88,6 @@
 	  */
 	void afficherListe( ListeSC* liste );
 
-#endif
+
+
+#endif // LISTESC_H_INCLUDED

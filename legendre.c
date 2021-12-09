@@ -1,6 +1,5 @@
 #include "legendre.h"
 
-
 double coeff (int x, int i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
@@ -217,16 +216,4 @@ return NULL ;
 }
 }
 */
-double Dist_Euc (double ** mat1 , double **mat2 , int n ) {  // tested with moments calculated from same image
-                                                             //except that one of them is saved and red (in/from) a file
-int p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
-double res = 0.00 ;                                          // in the function <lire_moments>
-    for (p=0 ; p<n ; p++ ){
-        for (q=0 ; q<n-p;q++){
-            res+= pow(mat1[p][q]-mat2[p][q],2);
-        }
-    }
-res = sqrt (res);
 
-return res;
-}

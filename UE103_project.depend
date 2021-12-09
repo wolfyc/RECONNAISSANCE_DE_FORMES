@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1639056352 source:c:\users\hrf_m\onedrive\desktop\ue103_project\mybmpgris.c
+	"myBmpGris.h"
+
+1639063034 c:\users\hrf_m\onedrive\desktop\ue103_project\mybmpgris.h
+	<stdlib.h>
+	<stdio.h>
+
+1639060301 source:c:\users\hrf_m\onedrive\desktop\ue103_project\legendre.c
+	"legendre.h"
+
+1639063034 c:\users\hrf_m\onedrive\desktop\ue103_project\legendre.h
+	"linkage.h"
+	"tools.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639059618 c:\users\hrf_m\onedrive\desktop\ue103_project\processing.h
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"legendre.h"
+	"moment_geometrique.h"
+	"myBmpGris.h"
+	"tools.h"
+	"Vandermonde.h"
+	"listeSC.h"
+
+1639063034 c:\users\hrf_m\onedrive\desktop\ue103_project\moment_geometrique.h
+	"linkage.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639064537 c:\users\hrf_m\onedrive\desktop\ue103_project\tools.h
+	"linkage.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"myBmpGris.h"
+	"moment_geometrique.h"
+	"legendre.h"
+	"listeSC.h"
+	"img_reconstruct.h"
+
+1639056547 c:\users\hrf_m\onedrive\desktop\ue103_project\vandermonde.h
+	"processing.h"
+	"myBmpGris.h"
+
+1639063034 c:\users\hrf_m\onedrive\desktop\ue103_project\listesc.h
+	"linkage.h"
+	"tools.h"
+
+1639056352 source:c:\users\hrf_m\onedrive\desktop\ue103_project\listesc.c
+	"listeSC.h"
+
+1639064861 source:c:\users\hrf_m\onedrive\desktop\ue103_project\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"myBmpGris.h"
+
+1639056352 source:c:\users\hrf_m\onedrive\desktop\ue103_project\moment_geometrique.c
+	"moment_geometrique.h"
+
+1639062160 source:c:\users\hrf_m\onedrive\desktop\ue103_project\tools.c
+	"tools.h"
+
+1639056352 source:c:\users\hrf_m\onedrive\desktop\ue103_project\vandermonde.c
+	"Vandermonde.h"
+
+1639060918 source:c:\users\hrf_m\onedrive\desktop\ue103_project\img_reconstruct.c
+	"img_reconstruct.h"
+
+1639063034 c:\users\hrf_m\onedrive\desktop\ue103_project\img_reconstruct.h
+	"linkage.h"
+	"tools.h"
+	"legendre.h"
+
+1639065894 c:\users\hrf_m\onedrive\desktop\ue103_project\linkage.h
+

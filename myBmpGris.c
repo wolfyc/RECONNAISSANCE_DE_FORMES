@@ -10,7 +10,7 @@ BmpImg createBmpImg( char* str, int dimX, int dimY ) {
     // 1) Dimensions et nom de l'image
     bmpImg.nomImg = str;
     bmpImg.dimX = dimX;
-    bmpImg.dimY = dimY; 
+    bmpImg.dimY = dimY;
     // 2) Differentes tailles de l'image
     bmpImg.bmpSize = 14; // octets
     bmpImg.dibSize = 56; // octets
@@ -56,8 +56,8 @@ void createDibHeader( BmpImg* bmpImg ) {
 
     uInt2Char( 0, bmpImg->dibHeader, 16 );  // BI_RGB, no pixel array compression used
     uInt2Char( bmpImg->imgSize, bmpImg->dibHeader, 20 );	// Size of the raw bitmap data (including padding)
-    uInt2Char( 2835, bmpImg->dibHeader, 24 );   // Horizontal resolution of the image (72 DPI Ã— 39.3701 inches per meter)
-    uInt2Char( 2835, bmpImg->dibHeader, 28 );	// Vertical resolution of the image (72 DPI Ã— 39.3701 inches per meter)
+    uInt2Char( 2835, bmpImg->dibHeader, 24 );   // Horizontal resolution of the image (72 DPI × 39.3701 inches per meter)
+    uInt2Char( 2835, bmpImg->dibHeader, 28 );	// Vertical resolution of the image (72 DPI × 39.3701 inches per meter)
     uInt2Char( 0, bmpImg->dibHeader, 32 );      // Number of colors in the palette
     uInt2Char( 0, bmpImg->dibHeader, 36 );      // Important colors: 0 means all colors are important
 }

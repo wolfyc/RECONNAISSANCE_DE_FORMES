@@ -1,5 +1,6 @@
-#ifndef _myBmpGris_h_
-#define _myBmpGris_h_
+#ifndef MYBMPGRIS_H_INCLUDED
+#define MYBMPGRIS_H_INCLUDED
+//#include "linkage.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,6 +21,14 @@ struct BmpImg_s {
 	unsigned char bmpHeader[14];	// Bmp Header fait toujours 14 octets (soit 14 char)
 };
 
+
+/*
+typedef struct moments {
+    int n ;
+    double ** centres_norm;
+    double ** leg ;
+} Moments;
+//*/
 
 // Constructeur et Destructeur
 /** Methode de creation d'une image Bmp "standard" (pas de LUT, pas d'alpha, codage sur 24 bits)
@@ -155,4 +164,5 @@ unsigned int char2UInt( unsigned char* buffer, int pos );
   */
 void uInt2Char( unsigned int n, unsigned char* buffer, int pos );
 
-#endif
+
+#endif // MYBMPGRIS_H_INCLUDED
