@@ -77,7 +77,7 @@ double Moment_Leg (BmpImg img,int p,int q, int n )  // Tested OK
     double c = Norm_Const(p, q);
     for (i=0 ; i<=p ; i++){
         for (j=0 ; j<=q; j++ ){
-            res += coeff (p,i)*coeff (q,j)*mom_geo_centre (img,i, j, n)   ;
+            res += coeff (p,i)*coeff (q,j)*momentGeoCentreNorme (img,i, j, n)   ;
         }
     }
     res*= c ;
@@ -125,7 +125,7 @@ int n ;
 Moments mom ;
 FILE * fichier = fopen (filename,"r");
 if ( fichier != NULL ) {
-fscanf(fichier , "%d \n" , n);
+fscanf(fichier , "%d \n" , &n);
 mom = creer_moments(n);
 fscanf(fichier , "Moments geometrique centres, normes : \n");
 for (i=0 ; i< n ; i++ ){
