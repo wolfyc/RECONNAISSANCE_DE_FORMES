@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "tools.h"
 #include "myBmpGris.h"
-int main()
+
+int main(void)
 {
     BmpImg img;
     char* path = "A.bmp";
