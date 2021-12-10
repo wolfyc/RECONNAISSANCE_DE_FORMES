@@ -5,8 +5,7 @@
 	  * @param d l'adresse de la donnee a supprimer
 	  */
 	void freeData( void *d ) {
-		// Comme p est un Point sans allocation dynamique,
-		// on ne fait rien dans cette fonction
+		
 	}
 
 	/** Affichage d'une donnee

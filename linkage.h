@@ -7,6 +7,14 @@
 #define N 46
 
 //*
+typedef struct { // Starting point 
+    ListeSC * images;
+} DataBase ; 
+typedef struct {
+    Moments mom ;
+    char * Label ;
+} image ; // the names are just a test
+
  typedef struct {
     int n ;
     double ** centres_norm;
