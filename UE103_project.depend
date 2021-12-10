@@ -107,7 +107,7 @@
 	"tools.h"
 	"myBmpGris.h"
 
-1639147097 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.h
+1639155397 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.h
 	"linkage.h"
 	"tools.h"
 	"tools.h"
@@ -124,16 +124,16 @@
 1639077509 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\mybmpgris.c
 	"myBmpGris.h"
 
-1639153249 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\tools.c
+1639155397 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\tools.c
 	"tools.h"
 
 1639153277 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\img_reconstruct.c
 	"img_reconstruct.h"
 
-1639153245 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.c
+1639155397 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.c
 	"legendre.h"
 
-1639153258 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\main.c
+1639154955 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tools.h"

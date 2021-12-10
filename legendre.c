@@ -37,11 +37,24 @@ double ** coeff_legendre (unsigned int n )  // Tested OK 2.0
 {
     double ** a= creer_mat_diago(n+1);
     unsigned int  x,i;
-    for (x=0; x<=n; x++ )
+    a[0][0] = 1;
+    a[1][0]= 0 ;
+    for (x=2; x<=n; x++ )
     {
         for (i=0; i<=x; i++)
         {
-            a[x][i]=coeff(x,i);
+             if (i==0)
+            {
+                a[x][i]=-((double)x-1)/((double)x) *a[x-2][0];
+            }
+            else {
+                if (i>= x-1){
+                    a[x][i]=((2*((double)x-1)+1)/(double)x)* a[x-1][i-1];
+                }
+                else {
+                     a[x][i]=((2*((double)x-1)+1)/x)* coeff(x-1,i-1)+(-((double)x-1)/(double)x)*a[x-2][i];
+                }
+            }
         }
     }
     return a;
@@ -74,28 +87,33 @@ double Norm_Const(unsigned int  p, unsigned int  q)
 
     return C;
 }
-double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n )  // Tested OK
+double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg)  // Tested OK
 {
     unsigned int  i,j;
     double res=0.00;
     double c = Norm_Const(p, q);
+
+
     for (i=0 ; i<=p ; i++){
         for (j=0 ; j<=q; j++ ){
-            res += coeff (p,i)*coeff (q,j)*momentGeoCentreNorme (img,i, j, n)   ;
+                 printf("debut moment leg \n");
+            res += co[p][i]*co[q][j] * momg[i][j]   ;
+                printf("debut fin leg \n");
         }
     }
     res*= c ;
     return res ;
 }
-double ** Moments_Legendre (BmpImg img, unsigned int  n ) // Tested OK
+double ** Moments_Legendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
 {
     double ** mat = creer_mat_anti_diag(n);
+    double ** co= coeff_legendre(n);
     unsigned int  p,q;
 
     for (p=0 ; p<n ; p++ ){
         for (q=0 ; q<n-p;q++){
 
-            mat[p][q]=Moment_Leg (img, p,q,n);
+            mat[p][q]=Moment_Leg (img, p,q,n,co,momg);
 
 
         }
