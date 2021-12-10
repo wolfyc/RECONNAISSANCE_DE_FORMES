@@ -26,7 +26,7 @@ double ** coeff_legendre (unsigned int  n);
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double P(double x,unsigned int  n );
+double P(double x,unsigned int  n, double ** co );
 double Pn(double x, unsigned int n);
 // lecture  des moment centres et normes � partir d'un fichier
 /**

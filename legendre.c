@@ -52,7 +52,7 @@ double ** coeff_legendre (unsigned int n )  // Tested OK 2.0
                     a[x][i]=((2*((double)x-1)+1)/(double)x)* a[x-1][i-1];
                 }
                 else {
-                     a[x][i]=((2*((double)x-1)+1)/x)* coeff(x-1,i-1)+(-((double)x-1)/(double)x)*a[x-2][i];
+                     a[x][i]=((2*((double)x-1)+1)/x)* a[x-1][i-1] +(-((double)x-1)/(double)x)*a[x-2][i];
                 }
             }
         }
@@ -69,14 +69,14 @@ double Pn(double x, unsigned int n){
     }
 }
 
-double P(double x,unsigned int  n )  // OK OK 2.0
+double P(double x,unsigned int  n, double ** co )  // OK OK 2.0
 {
     unsigned int i ;
     double poly =0.00;
 
     for (i=0; i<=n; i++)
     {
-        poly+= coeff(n,i)*pow(x,i);
+        poly+= co[n][i]*pow(x,i);
     }
     return poly;
 }

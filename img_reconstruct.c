@@ -3,10 +3,11 @@
 double pixel_rec (Moments mom ,double x_norm , double y_norm  ){
 unsigned int p ,q;
 double res=0.00;
+double ** co = coeff_legendre(mom.n);
  for (p=0 ; p< mom.n ; p++ ){
     for (q=0 ; q<mom.n-p ;q++){
 
-        res += mom.leg[p][q]*Pn(x_norm,p)*Pn(y_norm,q);
+        res += mom.leg[p][q]*P(x_norm,p,co)*P(y_norm,q,co);
 
     }
 }
@@ -42,7 +43,7 @@ BmpImg img = createBmpImg("bmpImg",dim_x,dim_y);
 unsigned int i,j;
  for ( i = 0 ; i<32;i++){
         for ( j =0 ; j<32;j++){
-            if (mat[i][j]>threshold)
+            if (mat[i][j]>=threshold)
                 setPixel(img,255,i,j);
             else
                 setPixel(img,0,i,j);
