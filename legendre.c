@@ -1,6 +1,6 @@
 #include "legendre.h"
 
-double coeff (int x, int i)  // Tested OK 2.0
+double coeff (unsigned int  x, unsigned int  i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
     {
@@ -33,45 +33,50 @@ double coeff (int x, int i)  // Tested OK 2.0
     }
 }
 
-double ** coeff_legendre (int n )  // Tested OK 2.0
+double ** coeff_legendre (unsigned int n )  // Tested OK 2.0
 {
     double ** a= creer_mat_diago(n+1);
-    int x,i;
+    unsigned int  x,i;
     for (x=0; x<=n; x++ )
     {
         for (i=0; i<=x; i++)
         {
             a[x][i]=coeff(x,i);
-            printf("%f \t", a[x][i]);
         }
-        printf("\n");
     }
     return a;
 }
+double Pn(double x, unsigned int n){
+    if(n==0){
+        return 1;
+    }else if(n==1){
+        return x ;
+    }else{
+        return (double)((2*n-1)*x*Pn(x,n-1)-(n-1)*Pn(x,n-2))/n;
+    }
+}
 
-double P(double x,int n )  // OK OK 2.0
+double P(double x,unsigned int  n )  // OK OK 2.0
 {
-    int i ;
+    unsigned int i ;
     double poly =0.00;
-    double ** a= coeff_legendre ( n );
-    printf("ok all ");
+
     for (i=0; i<=n; i++)
     {
-        poly+= a[n][i]*pow(x,i);
-        printf("%f \n", poly);
+        poly+= coeff(n,i)*pow(x,i);
     }
     return poly;
 }
-double Norm_Const(int p, int q)
+double Norm_Const(unsigned int  p, unsigned int  q)
 {
     double C;
     C=(2*p + 1)*(2*q + 1)/(4.);
 
     return C;
 }
-double Moment_Leg (BmpImg img,int p,int q, int n )  // Tested OK
+double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n )  // Tested OK
 {
-    int i,j;
+    unsigned int  i,j;
     double res=0.00;
     double c = Norm_Const(p, q);
     for (i=0 ; i<=p ; i++){
@@ -82,20 +87,24 @@ double Moment_Leg (BmpImg img,int p,int q, int n )  // Tested OK
     res*= c ;
     return res ;
 }
-double ** Moments_Legendre (BmpImg img, int n ) // Tested OK
+double ** Moments_Legendre (BmpImg img, unsigned int  n ) // Tested OK
 {
     double ** mat = creer_mat_anti_diag(n);
-    int p,q;
+    unsigned int  p,q;
+
     for (p=0 ; p<n ; p++ ){
         for (q=0 ; q<n-p;q++){
+
             mat[p][q]=Moment_Leg (img, p,q,n);
+
+
         }
     }
     return mat ;
 }
 void ecrire_mom (char * filename , Moments mom  ) // Tested OK
 {
-int i , j;
+unsigned int  i , j;
 FILE * fichier = fopen (filename,"w");
 if ( fichier != NULL ) {
     fprintf(fichier , "%d \n" , mom.n);
@@ -114,13 +123,13 @@ if ( fichier != NULL ) {
         fprintf(fichier, "\n");
     }
 }
-else {printf("Error Opening File Please Fix the problem and retry");}
+else {printf("Error Opening File Please Fix the problem and retry \n");}
 fclose(fichier);
 }
 
 Moments lire_moments (char * filename ){
-int i , j;
-int n ;
+unsigned int  i , j;
+unsigned int  n ;
 Moments mom ;
 FILE * fichier = fopen (filename,"r");
 if ( fichier != NULL ) {
@@ -142,23 +151,24 @@ for (i=0 ; i< n ; i++ ){
     }
 
 }
-else {printf("Error Opening File Please Fix the problem and retry");
+else {printf("Error Opening File Please Fix the problem and retry \n");
 fclose (fichier);
 }
 return mom  ;
 
 }
 void afficher_moments (Moments mom ){
+    unsigned int i,j;
     printf("Moments geometrique centres, normes : \n");
-    for (int i = 0 ; i<mom.n ; i++ ){
-        for (int j =0;j<mom.n-i ; j++){
+    for ( i = 0 ; i<mom.n ; i++ ){
+        for ( j =0;j<mom.n-i ; j++){
             printf("%lf " ,mom.centres_norm[i][j]);
         }
         printf("\n");
 }
 printf("Moments de Legendre : \n");
-    for (int i = 0 ; i<mom.n ; i++ ){
-        for (int j =0;j<mom.n-i ; j++){
+    for ( i = 0 ; i<mom.n ; i++ ){
+        for ( j =0;j<mom.n-i ; j++){
             printf("%lf " ,mom.leg[i][j]);
         }
         printf("\n");

@@ -4,7 +4,7 @@
 
 
 
-#define N 46
+#define N 30
 
 //*
  typedef struct {

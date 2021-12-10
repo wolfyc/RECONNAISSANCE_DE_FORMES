@@ -9,7 +9,7 @@ int main(void)
     char* path = "A.bmp";
     img = readBmpImage(path);
     Moments mom;
-    mom = get_mom(img,N);
+    mom = get_mom(img,10);
     char* path2 = "moment_ecrit";
     ecrire_mom(path2,mom);
     printf("Hello world!\n");

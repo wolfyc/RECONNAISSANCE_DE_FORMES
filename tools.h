@@ -30,7 +30,7 @@
   * @param dim_y nombre des colonnes de la matrice
   * @return une matrice de dimension dim_x * dim_y
   */
-double ** creer_mat (int dim_x, int dim_y) ;
+double ** creer_mat (unsigned int dim_x, unsigned int dim_y) ;
 // Matrice diagonale
 /**
   * @param dim dimension de la matrice
@@ -41,10 +41,10 @@ double ** creer_mat (int dim_x, int dim_y) ;
   /**
   * @param dim dimxdim la dim de la mat
   * @param pow_max l'ordre max de la mat
-  * @param moy la translation des pixel ie pour centré les moment geo.
+  * @param moy la translation des pixel ie pour centrï¿½ les moment geo.
   * @return une matrice de vandermonde de dimension dim
   */
-double ** Vander_monde (int dim,int pow_max,double moy);
+double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy);
 
 // Matrice anti diagonle diagonale
 /**
@@ -52,7 +52,7 @@ double ** Vander_monde (int dim,int pow_max,double moy);
   *
   * @return une matrice de dimension dim_x * dim_y
   */
-double ** creer_mat_anti_diag (int dim);
+double ** creer_mat_anti_diag (unsigned int dim);
 
 // Matrice diagonle
 /**
@@ -60,7 +60,7 @@ double ** creer_mat_anti_diag (int dim);
   *
   * @return une matrice de dimension dim
   */
-double ** creer_mat_diago (int dim);
+double ** creer_mat_diago (unsigned int dim);
 
 // Matrice de reconstruction de l'image equation 12
 /**
@@ -68,7 +68,7 @@ double ** creer_mat_diago (int dim);
   * @param dim_x dimension vertical de la matrice
   * @return no return
   */
-void freeMatrice(double ***mat, int dim_x);
+void freeMatrice(double ***mat, unsigned int dim_x);
 
 
 
@@ -80,13 +80,13 @@ void freeMatrice(double ***mat, int dim_x);
   * @return une matrice de dimension dim_x * dim_y
   */
 
-Moments creer_moments(int n );
+Moments creer_moments(unsigned int n );
 
 void Free_moments (Moments *mom );
 
-Moments get_mom(BmpImg img,int n);
+Moments get_mom(BmpImg img,unsigned int n);
 
-double Dist_Euc (double ** mat1 , double **mat2 , int n ); // tested with moments calculated from same image
+double Dist_Euc (double ** mat1 , double **mat2 ,unsigned int n ); // tested with moments calculated from same image
 
 
 #endif // TOOLS_H_INCLUDED

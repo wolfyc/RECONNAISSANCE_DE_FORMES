@@ -1,8 +1,8 @@
 #include "moment_geometrique.h"
 
-double mom_geo (BmpImg img, int p, int q, int n)    // Tested 2.0
+double mom_geo (BmpImg img, unsigned int p,unsigned int q, unsigned int n)    // Tested 2.0
 {
-    int x,y;
+    unsigned int x,y;
     double res=0;
     double ** vanx=Vander_monde(img.dimX,n,0);
     double ** vany=Vander_monde(img.dimY,n,0);
@@ -20,13 +20,13 @@ double mom_geo (BmpImg img, int p, int q, int n)    // Tested 2.0
     return res;
 }
 
-double momentGeoCentreNorme (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
+double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned int n)  // Tested Ok 2.0
 {
     double res=0.00; // correction res has not been initialized
     double omega = mom_geo(img,0,0,n);
     double x_bar = mom_geo(img,1,0,n)/omega;
     double y_bar = mom_geo(img,0,1,n)/omega;
-    int x,y;
+    unsigned int x,y;
     // centralisation des cordonne
     double ** vanx_centre=Vander_monde(img.dimX,n,x_bar);
     double ** vany_centre=Vander_monde(img.dimY,n,y_bar);
@@ -43,15 +43,17 @@ double momentGeoCentreNorme (BmpImg img,int p, int q, int n)  // Tested Ok 2.0
     return res;
 }
 
-double ** mat_moments_centre_norme(BmpImg img,int n)   //Tested Ok 2.0
+double ** mat_moments_centre_norme(BmpImg img,unsigned int n)   //Tested Ok 2.0
 {
     double ** mat_mom = creer_mat_anti_diag (n);
-    int p,q;
+    unsigned int p,q;
     for ( p=0; p<n; p++)
     {
         for (q=0; q<n-p; q++)
         {
+
             mat_mom[p][q]=momentGeoCentreNorme (img,p,q,n);
+
         }
     }
     return mat_mom;

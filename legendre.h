@@ -12,47 +12,47 @@
   * @param i l'ordre et la position dans la colonne de la matrice
   * @return le coeff de legendre
   */
-double coeff (int x, int i);
+double coeff (unsigned int  x, unsigned int  i);
 
 // calculateur du coef de legendre
 /**
   * @param n la dimension de la matrice de legendre
   * @return lune matrice de coeff de legendre
   */
-double ** coeff_legendre (int n);
-// lecture  des moment centres et normes à partir d'un fichier
+double ** coeff_legendre (unsigned int  n);
+// lecture  des moment centres et normes ï¿½ partir d'un fichier
 /**
   * @param filename string of char
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double P(double x,int n );
-
-// lecture  des moment centres et normes à partir d'un fichier
+double P(double x,unsigned int  n );
+double Pn(double x, unsigned int n);
+// lecture  des moment centres et normes ï¿½ partir d'un fichier
 /**
   * @param filename string of char
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double Norm_Const(int p, int q);
+double Norm_Const(unsigned int  p, unsigned int  q);
 
-// lecture  des moment centres et normes à partir d'un fichier
+// lecture  des moment centres et normes ï¿½ partir d'un fichier
 /**
   * @param filename string of char
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double Moment_Leg (BmpImg img,int p,int q, int n );
+double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n );
 
-// lecture  des moment centres et normes à partir d'un fichier
+// lecture  des moment centres et normes ï¿½ partir d'un fichier
 /**
   * @param filename string of char
-  * @param n l'ordre des moments à ecrire dans le fichier
-  * @param momg matrice moment geomtique centrés normés
+  * @param n l'ordre des moments ï¿½ ecrire dans le fichier
+  * @param momg matrice moment geomtique centrï¿½s normï¿½s
   * @param leg matrice de poly de legendre
   * @return sans retour
   */
-double ** Moments_Legendre (BmpImg img, int n );
+double ** Moments_Legendre (BmpImg img, unsigned int  n );
 void ecrire_mom (char * filename , Moments mom  ) ;
 
 Moments lire_moments (char * filename );

@@ -78,3 +78,64 @@
 
 1639065894 c:\users\hrf_m\onedrive\desktop\ue103_project\linkage.h
 
+1639077509 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\listesc.c
+	"listeSC.h"
+
+1639077509 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\listesc.h
+	"linkage.h"
+	"tools.h"
+
+1639145092 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\linkage.h
+
+1639146276 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\tools.h
+	"linkage.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"myBmpGris.h"
+	"moment_geometrique.h"
+	"legendre.h"
+	"listeSC.h"
+	"img_reconstruct.h"
+
+1639077509 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\mybmpgris.h
+	<stdlib.h>
+	<stdio.h>
+
+1639145346 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\moment_geometrique.h
+	"linkage.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639147097 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.h
+	"linkage.h"
+	"tools.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639148848 c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\img_reconstruct.h
+	"linkage.h"
+	"tools.h"
+	"legendre.h"
+
+1639153247 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\moment_geometrique.c
+	"moment_geometrique.h"
+
+1639077509 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\mybmpgris.c
+	"myBmpGris.h"
+
+1639153249 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\tools.c
+	"tools.h"
+
+1639153277 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\img_reconstruct.c
+	"img_reconstruct.h"
+
+1639153245 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\legendre.c
+	"legendre.h"
+
+1639153258 source:c:\users\khale\desktop\reconnaisance de formes\reconnaissance_de_formes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"myBmpGris.h"
+
