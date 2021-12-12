@@ -2,7 +2,7 @@
 #define LINKAGE_H_INCLUDED
 //#include"listeSC.h"
 
-
+//#include "listeSC.h"
 
 #define N 46 //presicion
 #define sourceDB "DATA/DB/DB.txt"
@@ -10,6 +10,7 @@
 typedef struct { // Starting point
     ListeSC * images;
 } DataBase ;
+
 typedef struct {
     Moments mom ;
     char * Label ;

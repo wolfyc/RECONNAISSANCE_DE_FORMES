@@ -22,18 +22,33 @@ int main(void)
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
 
     */
-ListeSC * listeBD = creerListe (sizeof (Moments));
+    int i = 0;
+    DataBase bdd;
+    bdd = logistics();
+    bdd.images->current = bdd.images->root;
+    Moments *mom1 = ((Moments*)bdd.images->current->data);
+    Moments *mom2 = (Moments*)bdd.images->current->next->data;
+    //for ((bdd.images)->current = (bdd.images)->root; hasNext(bdd.images); getNext(bdd.images)){
+        //printf("%s\n",sizeof(((Moments*)bdd.images->current->data)->label));
+   // }
+    Moments m = *mom1;
+    printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
+    printf("number of elements in data base is %d \n",bdd.images->length);
+    printf("%s %s",m.label,mom2->label);
+    /*
+    ListeSC * listeBD = creerListe (sizeof (Moments));
     Moments momImg;// = creer_moments(N);
     //char *source = sourceDB;
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
     int img_count = 0;
-    char imgName, *imgPath = malloc (15 * sizeof(char));
+    char *imgName=malloc (15 * sizeof(char));
+    char *imgPath = malloc (15 * sizeof(char));
     if (DB != NULL){
         fscanf(DB,"%d",&img_count);
         printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
-            fscanf(DB,"%s %c",imgPath,&imgName);
+            fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
             momImg = get_mom(img,N);
             momImg.label = imgName;
@@ -44,6 +59,7 @@ ListeSC * listeBD = creerListe (sizeof (Moments));
     Moments *mom1 = (Moments*)listeBD->current->data;
     Moments *mom2 = (Moments*)listeBD->current->next->data;
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
+   //*/
     /*
     BmpImg img1,img2,img3,img4,img5;
     char* path1 = "A_test.bmp";

@@ -35,7 +35,7 @@ double coeff (unsigned int  x, unsigned int  i)  // Tested OK 2.0
 
 double ** coeff_legendre (unsigned int n )  // Tested OK 2.0
 {
-    double ** a= creer_mat_diago(n+1);
+    double ** a = creer_mat_diago(n+1);
     unsigned int  x,i;
     a[0][0] = 1;
     a[1][0]= 0 ;
@@ -96,9 +96,9 @@ double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n ,
 
     for (i=0 ; i<=p ; i++){
         for (j=0 ; j<=q; j++ ){
-                 printf("debut moment leg \n");
+               //  printf("debut moment leg \n");
             res += co[p][i]*co[q][j] * momg[i][j]   ;
-                printf("debut fin leg \n");
+               // printf("debut fin leg \n");
         }
     }
     res*= c ;

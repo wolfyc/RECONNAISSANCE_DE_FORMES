@@ -70,7 +70,7 @@ Moments creer_moments(unsigned int n ){
     mom.n = n ;
     mom.centres_norm= creer_mat_anti_diag(n) ;
     mom.leg= creer_mat_anti_diag(n) ;
-    mom.label = "Vide";
+    mom.label = calloc (15,sizeof(char));
     return mom ;
 }
 
@@ -84,11 +84,11 @@ void Free_moments (Moments *mom ){
 Moments get_mom(BmpImg img,unsigned int  n)
 {
     Moments mom = creer_moments(n) ;
-    printf("debut \n");
+    //printf("debut \n");
     mom.centres_norm= mat_moments_centre_norme(img,n);
-    printf("fin centre norme \n");
+   // printf("fin centre norme \n");
     mom.leg = Moments_Legendre(img,n,mom.centres_norm);
-    printf("fin legendre \n");
+    //printf("fin legendre \n");
     //mom.label = "not-vide";
     return mom;
 }
