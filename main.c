@@ -2,9 +2,49 @@
 #include <stdlib.h>
 #include "tools.h"
 #include "myBmpGris.h"
-
+#include"constructeurBDD.h"
 int main(void)
 {
+    /*ListeSC* BDD = creerListe(sizeof(Moments));
+    BDD = creerBDDliste();
+// Moments mom = logistic(mom);
+    BmpImg img1;
+        char* path1 = "A_test.bmp";
+
+    img1 = readBmpImage(path1);
+    Moments mom;
+    mom=get_mom(img1,N);
+    ajout(BDD,&mom,2);
+    BDD->current = BDD->root;
+
+    Moments *mom1 = (Moments*)BDD->current->data;
+    Moments *mom2 = (Moments*)BDD->current->next->data;
+    printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
+
+    */
+ListeSC * listeBD = creerListe (sizeof (Moments));
+    Moments momImg;// = creer_moments(N);
+    //char *source = sourceDB;
+    BmpImg img;
+    FILE *DB = fopen(sourceDB,"r");
+    int img_count = 0;
+    char imgName, *imgPath = malloc (15 * sizeof(char));
+    if (DB != NULL){
+        fscanf(DB,"%d",&img_count);
+        printf(" img_count is %d",img_count);
+        for (int i = 0 ;i<img_count; i++){
+            fscanf(DB,"%s %c",imgPath,&imgName);
+            img = readBmpImage(imgPath);
+            momImg = get_mom(img,N);
+            momImg.label = imgName;
+            ajout(listeBD,&momImg,2);
+            }}
+    listeBD->current = listeBD->root;
+
+    Moments *mom1 = (Moments*)listeBD->current->data;
+    Moments *mom2 = (Moments*)listeBD->current->next->data;
+    printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
+    /*
     BmpImg img1,img2,img3,img4,img5;
     char* path1 = "A_test.bmp";
     char* path2 = "A.bmp";
@@ -29,6 +69,6 @@ int main(void)
     printf("La distance entre les deux image %s et %s est : %lf\n" ,path1,path3,Dist_Euc(mom1.leg,mom3.leg,46));
     printf("La distance entre les deux image  %s et %s  est : %lf\n" ,path1,path4,Dist_Euc(mom1.leg,mom4.leg,46));
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,path1,path5,Dist_Euc(mom1.leg,mom5.leg,46));
-
+    //*/
     return 0;
 }

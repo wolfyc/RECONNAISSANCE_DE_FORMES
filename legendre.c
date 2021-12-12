@@ -122,11 +122,11 @@ double ** Moments_Legendre (BmpImg img, unsigned int  n, double ** momg ) // Tes
 }
 void ecrire_mom (char * filename , Moments mom  ) // Tested OK
 {
-unsigned int  i , j;
-FILE * fichier = fopen (filename,"w");
-if ( fichier != NULL ) {
-    fprintf(fichier , "%d \n" , mom.n);
-    fprintf(fichier , "Moments geometrique centres, normes : \n");
+    unsigned int  i , j;
+    FILE * fichier = fopen (filename,"w");
+    if ( fichier != NULL ) {
+        fprintf(fichier , "%d \n" , mom.n);
+        fprintf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i< mom.n  ; i++ ){
         for (j=0 ; j<mom.n-i ; j++){
             fprintf(fichier , "%f " , mom.centres_norm[i][j]);
@@ -134,11 +134,11 @@ if ( fichier != NULL ) {
         fprintf(fichier, "\n");
     }
      fprintf(fichier , "Moments de Legendre : \n");
-    for (i=0 ; i< mom.n ; i++ ){
-        for (j=0 ; j<mom.n-i ; j++){
-            fprintf(fichier , "%f " , mom.leg[i][j]);
-        }
-        fprintf(fichier, "\n");
+        for (i=0 ; i< mom.n ; i++ ){
+            for (j=0 ; j<mom.n-i ; j++){
+                fprintf(fichier , "%f " , mom.leg[i][j]);
+            }
+            fprintf(fichier, "\n");
     }
 }
 else {printf("Error Opening File Please Fix the problem and retry \n");}
@@ -146,34 +146,35 @@ fclose(fichier);
 }
 
 Moments lire_moments (char * filename ){
-unsigned int  i , j;
-unsigned int  n ;
-Moments mom ;
-FILE * fichier = fopen (filename,"r");
-if ( fichier != NULL ) {
-fscanf(fichier , "%d \n" , &n);
-mom = creer_moments(n);
-fscanf(fichier , "Moments geometrique centres, normes : \n");
-for (i=0 ; i< n ; i++ ){
-    for (j=0 ; j<n-i ; j++){
-        fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
-    }
-    fscanf(fichier, "\n");
-    }
-fscanf(fichier , "Moments de Legendre : \n");
-for (i=0 ; i< n ; i++ ){
-    for (j=0 ; j< n-i ; j++){
-        fscanf(fichier , "%lf" , &mom.leg[i][j]);
-    }
-    fscanf(fichier, "\n");
-    }
+    unsigned int  i , j;
+    unsigned int  n ;
+    Moments mom ;
+    mom.label = filename;
+    FILE * fichier = fopen (filename,"r");
+    if ( fichier != NULL ) {
+        fscanf(fichier , "%d \n" , &n);
+        mom = creer_moments(n);
+        fscanf(fichier , "Moments geometrique centres, normes : \n");
+    for (i=0 ; i< n ; i++ ){
+        for (j=0 ; j<n-i ; j++){
+            fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
+        }
+        fscanf(fichier, "\n");
+        }
+    fscanf(fichier , "Moments de Legendre : \n");
+    for (i=0 ; i< n ; i++ ){
+        for (j=0 ; j< n-i ; j++){
+            fscanf(fichier , "%lf" , &mom.leg[i][j]);
+        }
+        fscanf(fichier, "\n");
+        }
 
-}
-else {printf("Error Opening File Please Fix the problem and retry \n");
-fclose (fichier);
-}
+    }
+    else {
+        printf("Error Opening File Please Fix the problem and retry \n");
+        fclose (fichier);
+    }
 return mom  ;
-
 }
 void afficher_moments (Moments mom ){
     unsigned int i,j;

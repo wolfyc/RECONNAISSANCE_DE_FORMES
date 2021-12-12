@@ -1,24 +1,25 @@
 #ifndef LINKAGE_H_INCLUDED
 #define LINKAGE_H_INCLUDED
+//#include"listeSC.h"
 
 
 
-
-#define N 46
-
-//*
-typedef struct { // Starting point 
+#define N 46 //presicion
+#define sourceDB "DATA/DB/DB.txt"
+/*
+typedef struct { // Starting point
     ListeSC * images;
-} DataBase ; 
+} DataBase ;
 typedef struct {
     Moments mom ;
     char * Label ;
 } image ; // the names are just a test
-
+//*/
  typedef struct {
-    int n ;
+    int n;
     double ** centres_norm;
     double ** leg ;
+    char* label;
 } Moments;
 //*/
 

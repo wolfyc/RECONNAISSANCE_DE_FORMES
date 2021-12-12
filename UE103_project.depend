@@ -139,3 +139,72 @@
 	"tools.h"
 	"myBmpGris.h"
 
+1639306909 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\img_reconstruct.c
+	"img_reconstruct.h"
+
+1639306909 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\img_reconstruct.h
+	"linkage.h"
+	"tools.h"
+	"legendre.h"
+
+1639322907 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\linkage.h
+
+1639318002 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\tools.h
+	"linkage.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"myBmpGris.h"
+	"moment_geometrique.h"
+	"legendre.h"
+	"listeSC.h"
+	"img_reconstruct.h"
+
+1639306909 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\mybmpgris.h
+	<stdlib.h>
+	<stdio.h>
+
+1639306909 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\moment_geometrique.h
+	"linkage.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639306909 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\legendre.h
+	"linkage.h"
+	"tools.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1639312246 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\listesc.h
+	"linkage.h"
+	"tools.h"
+
+1639313014 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\legendre.c
+	"legendre.h"
+
+1639318358 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\listesc.c
+	"listeSC.h"
+
+1639324539 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"myBmpGris.h"
+	"constructeurBDD.h"
+
+1639306909 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\moment_geometrique.c
+	"moment_geometrique.h"
+
+1639306909 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\mybmpgris.c
+	"myBmpGris.h"
+
+1639319431 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\tools.c
+	"tools.h"
+
+1639324553 source:c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\constructeurbdd.c
+	"constructeurBDD.h"
+
+1639319669 c:\users\hrf_m\onedrive\desktop\ue103_proj\reconnaissance_de_formes\constructeurbdd.h
+	"tools.h"
+

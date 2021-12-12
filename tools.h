@@ -5,12 +5,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include<string.h>
 #include "myBmpGris.h"
 #include "moment_geometrique.h"
 //#include "tools.h"
 #include "legendre.h"
 #include "listeSC.h"
 #include "img_reconstruct.h"
+//#include "constructeurBDD.h"
 //#include "legendre.h"
 //linking headers with their .C fies
 

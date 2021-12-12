@@ -26,13 +26,15 @@
 	typedef Maille* pMaille;		// Pointeur vers une maille
 		// Declaration de la structure Maille
 	struct Maille {
-		void *data;			// La donnee
+		void *data;		// La donnee
+		//char *label;
 		pMaille next;		// Le pointeur vers la maille suivante
 	};
 
 	typedef struct {
 		int length;
 		int dataSize;
+		//char *label;
 		pMaille root;		// Tete de liste
 		pMaille last;		// Fin de liste
 		pMaille current;	// Element courant

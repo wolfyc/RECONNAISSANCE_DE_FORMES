@@ -5,15 +5,16 @@
 	  * @param d l'adresse de la donnee a supprimer
 	  */
 	void freeData( void *d ) {
-		
+	    Moments *mom = (Moments*)d;
+		Free_moments (mom);
 	}
 
 	/** Affichage d'une donnee
 	  * @param d la donnee a afficher
 	  */
 	void afficherData( void *d ) {
-		//Point* pt = (Point*)d;	// Cast de d depuis void vers Point
-
+		Moments* pt = (Moments*)d;	// Cast de d depuis void vers Point
+        afficher_moments(*pt);
 	}
 
 
@@ -30,6 +31,7 @@
 		// On l'initialise
 		liste->length = 0;   // longueur nulle
 		liste->dataSize = dataSize;   // taille d'un element
+		//liste->label = "NULL"
 		liste->root = NULL;  // aucun element
 		liste->last = NULL;  // aucun element
 		liste->current = NULL;  // aucun element
