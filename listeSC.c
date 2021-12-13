@@ -14,7 +14,8 @@
 	  */
 	void afficherData( void *d ) {
 		Moments* pt = (Moments*)d;	// Cast de d depuis void vers Point
-        afficher_moments(*pt);
+        afficher_moments(*pt,0); //leg
+        printf("image name is %s\n",pt->label);
 	}
 
 

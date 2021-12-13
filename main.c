@@ -26,15 +26,15 @@ int main(void)
     DataBase bdd;
     bdd = logistics();
     bdd.images->current = bdd.images->root;
-    Moments *mom1 = ((Moments*)bdd.images->current->data);
-    Moments *mom2 = (Moments*)bdd.images->current->next->data;
-    //for ((bdd.images)->current = (bdd.images)->root; hasNext(bdd.images); getNext(bdd.images)){
-        //printf("%s\n",sizeof(((Moments*)bdd.images->current->data)->label));
-   // }
-    Moments m = *mom1;
-    printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
-    printf("number of elements in data base is %d \n",bdd.images->length);
-    printf("%s %s",m.label,mom2->label);
+    //Moments *mom1 = ((Moments*)bdd.images->current->data);
+    getNext(bdd.images);
+    //Moments *mom2 =((Moments*)bdd.images->current->data);
+    char *label = ((Moments*)bdd.images->current->data)->label;
+    afficherData(((Moments*)bdd.images->current->data));
+    getNext(bdd.images);
+    afficherData(((Moments*)bdd.images->current->data));
+
+//    printf("%s %s",m.label,mom2->label);
     /*
     ListeSC * listeBD = creerListe (sizeof (Moments));
     Moments momImg;// = creer_moments(N);

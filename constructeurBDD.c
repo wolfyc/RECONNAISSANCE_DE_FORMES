@@ -24,21 +24,20 @@ DataBase logistics(){
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
     int img_count = 0;
-    char *imgName=calloc (15 , sizeof(char));
+    char **imgName = malloc (sizeof(char*));
     char *imgPath = calloc (15,sizeof(char));
     if (DB != NULL){
         fscanf(DB,"%d",&img_count);
         //printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
-            fscanf(DB,"%s %s",imgPath,imgName);
-
+            fscanf(DB,"%s %s",imgPath,*imgName);
             img = readBmpImage(imgPath);
             momImg = get_mom(img,N);
-            momImg.label = imgName;
+            momImg.label = *imgName;
 
             ajout(bdd.images,&momImg,2);
             printf("%s\n",((Moments*)bdd.images->current->data)->label);
-            printf("image %s uploaded \n",imgName);
+            printf("image %s uploaded \n",*imgName);
             }
         fclose(DB);
     }else
