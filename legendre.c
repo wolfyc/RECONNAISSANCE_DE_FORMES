@@ -122,7 +122,7 @@ double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) //
     }
     return mat ;
 }
-void ecrire_mom (char * filename , Moments mom  ) // Tested OK
+void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
 {
     unsigned int  i , j;
     FILE * fichier = fopen (filename,"w");

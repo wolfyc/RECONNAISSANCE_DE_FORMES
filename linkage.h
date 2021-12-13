@@ -5,7 +5,9 @@
 //#include "listeSC.h"
 
 #define N 46 //presicion
-#define sourceDB "DATA/DB/DB.txt"
+#define sourceDB "DATA/DB/DBimg.txt"
+#define surcetxtDB "DATA/DB/txtDB.txt"
+#define destDB "DATA/DB/"
 /*
 typedef struct { // Starting point
     ListeSC * images;
