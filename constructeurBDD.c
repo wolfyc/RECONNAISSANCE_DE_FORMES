@@ -19,10 +19,10 @@ DataBase logistics(){
     Moments momImg;// = creer_moments(N);
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
+    FILE *txtDB = fopen(sourcetxtDB,"w");
     //FILE *DBdest = fopen(destDB,"w");
     int img_count = 0;
-
-    if (DB != NULL){
+    if (DB != NULL && txtDB != NULL) {
         fscanf(DB,"%d",&img_count);
         //printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
@@ -36,6 +36,7 @@ DataBase logistics(){
             strcat(DBdest,imgName);
             strcat(DBdest,".txt");
             printf("%s",DBdest);
+            fprintf(txtDB,"%s\n",DBdest);
             ecrireMomentTxt(DBdest,momImg);
             ajout(bdd.images,&momImg,2);
             printf("%s\n",imgName);

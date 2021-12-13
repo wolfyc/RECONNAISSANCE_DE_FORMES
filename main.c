@@ -23,7 +23,7 @@ int main(void)
 
     */
   //  int i = 0;
-<<<<<<< HEAD
+//<<<<<<< HEAD
    // DataBase bdd;
    // bdd = logistics();
    // bdd.images->current = bdd.images->root;
@@ -32,14 +32,14 @@ int main(void)
   // Moments mom = lire_moments("test0000.txt");
   //afficher_moments(mom,0);
   //printf("%s" ,mom.label);
-   bmp_rec("test0000.txt","v.bmp",32,32,1);
-=======
+  // bmp_rec("test0000.txt","v.bmp",32,32,1);
+//=======
     DataBase bdd;
     bdd = logistics();
     bdd.images->current = bdd.images->root;
     Moments *mom1 = ((Moments*)bdd.images->current->data);
-    ecrireMomentTxt("test0000.txt",*mom1);
->>>>>>> b70a7210d34a2b8d332c766e356392b245258c17
+    //ecrireMomentTxt("test0000.txt",*mom1);
+//>>>>>>> b70a7210d34a2b8d332c766e356392b245258c17
     //getNext(bdd.images);
   //  Moments *mom2 =((Moments*)bdd.images->current->next->data);
     //char *label = ((moments*)bdd.images->current->data)->label;
