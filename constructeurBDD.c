@@ -26,13 +26,17 @@ DataBase logistics(){
         fscanf(DB,"%d",&img_count);
         //printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
+            char DBdest[40] = destDB;
             char *imgName = calloc (15,sizeof(char));
             char *imgPath = calloc (15,sizeof(char));
             fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
             momImg = get_mom(img,N);
             momImg.label = imgName;
-            ecrireMomentTxt(destDB,momImg);
+            strcat(DBdest,imgName);
+            strcat(DBdest,".txt");
+            printf("%s",DBdest);
+            ecrireMomentTxt(DBdest,momImg);
             ajout(bdd.images,&momImg,2);
             printf("%s\n",imgName);
             printf("image %s uploaded \n", imgName);
