@@ -2,11 +2,7 @@
 
 Moments logistic(Moments mom){
     BmpImg img1;
-    //Moments mom1 = creer_moments(N);
     char *path1 = "DATA/DB/A.BMP"; // path to txt file with images.
-   // FILE *DB =
-    //printf("put an image in the main directory then give its name here|| directory : ");
-    //fgets(path1,sizeof(path1),stdin);
     img1 = readBmpImage(path1);
     mom=get_mom(img1,N);
     return mom;
@@ -23,9 +19,10 @@ DataBase logistics(){
     Moments momImg;// = creer_moments(N);
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
+    //FILE *DBdest = fopen(destDB,"w");
     int img_count = 0;
 
-    if (DB != NULL){
+    if (DB != NULL && DBdest != NULL){
         fscanf(DB,"%d",&img_count);
         //printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
@@ -35,7 +32,7 @@ DataBase logistics(){
             img = readBmpImage(imgPath);
             momImg = get_mom(img,N);
             momImg.label = imgName;
-
+            ecrireMomentTxt(destDB,momImg);
             ajout(bdd.images,&momImg,2);
             printf("%s\n",imgName);
             printf("image %s uploaded \n", imgName);
@@ -45,13 +42,5 @@ DataBase logistics(){
         printf("ERROR DB FILE MISSING OR DAMMAGED");
     Free_moments(&momImg);
     return bdd;
-}//*/
-/*ListeSC* creerBDDliste (){
-    ListeSC * listeBD = creerListe ( sizeof (Moments));
-    Moments mom = creer_moments(N);
-    mom = logistic(mom);
-    ajout(listeBD,&mom,2);
-    //Free_moments(&mom);
-    return listeBD;
 }
-*/
+

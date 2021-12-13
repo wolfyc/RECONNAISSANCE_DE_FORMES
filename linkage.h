@@ -6,6 +6,7 @@
 
 #define N 46 //presicion
 #define sourceDB "DATA/DB/DB.txt"
+#define destDB "DATA/DB/destDB.txt"
 /*
 typedef struct { // Starting point
     ListeSC * images;

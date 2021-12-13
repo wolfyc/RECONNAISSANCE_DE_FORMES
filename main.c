@@ -27,7 +27,7 @@ int main(void)
     bdd = logistics();
     bdd.images->current = bdd.images->root;
     Moments *mom1 = ((Moments*)bdd.images->current->data);
-    ecrire_mom("test0000.txt",*mom1);
+    ecrireMomentTxt("test0000.txt",*mom1);
     //getNext(bdd.images);
   //  Moments *mom2 =((Moments*)bdd.images->current->next->data);
     //char *label = ((moments*)bdd.images->current->data)->label;
