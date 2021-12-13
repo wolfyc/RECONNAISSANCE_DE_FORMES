@@ -60,8 +60,17 @@ void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_
     {
         for ( j =0 ; j<dim_y; j++)
         {
-            setPixel(img,(255*(int)mat[i][j]),i,j);
-        }
+            if ((int)(255*mat[i][j])> 255 ){
+                    setPixel(img,255,i,j);
+                    }
+            else {
+            if ((int)(255*mat[i][j])<0 ) {
+                    setPixel(img,0,i,j);
+                }
+            else {  setPixel(img,(int)(255*mat[i][j]),i,j); }
+            }
+
+            }
     }
     writeBmpImage(imgName,&img);
     freeMatrice(&mat,dim_x);
