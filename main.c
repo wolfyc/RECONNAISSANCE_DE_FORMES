@@ -35,7 +35,9 @@ int main(void)
   // bmp_rec("test0000.txt","v.bmp",32,32,1);
 //=======
     DataBase bdd;
-    bdd = dataBaseGOD();
+
+    dataBaseGOD();
+    bdd = creatListeBDD(sourcetxtDB);
     bdd.images->current = bdd.images->root;
     Moments *mom1 = ((Moments*)bdd.images->current->data);
     //ecrireMomentTxt("test0000.txt",*mom1);

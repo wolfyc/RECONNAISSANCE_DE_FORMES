@@ -18,7 +18,7 @@ DataBase creerBDD();
   * @param aucun
   * @return une bdd
   */
-DataBase dataBaseGOD();
+void dataBaseGOD();
 //Moments logistic(Moments mom);
 ListeSC* creerBDDliste ();
 #endif // CONSTRUCTEURBDD_H_INCLUDED

@@ -57,9 +57,13 @@ DataBase creatListeBDD(char* sourcetxt){
         for (int i=0; i<fileCount; i++){
             char* filePath = calloc (15,sizeof(char));
             fscanf(txtDB,"%s",filePath);
+            momImg = lireMomentsTxt(filePath);
+            ajout(bdd.images,&momImg,2);
             
         }
-
-    }
+    }else
+        printf("ERROR DB FILE MISSING OR DAMMAGED");
+    Free_moments(&momImg);
+    return bdd;
 }
 
