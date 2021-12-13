@@ -14,7 +14,7 @@ DataBase creerBDD(){
     return bdd;
 }
 
-DataBase logistics(){
+DataBase dataBaseGOD(){
     DataBase bdd = creerBDD();
     Moments momImg;// = creer_moments(N);
     BmpImg img;
