@@ -279,11 +279,11 @@ void copyBmpHeader( BmpImg origImg, BmpImg* copyImg ) {
   * @param copyImg copie de l'image
   */
 void copyBmpImg( BmpImg origImg, BmpImg* copyImg ) {
-    int i, j;
-    int dimXO = origImg.dimX;
-    int dimYO = origImg.dimY;
-    int dimXC = copyImg->dimX;
-    int dimYC = copyImg->dimY;
+    int i, j ;
+    int dimXO = origImg.dimX ;
+    int dimYO = origImg.dimY ;
+    int dimXC = copyImg->dimX ;
+    int dimYC = copyImg->dimY ;
 
     // On s'assure que les tailles d'images sont les memes (sinon il faudrait changer le header)
     if( (dimXO == dimXC) && (dimYO == dimYC) ) {

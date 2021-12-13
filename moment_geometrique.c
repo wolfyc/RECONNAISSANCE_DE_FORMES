@@ -1,5 +1,5 @@
 #include "moment_geometrique.h"
-
+#define beta 2.00
 double mom_geo (BmpImg img, unsigned int p,unsigned int q, unsigned int n)    // Tested 2.0
 {
     unsigned int x,y;
@@ -36,7 +36,7 @@ double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned
         {
             if (getPixel( img, x, y )!=0)
             {
-                res+=vanx_centre[x][p]*vany_centre[y][q]/pow(omega,(p+q+2)/2.) ; //point pour la conversion en float
+                res+=vanx_centre[x][p]*vany_centre[y][q]/pow(beta*omega,(p+q+2)/2.) ; //point pour la conversion en float
             }
         }
     }
