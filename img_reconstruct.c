@@ -19,7 +19,7 @@ double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
     unsigned int  x,y,p,q;
     double** mat;
     Moments mom;
-    mom=lire_moments(filename);
+    mom=lireMomentsTxt(filename);
     double ** co = matCoefficientLegendre(mom.n);
     mat= creer_mat(dim_x,dim_y);
 
@@ -60,7 +60,7 @@ void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_
     {
         for ( j =0 ; j<dim_y; j++)
         {
-            setPixel(img,(int)(255*mat[i][j]),i,j);
+            setPixel(img,255*(int)mat[i][j],i,j);
         }
     }
     writeBmpImage(imgName,&img);

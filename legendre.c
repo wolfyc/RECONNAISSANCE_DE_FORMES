@@ -148,7 +148,7 @@ else {printf("Error Opening File Please Fix the problem and retry \n");}
 fclose(fichier);
 }
 
-Moments lire_moments (char * filename ){
+Moments lireMomentsTxt (char * filename ){
     unsigned int  i , j;
     unsigned int  n ;
     Moments mom ;

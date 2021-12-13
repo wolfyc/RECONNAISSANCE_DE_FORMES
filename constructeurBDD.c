@@ -14,8 +14,8 @@ DataBase creerBDD(){
     return bdd;
 }
 
-DataBase dataBaseGOD(){
-    DataBase bdd = creerBDD();
+void dataBaseGOD(){
+    //DataBase bdd = creerBDD();
     Moments momImg;// = creer_moments(N);
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
@@ -24,7 +24,7 @@ DataBase dataBaseGOD(){
     int img_count = 0;
     if (DB != NULL && txtDB != NULL) {
         fscanf(DB,"%d",&img_count);
-        //printf(" img_count is %d",img_count);
+        fprintf(txtDB,"%d\n",img_count);
         for (int i = 0 ;i<img_count; i++){
             char DBdest[40] = destDB;
             char *imgName = calloc (15,sizeof(char));
@@ -35,17 +35,31 @@ DataBase dataBaseGOD(){
             momImg.label = imgName;
             strcat(DBdest,imgName);
             strcat(DBdest,".txt");
-            printf("%s",DBdest);
             fprintf(txtDB,"%s\n",DBdest);
             ecrireMomentTxt(DBdest,momImg);
-            ajout(bdd.images,&momImg,2);
             printf("%s\n",imgName);
             printf("image %s uploaded \n", imgName);
             }
+        printf("\nBDD Text files succesfully created ! ;)");
         fclose(DB);
     }else
         printf("ERROR DB FILE MISSING OR DAMMAGED");
     Free_moments(&momImg);
-    return bdd;
+}
+
+DataBase creatListeBDD(char* sourcetxt){
+    DataBase bdd = creerBDD();
+    Moments momImg;
+    unsigned int fileCount = 0;
+    FILE *txtDB = fopen(sourcetxtDB,"r");
+    fscanf (txtDB,"%d",&fileCount);
+    if (txtDB != NULL){
+        for (int i=0; i<fileCount; i++){
+            char* filePath = calloc (15,sizeof(char));
+            fscanf(txtDB,"%s",filePath);
+            
+        }
+
+    }
 }
 

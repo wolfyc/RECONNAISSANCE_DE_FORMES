@@ -55,7 +55,7 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
 double ** matMomentsDeLegendre (BmpImg img, unsigned int  n ,double ** momg );
 void ecrireMomentTxt (char * filename , Moments mom  ) ;
 
-Moments lire_moments (char * filename );
+Moments lireMomentsTxt (char * filename );
 void afficher_moments (Moments mom, int legOrcenNor ); //0 for leg -- 1 for norm 2 for leg
 
 #endif // LEGENDRE_H_INCLUDED
