@@ -22,7 +22,7 @@ DataBase logistics(){
     //FILE *DBdest = fopen(destDB,"w");
     int img_count = 0;
 
-    if (DB != NULL && DBdest != NULL){
+    if (DB != NULL){
         fscanf(DB,"%d",&img_count);
         //printf(" img_count is %d",img_count);
         for (int i = 0 ;i<img_count; i++){
