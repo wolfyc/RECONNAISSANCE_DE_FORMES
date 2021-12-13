@@ -22,18 +22,19 @@ int main(void)
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
 
     */
-    int i = 0;
+  //  int i = 0;
     DataBase bdd;
     bdd = logistics();
     bdd.images->current = bdd.images->root;
-    //moments *mom1 = ((moments*)bdd.images->current->data);
-    getNext(bdd.images);
-    //moments *mom2 =((moments*)bdd.images->current->data);
+    Moments *mom1 = ((Moments*)bdd.images->current->data);
+    ecrire_mom("test0000.txt",*mom1);
+    //getNext(bdd.images);
+  //  Moments *mom2 =((Moments*)bdd.images->current->next->data);
     //char *label = ((moments*)bdd.images->current->data)->label;
 //    afficherData(((moments*)bdd.images->current->data));
-    getNext(bdd.images);
+    //getNext(bdd.images);
 //    afficherData(((moments*)bdd.images->current->data));
-
+ //printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
 //    printf("%s %s",m.label,mom2->label);
     /*
     ListeSC * listeBD = creerListe (sizeof (moments));

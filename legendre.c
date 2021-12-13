@@ -128,6 +128,7 @@ void ecrire_mom (char * filename , Moments mom  ) // Tested OK
     FILE * fichier = fopen (filename,"w");
     if ( fichier != NULL ) {
         fprintf(fichier , "%d \n" , mom.n);
+        fprintf(fichier , "%s \n" , mom.label);
         fprintf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i< mom.n  ; i++ ){
         for (j=0 ; j<mom.n-i ; j++){
@@ -156,6 +157,7 @@ Moments lire_moments (char * filename ){
     if ( fichier != NULL ) {
         fscanf(fichier , "%d \n" , &n);
         mom = creer_moments(n);
+        fscanf(fichier , "%s \n" , mom.label);
         fscanf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i< n ; i++ ){
         for (j=0 ; j<n-i ; j++){
