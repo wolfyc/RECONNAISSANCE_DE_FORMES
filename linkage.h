@@ -6,7 +6,7 @@
 
 #define N 46 //presicion
 #define sourceDB "DATA/DB/DBimg.txt"
-#define surcetxtDB "DATA/DB/txtDB.txt"
+#define sourcetxtDB "DATA/DB/txtDB.txt"
 #define destDB "DATA/DB/"
 /*
 typedef struct { // Starting point
