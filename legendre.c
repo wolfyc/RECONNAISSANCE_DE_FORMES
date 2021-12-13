@@ -59,13 +59,14 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
     }
     return a;
 }
-double Pn(double x, unsigned int n){
+
+double polynomeDeLegendre(double x, unsigned int n){
     if(n==0){
         return 1;
     }else if(n==1){
         return x ;
     }else{
-        return (double)((2*n-1)*x*Pn(x,n-1)-(n-1)*Pn(x,n-2))/n;
+        return (double)((2*n-1)*x*polynomeDeLegendre(x,n-1)-(n-1)*polynomeDeLegendre(x,n-2))/n;
     }
 }
 

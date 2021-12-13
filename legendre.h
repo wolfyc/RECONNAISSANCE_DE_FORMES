@@ -27,7 +27,7 @@ double ** matCoefficientLegendre (unsigned int  n);
   * @return matrice de moment de legendre
   */
 double P(double x,unsigned int  n, double ** co );
-double Pn(double x, unsigned int n);
+double polynomeDeLegendre(double x, unsigned int n);
 // lecture  des moment centres et normes � partir d'un fichier
 /**
   * @param filename string of char
