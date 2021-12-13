@@ -47,7 +47,7 @@ void dataBaseGOD(){
     Free_moments(&momImg);
 }
 
-DataBase creatListeBDD(char* sourcetxt){
+DataBase creatListeBDD(DataBase BDD,char* sourcetxt){
     DataBase bdd = creerBDD();
     Moments momImg;
     unsigned int fileCount = 0;

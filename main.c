@@ -31,23 +31,19 @@ int main(void)
   // Moments mom = lire_moments("test0000.txt");
   //afficher_moments(mom,0);
   //printf("%s" ,mom.label);
-<<<<<<< HEAD
   // bmp_rec("test0000.txt","v.bmp",32,32,1);
 //=======
-    DataBase bdd;
-
+    DataBase bdd= creerBDD();
     dataBaseGOD();
-    bdd = creatListeBDD(sourcetxtDB);
+    bdd = creatListeBDD(bdd , sourcetxtDB);
     bdd.images->current = bdd.images->root;
     Moments *mom1 = ((Moments*)bdd.images->current->data);
-=======
    bmp_rec("test0000.txt","v.bmp",32,32,1);
 
    // DataBase bdd;
    // bdd = logistics();
    // bdd.images->current = bdd.images->root;
     //Moments *mom1 = ((Moments*)bdd.images->current->data);
->>>>>>> 269a222b6c9b46580f0910e68bd5428e1d449540
     //ecrireMomentTxt("test0000.txt",*mom1);
     //getNext(bdd.images);
   //  Moments *mom2 =((Moments*)bdd.images->current->next->data);
