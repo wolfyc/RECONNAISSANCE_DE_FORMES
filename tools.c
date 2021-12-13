@@ -87,7 +87,7 @@ Moments get_mom(BmpImg img,unsigned int  n)
     //printf("debut \n");
     mom.centres_norm= mat_moments_centre_norme(img,n);
    // printf("fin centre norme \n");
-    mom.leg = Moments_Legendre(img,n,mom.centres_norm);
+    mom.leg = matMomentsDeLegendre(img,n,mom.centres_norm);
     //printf("fin legendre \n");
     //mom.label = "not-vide";
     return mom;

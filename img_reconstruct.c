@@ -3,7 +3,7 @@
 double pixel_rec (Moments mom ,double x_norm , double y_norm  ){
 unsigned int p ,q;
 double res=0.00;
-double ** co = coeff_legendre(mom.n);
+double ** co = matCoefficientLegendre(mom.n);
  for (p=0 ; p< mom.n ; p++ ){
     for (q=0 ; q<mom.n-p ;q++){
 

@@ -1,6 +1,6 @@
 #include "legendre.h"
 
-double coeff (unsigned int  x, unsigned int  i)  // Tested OK 2.0
+double coefficientLegendre (unsigned int  x, unsigned int  i)  // Tested OK 2.0
 {
     if (x==0 && i==0)
     {
@@ -16,24 +16,24 @@ double coeff (unsigned int  x, unsigned int  i)  // Tested OK 2.0
         {
             if (x!=1 && i==0)
             {
-                return ((-((double)x-1)/(double)x)*coeff(x-2,0));
+                return ((-((double)x-1)/(double)x)*coefficientLegendre(x-2,0));
             }
             else
             {
                 if (i>= x-1)
                 {
-                    return (((2*((double)x-1)+1)/(double)x)* coeff(x-1,i-1));
+                    return (((2*((double)x-1)+1)/(double)x)* coefficientLegendre(x-1,i-1));
                 }
                 else
                 {
-                    return (((2*((double)x-1)+1)/x)* coeff(x-1,i-1)+(-((double)x-1)/(double)x)*coeff(x-2,i));
+                    return (((2*((double)x-1)+1)/x)* coefficientLegendre(x-1,i-1)+(-((double)x-1)/(double)x)*coefficientLegendre(x-2,i));
                 }
             }
         }
     }
 }
 
-double ** coeff_legendre (unsigned int n )  // Tested OK 2.0
+double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
 {
     double ** a = creer_mat_diago(n+1);
     unsigned int  x,i;
@@ -80,18 +80,19 @@ double P(double x,unsigned int  n, double ** co )  // OK OK 2.0
     }
     return poly;
 }
-double Norm_Const(unsigned int  p, unsigned int  q)
+
+double facteurMomentDeLegendre(unsigned int  p, unsigned int  q)
 {
     double C;
     C=(2*p + 1)*(2*q + 1)/(4.);
-
     return C;
 }
-double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg)  // Tested OK
+//equation 9
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg)  // Tested OK
 {
     unsigned int  i,j;
     double res=0.00;
-    double c = Norm_Const(p, q);
+    double c = facteurMomentDeLegendre(p, q);
 
 
     for (i=0 ; i<=p ; i++){
@@ -104,16 +105,16 @@ double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n ,
     res*= c ;
     return res ;
 }
-double ** Moments_Legendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
+double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
 {
     double ** mat = creer_mat_anti_diag(n);
-    double ** co= coeff_legendre(n);
+    double ** co= matCoefficientLegendre(n);
     unsigned int  p,q;
 
     for (p=0 ; p<n ; p++ ){
         for (q=0 ; q<n-p;q++){
 
-            mat[p][q]=Moment_Leg (img, p,q,n,co,momg);
+            mat[p][q]=momentDeLegendre (img, p,q,n,co,momg);
 
 
         }

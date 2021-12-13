@@ -12,14 +12,14 @@
   * @param i l'ordre et la position dans la colonne de la matrice
   * @return le coeff de legendre
   */
-double coeff (unsigned int  x, unsigned int  i);
+double coefficientLegendre (unsigned int  x, unsigned int  i);
 
 // calculateur du coef de legendre
 /**
   * @param n la dimension de la matrice de legendre
   * @return lune matrice de coeff de legendre
   */
-double ** coeff_legendre (unsigned int  n);
+double ** matCoefficientLegendre (unsigned int  n);
 // lecture  des moment centres et normes � partir d'un fichier
 /**
   * @param filename string of char
@@ -34,7 +34,7 @@ double Pn(double x, unsigned int n);
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double Norm_Const(unsigned int  p, unsigned int  q);
+double facteurMomentDeLegendre(unsigned int  p, unsigned int  q);
 
 // lecture  des moment centres et normes � partir d'un fichier
 /**
@@ -42,7 +42,7 @@ double Norm_Const(unsigned int  p, unsigned int  q);
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg);
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg);
 
 // lecture  des moment centres et normes � partir d'un fichier
 /**
@@ -52,7 +52,7 @@ double Moment_Leg (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n ,
   * @param leg matrice de poly de legendre
   * @return sans retour
   */
-double ** Moments_Legendre (BmpImg img, unsigned int  n ,double ** momg );
+double ** matMomentsDeLegendre (BmpImg img, unsigned int  n ,double ** momg );
 void ecrire_mom (char * filename , Moments mom  ) ;
 
 Moments lire_moments (char * filename );

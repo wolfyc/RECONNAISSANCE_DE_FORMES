@@ -5,20 +5,20 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    /*ListeSC* BDD = creerListe(sizeof(Moments));
+    /*ListeSC* BDD = creerListe(sizeof(moments));
     BDD = creerBDDliste();
-// Moments mom = logistic(mom);
+// moments mom = logistic(mom);
     BmpImg img1;
         char* path1 = "A_test.bmp";
 
     img1 = readBmpImage(path1);
-    Moments mom;
+    moments mom;
     mom=get_mom(img1,N);
     ajout(BDD,&mom,2);
     BDD->current = BDD->root;
 
-    Moments *mom1 = (Moments*)BDD->current->data;
-    Moments *mom2 = (Moments*)BDD->current->next->data;
+    moments *mom1 = (moments*)BDD->current->data;
+    moments *mom2 = (moments*)BDD->current->next->data;
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
 
     */
@@ -26,18 +26,18 @@ int main(void)
     DataBase bdd;
     bdd = logistics();
     bdd.images->current = bdd.images->root;
-    //Moments *mom1 = ((Moments*)bdd.images->current->data);
+    //moments *mom1 = ((moments*)bdd.images->current->data);
     getNext(bdd.images);
-    //Moments *mom2 =((Moments*)bdd.images->current->data);
-    char *label = ((Moments*)bdd.images->current->data)->label;
-    afficherData(((Moments*)bdd.images->current->data));
+    //moments *mom2 =((moments*)bdd.images->current->data);
+    //char *label = ((moments*)bdd.images->current->data)->label;
+//    afficherData(((moments*)bdd.images->current->data));
     getNext(bdd.images);
-    afficherData(((Moments*)bdd.images->current->data));
+//    afficherData(((moments*)bdd.images->current->data));
 
 //    printf("%s %s",m.label,mom2->label);
     /*
-    ListeSC * listeBD = creerListe (sizeof (Moments));
-    Moments momImg;// = creer_moments(N);
+    ListeSC * listeBD = creerListe (sizeof (moments));
+    moments momImg;// = creer_moments(N);
     //char *source = sourceDB;
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
@@ -56,8 +56,8 @@ int main(void)
             }}
     listeBD->current = listeBD->root;
 
-    Moments *mom1 = (Moments*)listeBD->current->data;
-    Moments *mom2 = (Moments*)listeBD->current->next->data;
+    moments *mom1 = (moments*)listeBD->current->data;
+    moments *mom2 = (moments*)listeBD->current->next->data;
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
    //*/
     /*
@@ -72,7 +72,7 @@ int main(void)
     img3 = readBmpImage(path3);
     img4 = readBmpImage(path4);
     img5 = readBmpImage(path5);
-    Moments mom1,mom2,mom3,mom4,mom5;
+    moments mom1,mom2,mom3,mom4,mom5;
     mom1=get_mom(img1,46);
     mom2=get_mom(img2,46);
     mom3=get_mom(img3,46);
