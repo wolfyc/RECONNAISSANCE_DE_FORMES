@@ -7,12 +7,16 @@ int main(void)
 {
      //dataBaseGOD();
     DataBase bdd;
-    bdd=creerBDD();
+
     bdd = creatListeBDD(sourcetxtDB);
     // Moments mom1=lireMomentsTxt("DATA/DB/A_bd.txt");
    // afficher_moments(mom1,0);
-   afficherListe(bdd.images);
-    killBDD(&bdd);
+    afficherListe(bdd.images);
+    bdd.images->current=bdd.images->root;
+    printf("%d \n" ,bdd.images->length);
+    Free_moments((Moments*)bdd.images->root->data);
+   //Free_moments((Moments*)bdd.images->last->data);
+
     //afficherListe(bdd.images);
 
 

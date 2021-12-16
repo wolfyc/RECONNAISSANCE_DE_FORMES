@@ -105,14 +105,13 @@ void Free_moments (Moments *mom ){
 Moments get_mom(BmpImg img,unsigned int  n)
 {
     Moments mom = creer_moments(n) ;
-    //printf("debut \n");
 
     mom.centres_norm= mat_moments_centre_norme(img,n);
-   // printf("fin centre norme \n");
+
     mom.leg = matMomentsDeLegendre(img,n,mom.centres_norm);
-    //printf("fin legendre \n");
-    //mom.label = "not-vide";
+
     return mom;
+
 }
 
 double Dist_Euc (double ** mat1 , double **mat2 , unsigned int  n ) {  // tested with moments calculated from same image

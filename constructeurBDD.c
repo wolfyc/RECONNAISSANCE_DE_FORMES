@@ -15,9 +15,7 @@ DataBase creerBDD(){
 }
 
 void killBDD(DataBase *bdd){
-    printf(" BDD Text en cours .... ! ;) \n");
     freeListe(bdd->images);
-    printf(" BDD Text files succesfully freed ! ;) \n");
 }
 
 void dataBaseGOD(){
@@ -81,7 +79,7 @@ DataBase creatListeBDD(char* sourcetxt){
         printf("ERROR DB FILE MISSING OR DAMMAGED\n");
     }
     fclose(txtDB);
-     printf("Done\n");
+    printf("Done\n");
     Free_moments(&momImg);
     return bdd;
 }
