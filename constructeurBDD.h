@@ -6,12 +6,14 @@
 typedef struct { // Starting point
     ListeSC * images;
 } DataBase ;
+
 // allocation de base de donn�es
 /**
   * .
   * @return une list dans la struct en dessus
   */
 DataBase creerBDD();
+
 // creation de data
 /**
   *
@@ -20,5 +22,5 @@ DataBase creerBDD();
   */
 void dataBaseGOD();
 //Moments logistic(Moments mom);
-ListeSC* creerBDDliste ();
+DataBase creatListeBDD(DataBase *bdd,char* sourcetxt);
 #endif // CONSTRUCTEURBDD_H_INCLUDED

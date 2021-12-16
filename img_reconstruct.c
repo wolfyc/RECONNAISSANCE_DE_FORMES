@@ -14,6 +14,7 @@ double ** co = matCoefficientLegendre(mom.n);
 return res ;
 }
 */
+
 double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
 {
     unsigned int  x,y,p,q;

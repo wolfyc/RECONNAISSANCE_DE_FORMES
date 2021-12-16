@@ -5,7 +5,15 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    /*ListeSC* BDD = creerListe(sizeof(moments));
+    dataBaseGOD();
+    DataBase bdd = creerBDD();
+    bdd = creatListeBDD(&bdd,sourcetxtDB);
+    afficherListe(bdd.images);
+
+    //afficherListe(bdd.images);
+    return 0;
+}
+/*ListeSC* BDD = creerListe(sizeof(moments));
     BDD = creerBDDliste();
 // moments mom = logistic(mom);
     BmpImg img1;
@@ -91,11 +99,13 @@ int main(void)
  afficher_moments(mom1,0);
  ecrireMomentTxt("jj.txt",mom1);
  */
+ /*
 Moments mom1=lireMomentsTxt("jj.txt");
 
  afficher_moments(mom1,0);
  bmp_rec("jj.txt","testv2.0.bmp",32,32,1);
  Free_moments(&mom1);
+ //*/
  /*   double ** a= mat_moments_centre_norme(img1,46);
     double ** b= matMomentsDeLegendre(img1,46,a);
 
@@ -116,5 +126,3 @@ Moments mom1=lireMomentsTxt("jj.txt");
     //ecrire_mom(path2,mom);
   // afficher_moments(mom1,0);
     //*/
-    return 0;
-}

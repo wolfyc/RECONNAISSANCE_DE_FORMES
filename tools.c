@@ -61,7 +61,28 @@ void freeMatrice(double ***mat,unsigned int dim_x)   //Corrected 2.0
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-
+void printButterfly(){
+     printf("\t\t\t\t                `         \'\n");
+    printf("\t\t\t\t;,,,             `       \'             ,,,;\n");
+    printf("\t\t\t\t`YES8888bo.       :     :       .od8888YES\'\n");
+    printf("\t\t\t\t  888IO8DO88b.     :   :     .d8888I8DO88\n");
+    printf("\t\t\t\t  8LOVEY\'  `Y8b.   `   \'   .d8Y\'  `YLOVE8\n");
+    printf("\t\t\t\t jTHEE!  .db.  Yb. \'   \' .dY  .db.  8THEE!\n");
+    printf("\t\t\t\t   `888  Y88Y    `b ( ) d\'    Y88Y  888\'\n");
+    printf("\t\t\t\t    8MYb  \'\"        ,\',        \"\'  dMY8\n");
+    printf("\t\t\t\t   j8prECIOUSgf\"\'   \':'   `\"?g8prECIOUSk\n");
+    printf("\t\t\t\t     \'Y\'   .8\'     d\' \'b     \'8.   \'Y\'\n");
+    printf("\t\t\t\t      !   .8\' db  d\'; ;`b  db \'8.   !\n");
+    printf("\t\t\t\t         d88  `\'  8 ; ; 8  `\'  88b\n");
+    printf("\t\t\t\t        d88Ib   .g8 \',\' 8g.   dI88b\n");
+    printf("\t\t\t\t       :888LOVE88Y\'     \'Y88LOVE888:\n");
+    printf("\t\t\t\t       \'! THEE888\'       `888THEE !\'\n");
+    printf("\t\t\t\t          \'8Y  `Y         Y\'  Y8\'\n");
+    printf("\t\t\t\t           Y                   Y\n");
+    printf("\t\t\t\t           !                   !\n");
+    printf("\n");
+    printf("\n");
+}
 
 
 
