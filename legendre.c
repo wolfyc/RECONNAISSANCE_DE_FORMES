@@ -185,7 +185,7 @@ return mom  ;
 void afficher_moments (Moments mom, int legOrcenNor ){
     unsigned int i,j;
     if ( legOrcenNor == 1|| legOrcenNor == 0){
-        printf("Moments geometrique centres, normes : \n");
+        printf("Moments geometrique centres, normes de %s sont : \n",mom.label);
         for ( i = 0 ; i<= mom.n ; i++ ){
             for ( j =0;j<= mom.n-i ; j++){
                 printf("%lf " ,mom.centres_norm[i][j]);
@@ -194,7 +194,7 @@ void afficher_moments (Moments mom, int legOrcenNor ){
         }
         }
     if ( legOrcenNor == 2 || legOrcenNor == 0 ){
-        printf("Moments de Legendre : \n");
+        printf("Moments de Legendre de %s sont: \n", mom.label);
         for ( i = 0 ; i<=mom.n ; i++ ){
             for ( j =0;j<=mom.n-i ; j++){
                 printf("%lf " ,mom.leg[i][j]);

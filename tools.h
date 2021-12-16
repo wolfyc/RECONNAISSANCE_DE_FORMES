@@ -90,5 +90,5 @@ Moments get_mom(BmpImg img,unsigned int n);
 
 double Dist_Euc (double ** mat1 , double **mat2 ,unsigned int n ); // tested with moments calculated from same image
 
-
+void printButterfly();
 #endif // TOOLS_H_INCLUDED

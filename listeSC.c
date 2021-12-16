@@ -13,9 +13,9 @@
 	  * @param d la donnee a afficher
 	  */
 	void afficherData( void *d ) {
+
 		Moments* pt = (Moments*)d;	// Cast de d depuis void vers Point
         afficher_moments(*pt,0); //leg
-        printf("image name is %s\n",pt->label);
 	}
 
 
@@ -187,9 +187,9 @@
 	  */
 	void afficherListe( ListeSC* liste ) {
 		int i;
+
 		for( liste->current = liste->root, i = 0; hasNext( liste ); getNext( liste ), i++ ) {
-			// On affiche les infos
-			printf( "%d: ", i );
+            printButterfly();
 			afficherData( liste->current->data );
 		}
 	}

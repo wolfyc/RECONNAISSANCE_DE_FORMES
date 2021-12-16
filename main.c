@@ -5,7 +5,15 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    /*ListeSC* BDD = creerListe(sizeof(moments));
+    dataBaseGOD();
+    DataBase bdd = creerBDD();
+    bdd = creatListeBDD(&bdd,sourcetxtDB);
+    afficherListe(bdd.images);
+
+    //afficherListe(bdd.images);
+    return 0;
+}
+/*ListeSC* BDD = creerListe(sizeof(moments));
     BDD = creerBDDliste();
 // moments mom = logistic(mom);
     BmpImg img1;
@@ -93,11 +101,25 @@ Moments mom2=get_mom(img2,46);
 mom2.label=path2;
 
 
+<<<<<<< HEAD
+=======
+ Moments mom1=get_mom(img1,40);
+ mom1.label= path1 ;
+ afficher_moments(mom1,0);
+ ecrireMomentTxt("jj.txt",mom1);
+ */
+ /*
+Moments mom1=lireMomentsTxt("jj.txt");
+>>>>>>> dcac5b7d2654e2b83df5fbb45cd18db54947b679
 
 printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1.label,mom2.label,Dist_Euc(mom1.leg,mom2.leg,N));
 
  Free_moments(&mom1);
+<<<<<<< HEAD
  Free_moments(&mom2);
+=======
+ //*/
+>>>>>>> dcac5b7d2654e2b83df5fbb45cd18db54947b679
  /*   double ** a= mat_moments_centre_norme(img1,46);
     double ** b= matMomentsDeLegendre(img1,46,a);
 
@@ -118,5 +140,3 @@ printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1.label,mom2
     //ecrire_mom(path2,mom);
   // afficher_moments(mom1,0);
     //*/
-    return 0;
-}
