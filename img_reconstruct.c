@@ -29,9 +29,9 @@ double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
 
         for ( y = 0; y < dim_y; y++)
         {
-            for (p=0 ; p< mom.n ; p++ )
+            for (p=0 ; p<= mom.n ; p++ )
             {
-                for (q=0 ; q<mom.n-p ; q++)
+                for (q=0 ; q<= mom.n-p ; q++)
                 {
                     mat[x][y] += mom.leg[p][q]*P((2*(double)x/dim_x-1),p,co)*P((2*(double)y/dim_y-1),q,co);
                 }
@@ -43,7 +43,7 @@ double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
 void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y, double threshold)
 {
     double ** mat=img_rec ( filemom,dim_x,dim_y );
-    printf("mat created\n");
+
     BmpImg img=createBmpImg("test",dim_x,dim_y) ;
 
 //copyBmpImg(readBmpImage("A.bmp"),&img);
@@ -53,15 +53,16 @@ void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_
     {
         for ( j =0 ; j<dim_y; j++)
         {
-            if ((int)(255*mat[i][j])> 255 ){
-                    setPixel(img,255,i,j);
+            if (mat[i][j]< 0 ){
+                    mat[i][j]=0;
                     }
             else {
-                if ((int)(255*mat[i][j])<0 ) {
-                    setPixel(img,0,i,j);
+                if ((mat[i][j])>1 ) {
+                    mat[i][j]=1;
                 }
-            else {  setPixel(img,(int)(255*mat[i][j]),i,j); }
-            }
+                }
+             setPixel(img,(int)(255*mat[i][j]),i,j);
+
 
             }
     }

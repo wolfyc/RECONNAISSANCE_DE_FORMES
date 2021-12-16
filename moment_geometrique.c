@@ -45,11 +45,13 @@ double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned
 
 double ** mat_moments_centre_norme(BmpImg img,unsigned int n)   //Tested Ok 2.0
 {
-    double ** mat_mom = creer_mat_anti_diag (n);
+
+    double ** mat_mom = creer_mat_anti_diag (n+1);
     unsigned int p,q;
-    for ( p=0; p<n; p++)
+
+    for ( p=0; p<=n; p++)
     {
-        for (q=0; q<n-p; q++)
+        for (q=0; q<=n-p; q++)
         {
 
             mat_mom[p][q]=momentGeoCentreNorme (img,p,q,n);

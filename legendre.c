@@ -108,12 +108,12 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
 }
 double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
 {
-    double ** mat = creer_mat_anti_diag(n);
+    double ** mat = creer_mat_anti_diag(n+1);
     double ** co= matCoefficientLegendre(n);
     unsigned int  p,q;
 
-    for (p=0 ; p<n ; p++ ){
-        for (q=0 ; q<n-p;q++){
+    for (p=0 ; p<=n ; p++ ){
+        for (q=0 ; q<=n-p;q++){
 
             mat[p][q]=momentDeLegendre (img, p,q,n,co,momg);
 
@@ -130,15 +130,15 @@ void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
         fprintf(fichier , "%d \n" , mom.n);
         fprintf(fichier , "%s \n" , mom.label);
         fprintf(fichier , "Moments geometrique centres, normes : \n");
-    for (i=0 ; i< mom.n  ; i++ ){
-        for (j=0 ; j<mom.n-i ; j++){
+    for (i=0 ; i<= mom.n  ; i++ ){
+        for (j=0 ; j<= mom.n-i ; j++){
             fprintf(fichier , "%f " , mom.centres_norm[i][j]);
         }
         fprintf(fichier, "\n");
     }
      fprintf(fichier , "Moments de Legendre : \n");
-        for (i=0 ; i< mom.n ; i++ ){
-            for (j=0 ; j<mom.n-i ; j++){
+        for (i=0 ; i<= mom.n ; i++ ){
+            for (j=0 ; j<=mom.n-i ; j++){
                 fprintf(fichier , "%f " , mom.leg[i][j]);
             }
             fprintf(fichier, "\n");
@@ -159,15 +159,15 @@ Moments lireMomentsTxt (char * filename ){
         mom = creer_moments(n);
         fscanf(fichier , "%s \n" , mom.label);
         fscanf(fichier , "Moments geometrique centres, normes : \n");
-    for (i=0 ; i< n ; i++ ){
-        for (j=0 ; j<n-i ; j++){
+    for (i=0 ; i<= n ; i++ ){
+        for (j=0 ; j<=n-i ; j++){
             fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
         }
         fscanf(fichier, "\n");
         }
     fscanf(fichier , "Moments de Legendre : \n");
-    for (i=0 ; i< n ; i++ ){
-        for (j=0 ; j< n-i ; j++){
+    for (i=0 ; i<= n ; i++ ){
+        for (j=0 ; j<= n-i ; j++){
             fscanf(fichier , "%lf" , &mom.leg[i][j]);
         }
         fscanf(fichier, "\n");
@@ -184,8 +184,8 @@ void afficher_moments (Moments mom, int legOrcenNor ){
     unsigned int i,j;
     if ( legOrcenNor == 1|| legOrcenNor == 0){
         printf("Moments geometrique centres, normes : \n");
-        for ( i = 0 ; i<mom.n ; i++ ){
-            for ( j =0;j<mom.n-i ; j++){
+        for ( i = 0 ; i<= mom.n ; i++ ){
+            for ( j =0;j<= mom.n-i ; j++){
                 printf("%lf " ,mom.centres_norm[i][j]);
             }
             printf("\n");
@@ -193,8 +193,8 @@ void afficher_moments (Moments mom, int legOrcenNor ){
         }
     if ( legOrcenNor == 2 || legOrcenNor == 0 ){
         printf("Moments de Legendre : \n");
-        for ( i = 0 ; i<mom.n ; i++ ){
-            for ( j =0;j<mom.n-i ; j++){
+        for ( i = 0 ; i<=mom.n ; i++ ){
+            for ( j =0;j<=mom.n-i ; j++){
                 printf("%lf " ,mom.leg[i][j]);
             }
             printf("\n");

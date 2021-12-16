@@ -4,7 +4,7 @@
 
 //#include "listeSC.h"
 
-#define N 46 //presicion
+#define N 40 //presicion
 #define sourceDB "DATA/DB/DBimg.txt"
 #define sourcetxtDB "DATA/DB/txtDB.txt"
 #define destDB "DATA/DB/"

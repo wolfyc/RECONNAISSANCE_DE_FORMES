@@ -13,11 +13,11 @@ double ** creer_mat (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
 }
 double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy)  // tested OK 2.0
 {
-    double ** van_m = creer_mat (dim,pow_max);
+    double ** van_m = creer_mat (dim,pow_max+1);
     unsigned int i, j;
     for (i=0; i<dim; i++)
     {
-        for (j=0; j<pow_max; j++)
+        for (j=0; j<=pow_max; j++)
         {
             van_m[i][j] = pow(i-moy,j);
         }
@@ -68,16 +68,16 @@ void freeMatrice(double ***mat,unsigned int dim_x)   //Corrected 2.0
 Moments creer_moments(unsigned int n ){
     Moments mom ;
     mom.n = n ;
-    mom.centres_norm= creer_mat_anti_diag(n) ;
-    mom.leg= creer_mat_anti_diag(n) ;
+    mom.centres_norm= creer_mat_anti_diag(n+1) ;
+    mom.leg= creer_mat_anti_diag(n+1) ;
     mom.label = calloc (15,sizeof(char));
     return mom ;
 }
 
 void Free_moments (Moments *mom ){
 
-    freeMatrice (&(mom->centres_norm),mom->n);
-    freeMatrice(&(mom->leg),mom->n);
+    freeMatrice (&(mom->centres_norm),mom->n+1);
+    freeMatrice(&(mom->leg),mom->n+1);
     mom->n=0 ;
 }
 
@@ -97,8 +97,8 @@ double Dist_Euc (double ** mat1 , double **mat2 , unsigned int  n ) {  // tested
                                                              //except that one of them is saved and red (in/from) a file
 unsigned int  p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
 double res = 0.00 ;                                          // in the function <lire_moments>
-    for (p=0 ; p<n ; p++ ){
-        for (q=0 ; q<n-p;q++){
+    for (p=0 ; p<=n ; p++ ){
+        for (q=0 ; q<=n-p;q++){
             res+= pow(mat1[p][q]-mat2[p][q],2);
         }
     }
