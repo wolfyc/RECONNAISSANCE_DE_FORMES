@@ -84,7 +84,7 @@ double P(double x,unsigned int  n, double ** co )  // OK OK 2.0
     return poly;
 }
 
-double facteurMomentDeLegendre(unsigned int  p, unsigned int  q)
+double facteurMomentDeLegendre(unsigned int  p, unsigned int  q) // change name 
 {
     double C;
     C=(2*p + 1)*(2*q + 1)/(4.);
