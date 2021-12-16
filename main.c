@@ -5,18 +5,28 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-     //dataBaseGOD();
+    char * input_path="hoho.bmp";
+    double Mindist;
+    char * output;
+    dataBaseGOD();
     DataBase bdd;
-
     bdd = creatListeBDD(sourcetxtDB);
-    // Moments mom1=lireMomentsTxt("DATA/DB/A_bd.txt");
-   // afficher_moments(mom1,0);
-    afficherListe(bdd.images);
-    bdd.images->current=bdd.images->root;
-    printf("%d \n" ,bdd.images->length);
-    Free_moments((Moments*)bdd.images->root->data);
-   //Free_moments((Moments*)bdd.images->last->data);
+    printf("enter your image directory ... \n");
+//    scanf("%s \n" ,input_path);
+    BmpImg InputImg=readBmpImage(input_path);
+    Moments InputMom = get_mom(InputImg,N);
 
+    Mindist = Dist_Euc(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
+    output = ((Moments*)bdd.images->root->data)->label;
+
+    for(bdd.images->current=bdd.images->root;hasNext(bdd.images);getNext(bdd.images)){
+        if (Mindist>Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
+            Mindist=Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
+            output = ((Moments*)bdd.images->current->data)->label;
+        }
+    }
+    printf("%f \t %s\n" ,Mindist,output);
+  // killBDD(&bdd);
     //afficherListe(bdd.images);
 
 

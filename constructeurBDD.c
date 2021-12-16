@@ -43,6 +43,8 @@ void dataBaseGOD(){
             ecrireMomentTxt(DBdest,momImg);
             printf("%s\n",imgName);
             printf("image %s uploaded \n", imgName);
+            free(imgName);
+            free(imgPath);
             }
         printf("\nBDD Text files succesfully created ! ;) \n");
         fclose(DB);
@@ -55,7 +57,7 @@ void dataBaseGOD(){
 
 DataBase creatListeBDD(char* sourcetxt){
     int i ;
-    DataBase bdd = creerBDD();
+    DataBase data_base = creerBDD();
     Moments momImg;
     unsigned int fileCount = 0;
     FILE *txtDB = fopen(sourcetxtDB,"r");
@@ -69,9 +71,9 @@ DataBase creatListeBDD(char* sourcetxt){
 
             momImg = lireMomentsTxt(filePath);
 
-            ajout(bdd.images,&momImg,2);
+            ajout(data_base.images,&momImg,2);
 
-        printf("%s added to liste\n",((Moments*)bdd.images->current->data)->label);
+        printf("%s added to liste\n",((Moments*)data_base.images->current->data)->label);
         free(filePath);
         }
     }
@@ -81,6 +83,6 @@ DataBase creatListeBDD(char* sourcetxt){
     fclose(txtDB);
     printf("Done\n");
     Free_moments(&momImg);
-    return bdd;
+    return data_base;
 }
 
