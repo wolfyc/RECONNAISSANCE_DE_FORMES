@@ -1,12 +1,12 @@
 #include"constructeurBDD.h"
 
-Moments logistic(Moments mom){
+/*Moments logistic(Moments mom){
     BmpImg img1;
     char *path1 = "DATA/DB/A.BMP"; // path to txt file with images.
     img1 = readBmpImage(path1);
     mom=get_mom(img1,N);
     return mom;
-}
+}*/
 //*
 DataBase creerBDD(){
     DataBase bdd;
@@ -15,7 +15,9 @@ DataBase creerBDD(){
 }
 
 void killBDD(DataBase *bdd){
+    printf(" BDD Text en cours .... ! ;) \n");
     freeListe(bdd->images);
+    printf(" BDD Text files succesfully freed ! ;) \n");
 }
 
 void dataBaseGOD(){
@@ -50,30 +52,37 @@ void dataBaseGOD(){
     }else
         printf("ERROR DB FILE MISSING OR DAMMAGED");
     Free_moments(&momImg);
+
 }
 
-DataBase creatListeBDD(DataBase *bdd,char* sourcetxt){
-    //DataBase bdd = creerBDD();
-   // killBDD(bdd);
-   // *bdd = creerBDD();
+DataBase creatListeBDD(char* sourcetxt){
+    int i ;
+    DataBase bdd = creerBDD();
     Moments momImg;
     unsigned int fileCount = 0;
     FILE *txtDB = fopen(sourcetxtDB,"r");
     if (txtDB != NULL){
-        fscanf (txtDB,"%d",&fileCount);
-        printf("\n\n-----file count %d-------\n",fileCount);
-        for (int i=0; i<fileCount; i++){
-                printf("filepath of file %d aquired thus ",i+1);
+        fscanf (txtDB,"%d\n",&fileCount);
+        printf("-----file count %d-------\n",fileCount);
+        for ( i=0; i<fileCount; i++){
+            printf("filepath of file %d aquired thus ",i+1);
             char* filePath = calloc (15,sizeof(char));
-            fscanf(txtDB,"%s",filePath);
+            fscanf(txtDB,"%s\n",filePath);
+
             momImg = lireMomentsTxt(filePath);
-            ajout(bdd->images,&momImg,2);
-        printf("%s added to liste\n",((Moments*)bdd->images->current->data)->label);
+
+            ajout(bdd.images,&momImg,2);
+
+        printf("%s added to liste\n",((Moments*)bdd.images->current->data)->label);
+        free(filePath);
         }
-        fclose(txtDB);
-    }else
+    }
+    else{
         printf("ERROR DB FILE MISSING OR DAMMAGED\n");
+    }
+    fclose(txtDB);
+     printf("Done\n");
     Free_moments(&momImg);
-    return *bdd;
+    return bdd;
 }
 

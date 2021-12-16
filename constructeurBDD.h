@@ -13,7 +13,7 @@ typedef struct { // Starting point
   * @return une list dans la struct en dessus
   */
 DataBase creerBDD();
-
+void killBDD(DataBase *bdd);
 // creation de data
 /**
   *
@@ -22,5 +22,6 @@ DataBase creerBDD();
   */
 void dataBaseGOD();
 //Moments logistic(Moments mom);
-DataBase creatListeBDD(DataBase *bdd,char* sourcetxt);
+DataBase creatListeBDD(char* sourcetxt);
+
 #endif // CONSTRUCTEURBDD_H_INCLUDED
