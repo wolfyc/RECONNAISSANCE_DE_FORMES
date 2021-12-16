@@ -84,41 +84,48 @@ double P(double x,unsigned int  n, double ** co )  // OK OK 2.0
     return poly;
 }
 
-double facteurMomentDeLegendre(unsigned int  p, unsigned int  q) // change name 
+double** facteurMomentDeLegendre(unsigned int  n) // change name
 {
-    double C;
-    C=(2*p + 1)*(2*q + 1)/(4.);
-    return C;
+     double** C=creer_mat_anti_diag(n+1);
+     unsigned int p,q;
+    for (p=0 ; p<=n ; p++ ){
+        for (q=0 ; q<=n-p;q++){
+
+            C[p][q]=(2*p + 1)*(2*q + 1)/(4.);
+
+        }
+    }
+return C;
 }
 //equation 9
-double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg)  // Tested OK
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg, double ** Cpq)  // Tested OK
 {
     unsigned int  i,j;
     double res=0.00;
-    double c = facteurMomentDeLegendre(p, q);
 
 
     for (i=0 ; i<= p ; i++){
         for (j=0 ; j<= q; j++ ){
-               //  printf("debut moment leg \n");
+
             res += co[p][i]*co[q][j] * momg[i][j]   ;
-               // printf("debut fin leg \n");
+
         }
     }
-    res*= c ;
+    res*=Cpq[p][q];
+
     return res ;
 }
 double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
 {
     double ** mat = creer_mat_anti_diag(n+1);
     double ** co= matCoefficientLegendre(n);
+    double ** Cpq=facteurMomentDeLegendre(n);
     unsigned int  p,q;
 
     for (p=0 ; p<=n ; p++ ){
         for (q=0 ; q<=n-p;q++){
 
-            mat[p][q]=momentDeLegendre (img, p,q,n,co,momg);
-
+            mat[p][q]=momentDeLegendre (img, p,q,n,co,momg,Cpq);
 
         }
     }

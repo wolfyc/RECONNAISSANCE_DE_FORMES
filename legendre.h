@@ -34,7 +34,7 @@ double polynomeDeLegendre(double x, unsigned int n);
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double facteurMomentDeLegendre(unsigned int  p, unsigned int  q);
+double** facteurMomentDeLegendre(unsigned int  n);
 
 // lecture  des moment centres et normes � partir d'un fichier
 /**
@@ -42,7 +42,7 @@ double facteurMomentDeLegendre(unsigned int  p, unsigned int  q);
   * @param n pointeur vers l'ordre des moments lu du fichiers
   * @return matrice de moment de legendre
   */
-double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg);
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg, double ** Cpq);
 
 // lecture  des moment centres et normes � partir d'un fichier
 /**

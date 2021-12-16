@@ -106,6 +106,7 @@ Moments get_mom(BmpImg img,unsigned int  n)
 {
     Moments mom = creer_moments(n) ;
     //printf("debut \n");
+
     mom.centres_norm= mat_moments_centre_norme(img,n);
    // printf("fin centre norme \n");
     mom.leg = matMomentsDeLegendre(img,n,mom.centres_norm);
