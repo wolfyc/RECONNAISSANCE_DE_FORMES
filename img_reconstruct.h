@@ -16,5 +16,5 @@
   */
 double pixel_rec (Moments mom ,double x_norm , double y_norm  );
 double** img_rec (char * filename,unsigned int  dim_x,unsigned int  dim_y );
-void bmp_rec (char* filemom , char* imgName,unsigned int dim_x , unsigned int dim_y , double threshold);
+void bmp_rec (char* filemom , char* imgName,unsigned int dim_x , unsigned int dim_y);
 #endif // IMG_RECONSTRUCT_H_INCLUDED

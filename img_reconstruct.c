@@ -40,13 +40,12 @@ double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
     }
     return mat ;
 }
-void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y, double threshold)
+void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y)
 {
     double ** mat=img_rec ( filemom,dim_x,dim_y );
 
-    BmpImg img=createBmpImg("test",dim_x,dim_y) ;
+    BmpImg img=createBmpImg("Result",dim_x,dim_y) ;
 
-//copyBmpImg(readBmpImage("A.bmp"),&img);
 
     unsigned int i,j;
     for ( i = 0 ; i<dim_x; i++)
@@ -62,7 +61,6 @@ void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_
                 }
                 }
              setPixel(img,(int)(255*mat[i][j]),i,j);
-
 
             }
     }

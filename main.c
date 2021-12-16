@@ -80,22 +80,24 @@ int main(void)
     printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1->label,mom2->label,Dist_Euc(mom1->leg,mom2->leg,N));
    //*/
 
-/*BmpImg img1;
+BmpImg img1,img2;
 
-    char* path1 = "A.bmp";
+   char* path1 = "A.bmp";
+   char* path2 = "A_test.bmp";
+   img1 = readBmpImage(path1);
+   img2 = readBmpImage(path2);
+printf("okk");
+Moments mom1=get_mom(img1,46);
+mom1.label=path1;
+Moments mom2=get_mom(img2,46);
+mom2.label=path2;
 
-    img1 = readBmpImage(path1);
 
- Moments mom1=get_mom(img1,40);
- mom1.label= path1 ;
- afficher_moments(mom1,0);
- ecrireMomentTxt("jj.txt",mom1);
- */
-Moments mom1=lireMomentsTxt("jj.txt");
 
- afficher_moments(mom1,0);
- bmp_rec("jj.txt","testv2.0.bmp",32,32,1);
+printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1.label,mom2.label,Dist_Euc(mom1.leg,mom2.leg,N));
+
  Free_moments(&mom1);
+ Free_moments(&mom2);
  /*   double ** a= mat_moments_centre_norme(img1,46);
     double ** b= matMomentsDeLegendre(img1,46,a);
 

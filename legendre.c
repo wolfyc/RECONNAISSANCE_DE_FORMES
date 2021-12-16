@@ -37,8 +37,9 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
 {
     double ** a = creer_mat_diago(n+1);
     unsigned int  x,i;
-    a[0][0] = 1;
-    a[1][0]= 0 ;
+    a[0][0] = 1.00;
+    a[1][0]= 0.00 ;
+    a[1][1]=1.00;
     for (x=2; x<=n; x++ )
     {
         for (i=0; i<=x; i++)
@@ -59,6 +60,7 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
     }
     return a;
 }
+
 
 double polynomeDeLegendre(double x, unsigned int n){
     if(n==0){
@@ -96,8 +98,8 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
     double c = facteurMomentDeLegendre(p, q);
 
 
-    for (i=0 ; i<=p ; i++){
-        for (j=0 ; j<=q; j++ ){
+    for (i=0 ; i<= p ; i++){
+        for (j=0 ; j<= q; j++ ){
                //  printf("debut moment leg \n");
             res += co[p][i]*co[q][j] * momg[i][j]   ;
                // printf("debut fin leg \n");
