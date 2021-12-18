@@ -5,13 +5,13 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-/*    char * input_path="A_test.bmp";
+    char * input_path="A_test.bmp";
     double Mindist;
     char * output;
     //dataBaseGOD();
     DataBase bdd;
     bdd = creatListeBDD(sourcetxtDB);
- /*  // exit(EXIT_SUCCESS);
+
    // printf("enter your image directory ... \n");
 //    scanf("%s \n" ,input_path);
     BmpImg InputImg=readBmpImage(input_path);
@@ -26,17 +26,11 @@ int main(void)
             output = ((Moments*)bdd.images->current->data)->label;
         }
     }
-    printf("%f \t %s\n" ,Mindist,output);
-   // exit(EXIT_SUCCESS);*/
-    //dataBaseGOD();
-    DataBase bdd;
-    bdd = creatListeBDD(sourcetxtDB);
-  afficherListe(bdd.images);
-   // killBDD(&bdd);
-  //  Moments Mom = lireMomentsTxt("DATA/DB/F_bd.txt");
-//afficher_moments(Mom,0);
-//Free_moments(&Mom);
+
+printf("%s \t %lf\n" ,output,Mindist);
+
 killBDD(&bdd);
+printButterfly();
     return 0;
 }
 /*
