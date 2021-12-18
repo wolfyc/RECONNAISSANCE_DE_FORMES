@@ -5,13 +5,14 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    char * input_path="hoho.bmp";
+/*    char * input_path="A_test.bmp";
     double Mindist;
     char * output;
-    dataBaseGOD();
+    //dataBaseGOD();
     DataBase bdd;
     bdd = creatListeBDD(sourcetxtDB);
-    printf("enter your image directory ... \n");
+ /*  // exit(EXIT_SUCCESS);
+   // printf("enter your image directory ... \n");
 //    scanf("%s \n" ,input_path);
     BmpImg InputImg=readBmpImage(input_path);
     Moments InputMom = get_mom(InputImg,N);
@@ -26,10 +27,12 @@ int main(void)
         }
     }
     printf("%f \t %s\n" ,Mindist,output);
-  // killBDD(&bdd);
-    //afficherListe(bdd.images);
+   // exit(EXIT_SUCCESS);*/
 
-
+ //  afficherListe(bdd.images);
+   // killBDD(&bdd);
+    Moments Mom = lireMomentsTxt("DATA/DB/F_bd.txt");
+afficher_moments(Mom,0);
 
     return 0;
 }

@@ -31,8 +31,8 @@ void dataBaseGOD(){
         fprintf(txtDB,"%d\n",img_count);
         for (int i = 0 ;i<img_count; i++){
             char DBdest[40] = destDB;
-            char *imgName = calloc (15,sizeof(char));
-            char *imgPath = calloc (15,sizeof(char));
+            char *imgName = calloc (20,sizeof(char));
+            char *imgPath = calloc (20,sizeof(char));
             fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
             momImg = get_mom(img,N);
@@ -64,9 +64,9 @@ DataBase creatListeBDD(char* sourcetxt){
     if (txtDB != NULL){
         fscanf (txtDB,"%d\n",&fileCount);
         printf("-----file count %d-------\n",fileCount);
-        for ( i=0; i<fileCount; i++){
-            printf("filepath of file %d aquired thus ",i+1);
-            char* filePath = calloc (15,sizeof(char));
+        for ( i=1; i<=fileCount; i++){
+            printf("filepath of file %d aquired thus ",i);
+            char* filePath [40];
             fscanf(txtDB,"%s\n",filePath);
 
             momImg = lireMomentsTxt(filePath);
@@ -74,7 +74,8 @@ DataBase creatListeBDD(char* sourcetxt){
             ajout(data_base.images,&momImg,2);
 
         printf("%s added to liste\n",((Moments*)data_base.images->current->data)->label);
-        free(filePath);
+        //free(filePath);
+
         }
     }
     else{

@@ -141,20 +141,21 @@ void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
         fprintf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i<= mom.n  ; i++ ){
         for (j=0 ; j<= mom.n-i ; j++){
-            fprintf(fichier , "%f " , mom.centres_norm[i][j]);
+            fprintf(fichier , "%lf " , mom.centres_norm[i][j]);
         }
         fprintf(fichier, "\n");
     }
      fprintf(fichier , "Moments de Legendre : \n");
         for (i=0 ; i<= mom.n ; i++ ){
             for (j=0 ; j<=mom.n-i ; j++){
-                fprintf(fichier , "%f " , mom.leg[i][j]);
+                fprintf(fichier , "%lf " , mom.leg[i][j]);
             }
             fprintf(fichier, "\n");
     }
 }
 else {printf("Error Opening File Please Fix the problem and retry \n");}
-fclose(fichier);
+ if( fclose (fichier)== 0) {printf("successfully close \n");}
+
 }
 
 Moments lireMomentsTxt (char * filename ){
@@ -181,12 +182,11 @@ Moments lireMomentsTxt (char * filename ){
         }
         fscanf(fichier, "\n");
         }
-
     }
     else {
         printf("Error Opening File Please Fix the problem and retry \n");
-        fclose (fichier);
     }
+    if( fclose (fichier)== 0) {printf("successfully close \n");}
 return mom  ;
 }
 void afficher_moments (Moments mom, int legOrcenNor ){

@@ -21,6 +21,7 @@
 
 
 
+
 	/// Partie generique deja implementee (par les enseignants)
 	// Constructeur et Destructeur
 	/** Creation d'une liste
@@ -32,7 +33,6 @@
 		// On l'initialise
 		liste->length = 0;   // longueur nulle
 		liste->dataSize = dataSize;   // taille d'un element
-		//liste->label = "NULL"
 		liste->root = NULL;  // aucun element
 		liste->last = NULL;  // aucun element
 		liste->current = NULL;  // aucun element
@@ -187,9 +187,9 @@
 	  */
 	void afficherListe( ListeSC* liste ) {
 		int i;
-
 		for( liste->current = liste->root, i = 0; hasNext( liste ); getNext( liste ), i++ ) {
-            printButterfly();
+			// On affiche les infos
+			printf( "%d: ", i );
 			afficherData( liste->current->data );
 		}
 	}
