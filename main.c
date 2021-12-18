@@ -28,12 +28,15 @@ int main(void)
     }
     printf("%f \t %s\n" ,Mindist,output);
    // exit(EXIT_SUCCESS);*/
-
- //  afficherListe(bdd.images);
+    //dataBaseGOD();
+    DataBase bdd;
+    bdd = creatListeBDD(sourcetxtDB);
+  afficherListe(bdd.images);
    // killBDD(&bdd);
-    Moments Mom = lireMomentsTxt("DATA/DB/F_bd.txt");
-afficher_moments(Mom,0);
-
+  //  Moments Mom = lireMomentsTxt("DATA/DB/F_bd.txt");
+//afficher_moments(Mom,0);
+//Free_moments(&Mom);
+killBDD(&bdd);
     return 0;
 }
 /*

@@ -83,7 +83,7 @@ DataBase creatListeBDD(char* sourcetxt){
     }
     fclose(txtDB);
     printf("Done\n");
-    Free_moments(&momImg);
+   // Free_moments(&momImg);
     return data_base;
 }
 

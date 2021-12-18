@@ -104,7 +104,7 @@ void Free_moments (Moments *mom ){
 
 Moments get_mom(BmpImg img,unsigned int  n)
 {
-    Moments mom = creer_moments(n) ;
+    Moments mom ;//= creer_moments(n) ;
 
     mom.centres_norm= mat_moments_centre_norme(img,n);
 
