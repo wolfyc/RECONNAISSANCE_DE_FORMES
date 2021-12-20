@@ -11,7 +11,7 @@ int main(void)
     //dataBaseGOD();
     DataBase bdd;
     bdd = creatListeBDD(sourcetxtDB);
-
+    //afficherListe(bdd.images);
    // printf("enter your image directory ... \n");
 //    scanf("%s \n" ,input_path);
     BmpImg InputImg=readBmpImage(input_path);
@@ -24,6 +24,7 @@ int main(void)
         if (Mindist>Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
             Mindist=Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
             output = ((Moments*)bdd.images->current->data)->label;
+
         }
     }
 

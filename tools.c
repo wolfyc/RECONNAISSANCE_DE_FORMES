@@ -62,7 +62,7 @@ void freeMatrice(double ***mat,unsigned int dim_x)   //Corrected 2.0
 }
 
 void printButterfly(){
-    printf("\t\t\t\t  Fuckiinggggg Worksss bitch  \n");
+    printf("\t\t\t\t  \n");
      printf("\t\t\t\t                `         \'\n");
     printf("\t\t\t\t;,,,             `       \'             ,,,;\n");
     printf("\t\t\t\t`YES8888bo.       :     :       .od8888YES\'\n");

@@ -66,7 +66,7 @@ DataBase creatListeBDD(char* sourcetxt){
         printf("-----file count %d-------\n",fileCount);
         for ( i=1; i<=fileCount; i++){
             printf("filepath of file %d aquired thus ",i);
-            char* filePath [40];
+            char* filePath = calloc (25,sizeof(char));
             fscanf(txtDB,"%s\n",filePath);
 
             momImg = lireMomentsTxt(filePath);
@@ -74,7 +74,7 @@ DataBase creatListeBDD(char* sourcetxt){
             ajout(data_base.images,&momImg,2);
 
         printf("%s added to liste\n",((Moments*)data_base.images->current->data)->label);
-        //free(filePath);
+        free(filePath);
 
         }
     }
