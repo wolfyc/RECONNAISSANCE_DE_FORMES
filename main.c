@@ -10,7 +10,7 @@ int main(void)
     char * output;
     //dataBaseGOD();
     DataBase bdd;
-    bdd = creatListeBDD(sourcetxtDB);
+    bdd = chainageListeBDD(sourcetxtDB);
     //afficherListe(bdd.images);
    // printf("enter your image directory ... \n");
 //    scanf("%s \n" ,input_path);
@@ -30,7 +30,7 @@ int main(void)
 
 printf("%s \t %lf\n" ,output,Mindist);
 
-killBDD(&bdd);
+freeBDD(&bdd);
 printButterfly();
     return 0;
 }

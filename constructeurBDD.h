@@ -10,18 +10,32 @@ typedef struct { // Starting point
 // allocation de base de donn�es
 /**
   * .
-  * @return une list dans la struct en dessus
+  * @return une base de données initialisé
   */
 DataBase creerBDD();
-void killBDD(DataBase *bdd);
-// creation de data
+// distruction de la base de données
+/**
+  *
+  * @param bdd pointeur vers la base de donné
+  * @return void
+  */
+void freeBDD(DataBase *bdd);
+
+// creation des fichiers txt a partir des img
 /**
   *
   * @param aucun
-  * @return une bdd
+  * @return un nombre de fichier dans le repertoire DATA/DB/
   */
-void dataBaseGOD();
+void imgTotxt();
+
 //Moments logistic(Moments mom);
-DataBase creatListeBDD(char* sourcetxt);
+// creation de la liste chainé a partir des fichiers txt
+/**
+  *
+  * @param sourcetxt repertoire vers le fichier qui contient les repetoires des fichier txt des imgs
+  * @return une base de données
+  */
+DataBase chainageListeBDD(char* sourcetxt);
 
 #endif // CONSTRUCTEURBDD_H_INCLUDED

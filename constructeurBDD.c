@@ -14,11 +14,11 @@ DataBase creerBDD(){
     return bdd;
 }
 
-void killBDD(DataBase *bdd){
+void freeBDD(DataBase *bdd){
     freeListe(bdd->images);
 }
 
-void dataBaseGOD(){
+void imgTotxt(){
     //DataBase bdd = creerBDD();
     Moments momImg;// = creer_moments(N);
     BmpImg img;
@@ -55,7 +55,7 @@ void dataBaseGOD(){
 
 }
 
-DataBase creatListeBDD(char* sourcetxt){
+DataBase chainageListeBDD(char* sourcetxt){
     int i ;
     DataBase data_base = creerBDD();
     Moments momImg;
