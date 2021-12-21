@@ -32,7 +32,7 @@
   * @param dim_y nombre des colonnes de la matrice
   * @return une matrice de dimension dim_x * dim_y
   */
-double ** creer_mat (unsigned int dim_x, unsigned int dim_y) ;
+double ** creerMatrice (unsigned int dim_x, unsigned int dim_y) ;
 // Matrice diagonale
 /**
   * @param dim dimension de la matrice
@@ -46,7 +46,7 @@ double ** creer_mat (unsigned int dim_x, unsigned int dim_y) ;
   * @param moy la translation des pixel ie pour centr� les moment geo.
   * @return une matrice de vandermonde de dimension dim
   */
-double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy);
+double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy);
 
 // Matrice anti diagonle diagonale
 /**
@@ -54,7 +54,7 @@ double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy);
   *
   * @return une matrice de dimension dim_x * dim_y
   */
-double ** creer_mat_anti_diag (unsigned int dim);
+double ** creerMatAntiDiagonal (unsigned int dim);
 
 // Matrice diagonle
 /**
@@ -62,7 +62,7 @@ double ** creer_mat_anti_diag (unsigned int dim);
   *
   * @return une matrice de dimension dim
   */
-double ** creer_mat_diago (unsigned int dim);
+double ** creerMatDiagonale (unsigned int dim);
 
 // Matrice de reconstruction de l'image equation 12
 /**
@@ -82,13 +82,18 @@ void freeMatrice(double ***mat, unsigned int dim_x);
   * @return une matrice de dimension dim_x * dim_y
   */
 
-Moments creer_moments(unsigned int n );
+Moments creerMoments(unsigned int n );
 
-void Free_moments (Moments *mom );
+void FreeMoments (Moments *mom );
 
-Moments get_mom(BmpImg img,unsigned int n);
+Moments getMoment(BmpImg img,unsigned int n);
 
-double Dist_Euc (double ** mat1 , double **mat2 ,unsigned int n ); // tested with moments calculated from same image
+double distanceEuclidienne (double ** mat1 , double **mat2 ,unsigned int n ); // tested with moments calculated from same image
 
 void printButterfly();
+void ecrireMomentTxt (char * filename , Moments mom  ) ;
+
+Moments lireMomentsTxt (char * filename );
+
+void afficherMoments (Moments mom, int legOrcenNor ); //0 for leg -- 1 for norm 2 for leg
 #endif // TOOLS_H_INCLUDED

@@ -35,7 +35,7 @@ void imgTotxt(){
             char *imgPath = calloc (20,sizeof(char));
             fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
-            momImg = get_mom(img,N);
+            momImg = getMoment(img,N);
             momImg.label = imgName;
             strcat(DBdest,imgName);
             strcat(DBdest,".txt");
@@ -51,7 +51,7 @@ void imgTotxt(){
         fclose(txtDB);
     }else
         printf("ERROR DB FILE MISSING OR DAMMAGED");
-    Free_moments(&momImg);
+    FreeMoments(&momImg);
 
 }
 

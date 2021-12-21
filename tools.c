@@ -1,7 +1,7 @@
 #include "tools.h"
 //creation de matrice rectangulaire.
 
-double ** creer_mat (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
+double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
 {
     double **mat = malloc(dim_x*sizeof(double*));
     unsigned int i;
@@ -11,9 +11,9 @@ double ** creer_mat (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
     }
     return mat;
 }
-double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy)  // tested OK 2.0
+double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)  // tested OK 2.0
 {
-    double ** van_m = creer_mat (dim,pow_max+1);
+    double ** van_m = creerMatrice (dim,pow_max+1);
     unsigned int i, j;
     for (i=0; i<dim; i++)
     {
@@ -25,7 +25,7 @@ double ** Vander_monde (unsigned int dim,unsigned int pow_max,double moy)  // te
     return van_m;
 }
 //creation matrice anti diago pour moment centr�es norm�
-double ** creer_mat_anti_diag (unsigned int dim) // tested OK 2.0
+double ** creerMatAntiDiagonal (unsigned int dim) // tested OK 2.0
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -36,7 +36,7 @@ double ** creer_mat_anti_diag (unsigned int dim) // tested OK 2.0
     return mat;
 }
 
-double ** creer_mat_diago (unsigned int dim) // tested OK 2.0
+double ** creerMatDiagonale (unsigned int dim) // tested OK 2.0
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -87,27 +87,27 @@ void printButterfly(){
 
 
 
-Moments creer_moments(unsigned int n ){
+Moments creerMoments(unsigned int n ){
     Moments mom ;
     mom.n = n ;
-    mom.centres_norm= creer_mat_anti_diag(n+1) ;
-    mom.leg= creer_mat_anti_diag(n+1) ;
+    mom.centres_norm= creerMatAntiDiagonal(n+1) ;
+    mom.leg= creerMatAntiDiagonal(n+1) ;
     mom.label = calloc (15,sizeof(char));
     return mom ;
 }
 
-void Free_moments (Moments *mom ){
+void FreeMoments (Moments *mom ){
 
     freeMatrice (&(mom->centres_norm),mom->n+1);
     freeMatrice(&(mom->leg),mom->n+1);
     mom->n=0 ;
 }
 
-Moments get_mom(BmpImg img,unsigned int  n)
+Moments getMoment(BmpImg img,unsigned int  n)
 {
     Moments mom ;//= creer_moments(n) ;
 
-    mom.centres_norm= mat_moments_centre_norme(img,n);
+    mom.centres_norm= matMomentsCentreNorme(img,n);
 
     mom.leg = matMomentsDeLegendre(img,n,mom.centres_norm);
 
@@ -115,7 +115,7 @@ Moments get_mom(BmpImg img,unsigned int  n)
 
 }
 
-double Dist_Euc (double ** mat1 , double **mat2 , unsigned int  n ) {  // tested with moments calculated from same image
+double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {  // tested with moments calculated from same image
                                                              //except that one of them is saved and red (in/from) a file
 unsigned int  p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
 double res = 0.00 ;                                          // in the function <lire_moments>
@@ -129,5 +129,84 @@ res = sqrt (res);
 return res;
 }
 
+void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
+{
+    unsigned int  i , j;
+    FILE * fichier = fopen (filename,"w");
+    if ( fichier != NULL ) {
+        fprintf(fichier , "%d \n" , mom.n);
+        fprintf(fichier , "%s \n" , mom.label);
+        fprintf(fichier , "Moments geometrique centres, normes : \n");
+    for (i=0 ; i<= mom.n  ; i++ ){
+        for (j=0 ; j<= mom.n-i ; j++){
+            fprintf(fichier , "%lf " , mom.centres_norm[i][j]);
+        }
+        fprintf(fichier, "\n");
+    }
+     fprintf(fichier , "Moments de Legendre : \n");
+        for (i=0 ; i<= mom.n ; i++ ){
+            for (j=0 ; j<=mom.n-i ; j++){
+                fprintf(fichier , "%lf " , mom.leg[i][j]);
+            }
+            fprintf(fichier, "\n");
+    }
+}
+else {printf("Error Opening File Please Fix the problem and retry \n");}
+ if( fclose (fichier)== 0) {printf("successfully close \n");}
+
+}
+
+Moments lireMomentsTxt (char * filename ){
+    unsigned int  i , j;
+    unsigned int  n ;
+    Moments mom ;
+    mom.label = filename;
+    FILE * fichier = fopen (filename,"r");
+    if ( fichier != NULL ) {
+        fscanf(fichier , "%d \n" , &n);
+        mom = creerMoments(n);
+        fscanf(fichier , "%s \n" , mom.label);
+        fscanf(fichier , "Moments geometrique centres, normes : \n");
+    for (i=0 ; i<= n ; i++ ){
+        for (j=0 ; j<=n-i ; j++){
+            fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
+        }
+        fscanf(fichier, "\n");
+        }
+    fscanf(fichier , "Moments de Legendre : \n");
+    for (i=0 ; i<= n ; i++ ){
+        for (j=0 ; j<= n-i ; j++){
+            fscanf(fichier , "%lf" , &mom.leg[i][j]);
+        }
+        fscanf(fichier, "\n");
+        }
+    }
+    else {
+        printf("Error Opening File Please Fix the problem and retry \n");
+    }
+    if( fclose (fichier)== 0) {printf("successfully close \n");}
+return mom  ;
+}
+void afficherMoments (Moments mom, int legOrcenNor ){
+    unsigned int i,j;
+    if ( legOrcenNor == 1|| legOrcenNor == 0){
+        printf("Moments geometrique centres, normes de %s sont : \n",mom.label);
+        for ( i = 0 ; i<= mom.n ; i++ ){
+            for ( j =0;j<= mom.n-i ; j++){
+                printf("%lf " ,mom.centres_norm[i][j]);
+            }
+            printf("\n");
+        }
+        }
+    if ( legOrcenNor == 2 || legOrcenNor == 0 ){
+        printf("Moments de Legendre de %s sont: \n", mom.label);
+        for ( i = 0 ; i<=mom.n ; i++ ){
+            for ( j =0;j<=mom.n-i ; j++){
+                printf("%lf " ,mom.leg[i][j]);
+            }
+            printf("\n");
+    }
+
+}}
 
 

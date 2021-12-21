@@ -12,7 +12,7 @@
   * @param q l'ordre de y
   * @return un moment geometrique
   */
-double mom_geo (BmpImg img, unsigned int p, unsigned int q, unsigned int n );
+double MomentGeometrique (BmpImg img, unsigned int p, unsigned int q, unsigned int n );
 
 // Moment geometrique centr� (vandermonde) et norm� equation (6)
 /**
@@ -29,7 +29,7 @@ double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned
   * @param n la dimension de la matrice
   * @return une matrice anti diagonale superieur des moments geometriques centr�s et norm�s
   */
-double ** mat_moments_centre_norme(BmpImg img,unsigned int n);
+double ** matMomentsCentreNorme(BmpImg img,unsigned int n);
 
 
 #endif // MOMENT_GEOMETRIQUE_H_INCLUDED

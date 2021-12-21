@@ -15,14 +15,14 @@ int main(void)
    // printf("enter your image directory ... \n");
 //    scanf("%s \n" ,input_path);
     BmpImg InputImg=readBmpImage(input_path);
-    Moments InputMom = get_mom(InputImg,N);
+    Moments InputMom = getMoment(InputImg,N);
 
-    Mindist = Dist_Euc(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
+    Mindist = distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
     output = ((Moments*)bdd.images->root->data)->label;
 
     for(bdd.images->current=bdd.images->root;hasNext(bdd.images);getNext(bdd.images)){
-        if (Mindist>Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
-            Mindist=Dist_Euc(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
+        if (Mindist>distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
+            Mindist=distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
             output = ((Moments*)bdd.images->current->data)->label;
 
         }

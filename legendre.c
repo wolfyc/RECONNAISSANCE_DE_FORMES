@@ -35,7 +35,7 @@ double coefficientLegendre (unsigned int  x, unsigned int  i)  // Tested OK 2.0
 
 double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
 {
-    double ** a = creer_mat_diago(n+1);
+    double ** a = creerMatDiagonale(n+1);
     unsigned int  x,i;
     a[0][0] = 1.00;
     a[1][0]= 0.00 ;
@@ -86,7 +86,7 @@ double P(double x,unsigned int  n, double ** co )  // OK OK 2.0
 
 double** facteurMomentDeLegendre(unsigned int  n) // change name
 {
-     double** C=creer_mat_anti_diag(n+1);
+     double** C=creerMatAntiDiagonal(n+1);
      unsigned int p,q;
     for (p=0 ; p<=n ; p++ ){
         for (q=0 ; q<=n-p;q++){
@@ -117,7 +117,7 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
 }
 double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
 {
-    double ** mat = creer_mat_anti_diag(n+1);
+    double ** mat = creerMatAntiDiagonal(n+1);
     double ** co= matCoefficientLegendre(n);
     double ** Cpq=facteurMomentDeLegendre(n);
     unsigned int  p,q;
@@ -166,7 +166,7 @@ Moments lireMomentsTxt (char * filename ){
     FILE * fichier = fopen (filename,"r");
     if ( fichier != NULL ) {
         fscanf(fichier , "%d \n" , &n);
-        mom = creer_moments(n);
+        mom = creerMoments(n);
         fscanf(fichier , "%s \n" , mom.label);
         fscanf(fichier , "Moments geometrique centres, normes : \n");
     for (i=0 ; i<= n ; i++ ){
@@ -189,7 +189,7 @@ Moments lireMomentsTxt (char * filename ){
     if( fclose (fichier)== 0) {printf("successfully close \n");}
 return mom  ;
 }
-void afficher_moments (Moments mom, int legOrcenNor ){
+void afficherMoments (Moments mom, int legOrcenNor ){
     unsigned int i,j;
     if ( legOrcenNor == 1|| legOrcenNor == 0){
         printf("Moments geometrique centres, normes de %s sont : \n",mom.label);

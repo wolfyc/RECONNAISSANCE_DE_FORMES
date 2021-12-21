@@ -6,7 +6,7 @@
 	  */
 	void freeData( void *d ) {
 	    Moments *mom = (Moments*)d;
-		Free_moments (mom);
+		FreeMoments (mom);
 	}
 
 	/** Affichage d'une donnee
@@ -15,7 +15,7 @@
 	void afficherData( void *d ) {
 
 		Moments* pt = (Moments*)d;	// Cast de d depuis void vers Point
-        afficher_moments(*pt,0); //leg
+        afficherMoments(*pt,0); //leg
 	}
 
 

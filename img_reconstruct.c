@@ -15,14 +15,14 @@ return res ;
 }
 */
 
-double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
+double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
 {
     unsigned int  x,y,p,q;
     double** mat;
     Moments mom;
     mom=lireMomentsTxt(filename);
     double ** co = matCoefficientLegendre(mom.n);
-    mat= creer_mat(dim_x,dim_y);
+    mat= creerMatrice(dim_x,dim_y);
 
 
     for ( x = 0; x < dim_x; x++)
@@ -41,9 +41,10 @@ double** img_rec (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
     }
     return mat ;
 }
-void bmp_rec (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y)
+
+void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y)
 {
-    double ** mat=img_rec ( filemom,dim_x,dim_y );
+    double ** mat=reconstructionImg ( filemom,dim_x,dim_y );
 
     BmpImg img=createBmpImg("Result",dim_x,dim_y) ;
 
