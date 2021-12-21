@@ -131,6 +131,7 @@ double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) //
     }
     return mat ;
 }
+/*
 void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
 {
     unsigned int  i , j;
