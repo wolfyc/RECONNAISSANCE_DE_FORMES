@@ -81,7 +81,7 @@ double** constantsDeNormalisation(unsigned int  n)
         for (q=0 ; q<=n-p;q++){
 
             C[p][q]=(2*p + 1)*(2*q + 1)/(4.);
-polyLegendre
+
         }
     }
 return C;

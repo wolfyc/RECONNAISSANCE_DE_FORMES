@@ -105,9 +105,9 @@ void FreeMoments (Moments *mom ){
 
 Moments getMoment(BmpImg img,unsigned int  n)
 {
-    Moments mom ;//= creer_moments(n) ;
+    Moments mom = creerMoments(n) ;
 
-    mom.centres_norm= matMomentsCentreNorme(img,n);
+    mom.centres_norm = matMomentsCentreNorme(img,n);
 
     mom.leg = matMomentsDeLegendre(img,n,mom.centres_norm);
 
@@ -115,10 +115,10 @@ Moments getMoment(BmpImg img,unsigned int  n)
 
 }
 
-double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {  
-                                                             
-unsigned int  p,q;                                                     
-double res = 0.00 ;                                          
+double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {
+
+unsigned int  p,q;
+double res = 0.00 ;
     for (p=0 ; p<=n ; p++ ){
         for (q=0 ; q<=n-p;q++){
             res+= pow(mat1[p][q]-mat2[p][q],2);

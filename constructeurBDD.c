@@ -13,7 +13,7 @@ void freeBDD(DataBase *bdd){
 
 void imgTotxt(){
     //DataBase bdd = creerBDD();
-    Moments momImg;// = creer_moments(N);
+    Moments momImg ;//= creerMoments(N);
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
     FILE *txtDB = fopen(sourcetxtDB,"w");
@@ -28,16 +28,19 @@ void imgTotxt(){
             char *imgPath = calloc (20,sizeof(char));
             fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
+            printf("%s" ,imgPath);
             momImg = getMoment(img,N);
             momImg.label = imgName;
             strcat(DBdest,imgName);
             strcat(DBdest,".txt");
             fprintf(txtDB,"%s\n",DBdest);
+
             ecrireMomentTxt(DBdest,momImg);
             printf("%s\n",imgName);
             printf("image %s uploaded \n", imgName);
             free(imgName);
             free(imgPath);
+
             }
         printf("\nBDD Text files succesfully created ! ;) \n");
         fclose(DB);

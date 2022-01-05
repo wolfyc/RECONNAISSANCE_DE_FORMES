@@ -5,15 +5,16 @@
 #include"constructeurBDD.h"
 int main(void)
 {
+   // imgTotxt();
 //chaine de caractère de la source vers l'image a testé
-    char * input_path="A_test.bmp"; 
+    char * input_path="A_test.bmp";
 //double pour stocké la distance entre les images stocké et l'image a testé
     double Mindist;
 //chaine de caractère qui le nom du prediction du program
     char * output;
 //declaration de la base de donnée
     DataBase bdd;
-//creation de la list chainé et l'affecter à bdd 
+//creation de la list chainé et l'affecter à bdd
     bdd = chainageListeBDD(sourcetxtDB);
 //lecture de l'image
     BmpImg InputImg=readBmpImage(input_path);
