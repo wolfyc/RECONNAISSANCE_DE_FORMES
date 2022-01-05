@@ -187,9 +187,9 @@ Moments lireMomentsTxt (char * filename ){
     if( fclose (fichier)== 0) {printf("successfully close \n");}
 return mom  ;
 }
-void afficherMoments (Moments mom, int legOrcenNor ){
+void afficherMoments (Moments mom, int legAndOrCenNor ){
     unsigned int i,j;
-    if ( legOrcenNor == 1|| legOrcenNor == 0){
+    if ( legAndOrCenNor == 1|| legAndOrCenNor == 0){
         printf("Moments geometrique centres, normes de %s sont : \n",mom.label);
         for ( i = 0 ; i<= mom.n ; i++ ){
             for ( j =0;j<= mom.n-i ; j++){
@@ -198,7 +198,7 @@ void afficherMoments (Moments mom, int legOrcenNor ){
             printf("\n");
         }
         }
-    if ( legOrcenNor == 2 || legOrcenNor == 0 ){
+    if ( legAndOrCenNor == 2 || legAndOrCenNor == 0 ){
         printf("Moments de Legendre de %s sont: \n", mom.label);
         for ( i = 0 ; i<=mom.n ; i++ ){
             for ( j =0;j<=mom.n-i ; j++){

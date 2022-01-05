@@ -86,12 +86,21 @@ void printButterfly();
 
 /** 
   * @param filename chaine de caractère du fichier txt à ecrire
-  * @param mom
-  * @return ART butterfly
+  * @param mom Moment d'une image a ecrire dans un fichier txt
+  * @return Nae
   * */
 void ecrireMomentTxt (char * filename , Moments mom  ) ;
 
+/** 
+  * @param filename chaine de caractère du fichier txt à lire
+  * @return un Moment lue a partir le fichier filename
+  * */
 Moments lireMomentsTxt (char * filename );
 
-void afficherMoments (Moments mom, int legOrcenNor ); //0 for leg -- 1 for norm 2 for leg
+/** 
+  * @param mom Moments
+  * @param legAndOrCenNor indice de fonctionalité 
+  * @return si l'indice = 0 => legendre et centré normé si 1 => moment geometrique centré normé finalement 2=> moment de legendre
+  * */
+void afficherMoments (Moments mom, int legAndOrCenNor ); 
 #endif // TOOLS_H_INCLUDED
