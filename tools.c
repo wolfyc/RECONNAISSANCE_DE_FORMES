@@ -65,9 +65,9 @@ void printButterfly(){
     printf("\t\t\t\t  \n");
      printf("\t\t\t\t                `         \'\n");
     printf("\t\t\t\t;,,,             `       \'             ,,,;\n");
-    printf("\t\t\t\t`YES8888bo.       :     :       .od8888YES\'\n");
-    printf("\t\t\t\t  888IO8DO88b.     :   :     .d8888I8DO88\n");
-    printf("\t\t\t\t  8LOVEY\'  `Y8b.   `   \'   .d8Y\'  `YLOVE8\n");
+    printf("\t\t\t\t`ZAIDI88bo.       :     :       .odMohamed\'\n");
+    printf("\t\t\t\t  888GUEDOUAH.     :   :     .d8888Khaled\n");
+    printf("\t\t\t\t  MAHFOUDI\'  `Y8b.   `   \'   .d8Y\'  `YAssil\n");
     printf("\t\t\t\t jTHEE!  .db.  Yb. \'   \' .dY  .db.  8THEE!\n");
     printf("\t\t\t\t   `888  Y88Y    `b ( ) d\'    Y88Y  888\'\n");
     printf("\t\t\t\t    8MYb  \'\"        ,\',        \"\'  dMY8\n");
@@ -115,10 +115,10 @@ Moments getMoment(BmpImg img,unsigned int  n)
 
 }
 
-double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {  // tested with moments calculated from same image
-                                                             //except that one of them is saved and red (in/from) a file
-unsigned int  p,q;                                                     // Result was 0.000004 Due to the use of the tmp variable
-double res = 0.00 ;                                          // in the function <lire_moments>
+double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {  
+                                                             
+unsigned int  p,q;                                                     
+double res = 0.00 ;                                          
     for (p=0 ; p<=n ; p++ ){
         for (q=0 ; q<=n-p;q++){
             res+= pow(mat1[p][q]-mat2[p][q],2);

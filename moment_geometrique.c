@@ -1,6 +1,7 @@
 #include "moment_geometrique.h"
 #define beta 2.00
-double MomentGeometrique (BmpImg img, unsigned int p,unsigned int q, unsigned int n)    // Tested 2.0
+
+double MomentGeometrique (BmpImg img, unsigned int p,unsigned int q, unsigned int n)   
 {
     unsigned int x,y;
     double res=0;
@@ -15,14 +16,12 @@ double MomentGeometrique (BmpImg img, unsigned int p,unsigned int q, unsigned in
                 res+=vanx[x][p]*vany[y][q] ;
             }
         }
-
     }
     return res;
 }
 
-double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned int n)  // Tested Ok 2.0
-{
-    double res=0.00; // correction res has not been initialized
+double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned int n)  {
+    double res=0.00; 
     double omega = MomentGeometrique(img,0,0,n);
     double x_bar = MomentGeometrique(img,1,0,n)/omega;
     double y_bar = MomentGeometrique(img,0,1,n)/omega;
@@ -43,7 +42,7 @@ double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned
     return res;
 }
 
-double ** matMomentsCentreNorme(BmpImg img,unsigned int n)   //Tested Ok 2.0
+double ** matMomentsCentreNorme(BmpImg img,unsigned int n) 
 {
 
     double ** mat_mom = creerMatAntiDiagonal (n+1);

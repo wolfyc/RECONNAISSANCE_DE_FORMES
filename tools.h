@@ -8,23 +8,9 @@
 #include<string.h>
 #include "myBmpGris.h"
 #include "moment_geometrique.h"
-//#include "tools.h"
 #include "legendre.h"
 #include "listeSC.h"
 #include "img_reconstruct.h"
-//#include "constructeurBDD.h"
-//#include "legendre.h"
-//linking headers with their .C fies
-
-
-/*
-
- typedef struct {
-    int n ;
-    double ** centres_norm;
-    double ** leg ;
-} Moments;
-//*/
 
 // creation et allocation d'une Matrice
 /**
@@ -33,12 +19,6 @@
   * @return une matrice de dimension dim_x * dim_y
   */
 double ** creerMatrice (unsigned int dim_x, unsigned int dim_y) ;
-// Matrice diagonale
-/**
-  * @param dim dimension de la matrice
-  *
-  * @return une matrice diagonale de dimension dim
-  */
 
   /**
   * @param dim dimxdim la dim de la mat
@@ -51,7 +31,6 @@ double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy);
 // Matrice anti diagonle diagonale
 /**
   * @param dim dimension de la matrice
-  *
   * @return une matrice de dimension dim_x * dim_y
   */
 double ** creerMatAntiDiagonal (unsigned int dim);
@@ -74,23 +53,42 @@ void freeMatrice(double ***mat, unsigned int dim_x);
 
 
 
-// Matrice de reconstruction de l'image equation 12
 /**
-  * @param dim_y dimension de la matrice
-  * @param dim_x dimension de la matrice
-  * @param n dimension de la matrice
-  * @return une matrice de dimension dim_x * dim_y
+  * @param n l'ordre
+  * @return une structure moment initialisé
   */
-
 Moments creerMoments(unsigned int n );
 
+/**
+  * @param mom l'adresse du moment
+  * @return free la memoire d'un moment
+  */
 void FreeMoments (Moments *mom );
-
+/**
+  * @param img une image
+  * @param n l'ordre 
+  * @return le Moment de l'image
+  */
 Moments getMoment(BmpImg img,unsigned int n);
 
-double distanceEuclidienne (double ** mat1 , double **mat2 ,unsigned int n ); // tested with moments calculated from same image
-
+/**
+  * @param mat1 matrice de double des moment de legendre
+  * @param mat2 matrice de double des moment de legendre
+  * @param n l'ordre
+  * @return la distance euclidienne entre deux matrice
+  */
+double distanceEuclidienne (double ** mat1 , double **mat2 ,unsigned int n );
+ /** 
+  * @param aucun
+  * @return ART butterfly
+  * */
 void printButterfly();
+
+/** 
+  * @param filename chaine de caractère du fichier txt à ecrire
+  * @param mom
+  * @return ART butterfly
+  * */
 void ecrireMomentTxt (char * filename , Moments mom  ) ;
 
 Moments lireMomentsTxt (char * filename );
