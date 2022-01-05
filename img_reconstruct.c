@@ -34,6 +34,7 @@ void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigne
 
 
     unsigned int i,j;
+
     for ( i = 0 ; i<dim_x; i++)
     {
         for ( j =0 ; j<dim_y; j++)
