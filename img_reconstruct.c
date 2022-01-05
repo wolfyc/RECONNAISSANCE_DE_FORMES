@@ -1,21 +1,6 @@
 #include "img_reconstruct.h"
 
-/*double pixel_rec (Moments mom ,double x_norm , double y_norm  ){
-unsigned int p ,q;
-double res=0.00;
-double ** co = matCoefficientLegendre(mom.n);
- for (p=0 ; p< mom.n ; p++ ){
-    for (q=0 ; q<mom.n-p ;q++){
-
-        res += mom.leg[p][q]*P(x_norm,p,co)*P(y_norm,q,co);
-
-    }
-}
-return res ;
-}
-*/
-
-double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim_y )  //
+double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim_y )
 {
     unsigned int  x,y,p,q;
     double** mat;
@@ -23,7 +8,6 @@ double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim
     mom=lireMomentsTxt(filename);
     double ** co = matCoefficientLegendre(mom.n);
     mat= creerMatrice(dim_x,dim_y);
-
 
     for ( x = 0; x < dim_x; x++)
     {

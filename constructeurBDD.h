@@ -3,7 +3,7 @@
 
 #include "tools.h"
 
-typedef struct { // Starting point
+typedef struct { 
     ListeSC * images;
 } DataBase ;
 
@@ -21,7 +21,7 @@ DataBase creerBDD();
   */
 void freeBDD(DataBase *bdd);
 
-// creation des fichiers txt a partir des img
+// creation des fichiers txt de moments a partir des img
 /**
   *
   * @param aucun

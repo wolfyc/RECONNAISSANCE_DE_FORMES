@@ -1,13 +1,6 @@
 #include"constructeurBDD.h"
 
-/*Moments logistic(Moments mom){
-    BmpImg img1;
-    char *path1 = "DATA/DB/A.BMP"; // path to txt file with images.
-    img1 = readBmpImage(path1);
-    mom=get_mom(img1,N);
-    return mom;
-}*/
-//*
+
 DataBase creerBDD(){
     DataBase bdd;
     bdd.images = creerListe(sizeof(Moments));
