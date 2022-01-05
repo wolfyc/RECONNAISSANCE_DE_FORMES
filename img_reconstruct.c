@@ -18,7 +18,7 @@ double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim
             {
                 for (q=0 ; q<= mom.n-p ; q++)
                 {
-                    mat[x][y] += mom.leg[p][q]*P((2*(double)x/dim_x-1),p,co)*P((2*(double)y/dim_y-1),q,co);
+                    mat[x][y] += mom.leg[p][q]*polyLegendre((2*(double)x/dim_x-1),p,co)*polyLegendre((2*(double)y/dim_y-1),q,co);
                 }
             }
         }
