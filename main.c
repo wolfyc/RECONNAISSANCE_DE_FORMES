@@ -5,21 +5,23 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    char * input_path="A_test.bmp";
+//chaine de caractère de la source vers l'image a testé
+    char * input_path="A_test.bmp"; 
+//double pour stocké la distance entre les images stocké et l'image a testé
     double Mindist;
+//chaine de caractère qui le nom du prediction du program
     char * output;
-    //dataBaseGOD();
+//declaration de la base de donnée
     DataBase bdd;
+//creation de la list chainé et l'affecter à bdd 
     bdd = chainageListeBDD(sourcetxtDB);
-    //afficherListe(bdd.images);
-   // printf("enter your image directory ... \n");
-//    scanf("%s \n" ,input_path);
+//lecture de l'image
     BmpImg InputImg=readBmpImage(input_path);
+//creation du moment de l'image
     Moments InputMom = getMoment(InputImg,N);
-
+//cherchons l'image la plus proche a l'image teste dans la base de données
     Mindist = distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
     output = ((Moments*)bdd.images->root->data)->label;
-
     for(bdd.images->current=bdd.images->root;hasNext(bdd.images);getNext(bdd.images)){
         if (Mindist>distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
             Mindist=distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
@@ -27,34 +29,11 @@ int main(void)
 
         }
     }
-
+//affichage du resultat
 printf("%s \t %lf\n" ,output,Mindist);
-
+//desallocation dynamique de la BDD
 freeBDD(&bdd);
+// a little art won't hurt
 printButterfly();
     return 0;
 }
-/*
-BmpImg img1,img2;
-
-   char* path1 = "A.bmp";
-   char* path2 = "A_test.bmp";
-
-   img1 = readBmpImage(path1);
-   img2 = readBmpImage(path2);
-
-Moments mom1=get_mom(img1,46);
-
-mom1.label=path1;
-
-Moments mom2=get_mom(img2,46);
-
-mom2.label=path2;
-ecrireMomentTxt("test1.txt",mom1);
-
-printf("La distance entre les deux image %s et %s  est : %lf\n" ,mom1.label,mom2.label,Dist_Euc(mom1.leg,mom2.leg,N));
-
- Free_moments(&mom1);
-
- Free_moments(&mom2);
-*/
