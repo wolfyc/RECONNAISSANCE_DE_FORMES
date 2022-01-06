@@ -35,7 +35,7 @@ double momentGeoCentreNorme (BmpImg img,unsigned int p, unsigned int q, unsigned
         {
             if (getPixel( img, x, y )!=0)
             {
-                res+=vanx_centre[x][p]*vany_centre[y][q]/pow(beta*omega,(p+q+2)/2.) ; //point pour la conversion en float
+                res+=vanx_centre[x][p]*vany_centre[y][q]/pow(beta*omega,(p+q+2)/2.) ;
             }
         }
     }

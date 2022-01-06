@@ -2,8 +2,8 @@
 #define LINKAGE_H_INCLUDED
 
 #define N 40 
-#define sourceDB "DATA/DB/DBimg.txt" //file of image names
-#define sourcetxtDB "DATA/DB/txtDB.txt" // file of converted to moments file names
+#define sourceDB "DATA/DB/DBimg.txt" //file of images repertoires
+#define sourcetxtDB "DATA/DB/txtDB.txt" // file  moments repertoires
 #define destDB "DATA/DB/" //Data Base directory
 
 typedef struct {

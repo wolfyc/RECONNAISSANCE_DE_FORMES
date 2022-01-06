@@ -5,7 +5,7 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-   // imgTotxt();
+    imgTotxt();
 //chaine de caractère de la source vers l'image a testé
     char * input_path="A_test.bmp";
 //double pour stocké la distance entre les images stocké et l'image a testé

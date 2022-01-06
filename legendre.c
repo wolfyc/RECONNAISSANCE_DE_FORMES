@@ -61,7 +61,7 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
     return a;
 }
 
-double polyLegendre(double x,unsigned int  n, double ** co )  // OK OK 2.0
+double polyLegendre(double x,unsigned int  n, double ** co )  
 {
     unsigned int i ;
     double poly =0.00;
@@ -87,7 +87,7 @@ double** constantsDeNormalisation(unsigned int  n)
 return C;
 }
 //equation 9
-double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg, double ** Cpq)  // Tested OK
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg, double ** Cpq) 
 {
     unsigned int  i,j;
     double res=0.00;
@@ -104,7 +104,7 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
 
     return res ;
 }
-double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) // Tested OK
+double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) 
 {
     double ** mat = creerMatAntiDiagonal(n+1);
     double ** co= matCoefficientLegendre(n);

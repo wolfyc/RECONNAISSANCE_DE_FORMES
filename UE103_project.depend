@@ -343,3 +343,69 @@
 	"myBmpGris.h"
 	"constructeurBDD.h"
 
+1641501786 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\img_reconstruct.c
+	"img_reconstruct.h"
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\img_reconstruct.h
+	"linkage.h"
+	"tools.h"
+
+1641502389 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\linkage.h
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\tools.h
+	"linkage.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	"myBmpGris.h"
+	"moment_geometrique.h"
+	"legendre.h"
+	"listeSC.h"
+	"img_reconstruct.h"
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\mybmpgris.h
+	<stdlib.h>
+	<stdio.h>
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\moment_geometrique.h
+	"linkage.h"
+	"tools.h"
+	"myBmpGris.h"
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\legendre.h
+	"linkage.h"
+	"tools.h"
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\listesc.h
+	"linkage.h"
+	"tools.h"
+
+1641501786 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\listesc.c
+	"listeSC.h"
+
+1641502067 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"myBmpGris.h"
+	"constructeurBDD.h"
+
+1641501786 c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\constructeurbdd.h
+	"tools.h"
+
+1641501786 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\mybmpgris.c
+	"myBmpGris.h"
+
+1641502297 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\constructeurbdd.c
+	"constructeurBDD.h"
+
+1641502344 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\legendre.c
+	"legendre.h"
+
+1641502420 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\moment_geometrique.c
+	"moment_geometrique.h"
+
+1641502480 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\tools.c
+	"tools.h"
+

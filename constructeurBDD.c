@@ -12,12 +12,11 @@ void freeBDD(DataBase *bdd){
 }
 
 void imgTotxt(){
-    //DataBase bdd = creerBDD();
-    Moments momImg ;//= creerMoments(N);
+    
+    Moments momImg ;
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
     FILE *txtDB = fopen(sourcetxtDB,"w");
-    //FILE *DBdest = fopen(destDB,"w");
     int img_count = 0;
     if (DB != NULL && txtDB != NULL) {
         fscanf(DB,"%d",&img_count);
@@ -79,7 +78,6 @@ DataBase chainageListeBDD(char* sourcetxt){
     }
     fclose(txtDB);
     printf("Done\n");
-   // Free_moments(&momImg);
     return data_base;
 }
 

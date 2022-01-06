@@ -1,7 +1,6 @@
 #include "tools.h"
-//creation de matrice rectangulaire.
 
-double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
+double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)  
 {
     double **mat = malloc(dim_x*sizeof(double*));
     unsigned int i;
@@ -11,7 +10,7 @@ double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)  //tested OK 2.0
     }
     return mat;
 }
-double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)  // tested OK 2.0
+double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)  
 {
     double ** van_m = creerMatrice (dim,pow_max+1);
     unsigned int i, j;
@@ -24,8 +23,8 @@ double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)  // 
     }
     return van_m;
 }
-//creation matrice anti diago pour moment centr�es norm�
-double ** creerMatAntiDiagonal (unsigned int dim) // tested OK 2.0
+
+double ** creerMatAntiDiagonal (unsigned int dim) 
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -36,7 +35,7 @@ double ** creerMatAntiDiagonal (unsigned int dim) // tested OK 2.0
     return mat;
 }
 
-double ** creerMatDiagonale (unsigned int dim) // tested OK 2.0
+double ** creerMatDiagonale (unsigned int dim) 
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -49,7 +48,7 @@ double ** creerMatDiagonale (unsigned int dim) // tested OK 2.0
 }
 
 
-void freeMatrice(double ***mat,unsigned int dim_x)   //Corrected 2.0
+void freeMatrice(double ***mat,unsigned int dim_x)  
 {
     unsigned int i;
     for ( i = 0; i< dim_x; i++)
@@ -129,7 +128,7 @@ res = sqrt (res);
 return res;
 }
 
-void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
+void ecrireMomentTxt (char * filename , Moments mom  ) 
 {
     unsigned int  i , j;
     FILE * fichier = fopen (filename,"w");
@@ -152,7 +151,7 @@ void ecrireMomentTxt (char * filename , Moments mom  ) // Tested OK
     }
 }
 else {printf("Error Opening File Please Fix the problem and retry \n");}
- if( fclose (fichier)== 0) {printf("successfully close \n");}
+ if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
 
 }
 
@@ -184,7 +183,7 @@ Moments lireMomentsTxt (char * filename ){
     else {
         printf("Error Opening File Please Fix the problem and retry \n");
     }
-    if( fclose (fichier)== 0) {printf("successfully close \n");}
+    if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
 return mom  ;
 }
 void afficherMoments (Moments mom, int legAndOrCenNor ){
