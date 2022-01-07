@@ -5,7 +5,7 @@
 #include"constructeurBDD.h"
 int main(void)
 {
-    imgTotxt();
+   imgTotxt();
 //chaine de caractère de la source vers l'image a testé
     char * input_path="A_test.bmp";
 //double pour stocké la distance entre les images stocké et l'image a testé
@@ -20,6 +20,7 @@ int main(void)
     BmpImg InputImg=readBmpImage(input_path);
 //creation du moment de l'image
     Moments InputMom = getMoment(InputImg,N);
+    InputMom.label="InputImg";
 //cherchons l'image la plus proche a l'image teste dans la base de données
     Mindist = distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
     output = ((Moments*)bdd.images->root->data)->label;
@@ -32,9 +33,10 @@ int main(void)
     }
 //affichage du resultat
 printf("%s \t %lf\n" ,output,Mindist);
+FreeMoments(&InputMom);
 //desallocation dynamique de la BDD
 freeBDD(&bdd);
-// a little art won't hurt
-printButterfly();
+
+
     return 0;
 }

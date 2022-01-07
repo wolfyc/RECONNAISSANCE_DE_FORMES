@@ -1,6 +1,6 @@
 #include "tools.h"
 
-double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)  
+double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)
 {
     double **mat = malloc(dim_x*sizeof(double*));
     unsigned int i;
@@ -10,7 +10,7 @@ double ** creerMatrice (unsigned int dim_x, unsigned int dim_y)
     }
     return mat;
 }
-double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)  
+double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)
 {
     double ** van_m = creerMatrice (dim,pow_max+1);
     unsigned int i, j;
@@ -24,7 +24,7 @@ double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy)
     return van_m;
 }
 
-double ** creerMatAntiDiagonal (unsigned int dim) 
+double ** creerMatAntiDiagonal (unsigned int dim)
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -35,7 +35,7 @@ double ** creerMatAntiDiagonal (unsigned int dim)
     return mat;
 }
 
-double ** creerMatDiagonale (unsigned int dim) 
+double ** creerMatDiagonale (unsigned int dim)
 {
     double **mat = malloc(dim*sizeof(double*));
     unsigned int i;
@@ -48,7 +48,7 @@ double ** creerMatDiagonale (unsigned int dim)
 }
 
 
-void freeMatrice(double ***mat,unsigned int dim_x)  
+void freeMatrice(double ***mat,unsigned int dim_x)
 {
     unsigned int i;
     for ( i = 0; i< dim_x; i++)
@@ -60,29 +60,6 @@ void freeMatrice(double ***mat,unsigned int dim_x)
     if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
-void printButterfly(){
-    printf("\t\t\t\t  \n");
-     printf("\t\t\t\t                `         \'\n");
-    printf("\t\t\t\t;,,,             `       \'             ,,,;\n");
-    printf("\t\t\t\t`ZAIDI88bo.       :     :       .odMohamed\'\n");
-    printf("\t\t\t\t  888GUEDOUAH.     :   :     .d8888Khaled\n");
-    printf("\t\t\t\t  MAHFOUDI\'  `Y8b.   `   \'   .d8Y\'  `YAssil\n");
-    printf("\t\t\t\t jTHEE!  .db.  Yb. \'   \' .dY  .db.  8THEE!\n");
-    printf("\t\t\t\t   `888  Y88Y    `b ( ) d\'    Y88Y  888\'\n");
-    printf("\t\t\t\t    8MYb  \'\"        ,\',        \"\'  dMY8\n");
-    printf("\t\t\t\t   j8prECIOUSgf\"\'   \':'   `\"?g8prECIOUSk\n");
-    printf("\t\t\t\t     \'Y\'   .8\'     d\' \'b     \'8.   \'Y\'\n");
-    printf("\t\t\t\t      !   .8\' db  d\'; ;`b  db \'8.   !\n");
-    printf("\t\t\t\t         d88  `\'  8 ; ; 8  `\'  88b\n");
-    printf("\t\t\t\t        d88Ib   .g8 \',\' 8g.   dI88b\n");
-    printf("\t\t\t\t       :888LOVE88Y\'     \'Y88LOVE888:\n");
-    printf("\t\t\t\t       \'! THEE888\'       `888THEE !\'\n");
-    printf("\t\t\t\t          \'8Y  `Y         Y\'  Y8\'\n");
-    printf("\t\t\t\t           Y                   Y\n");
-    printf("\t\t\t\t           !                   !\n");
-    printf("\n");
-    printf("\n");
-}
 
 
 
@@ -128,7 +105,7 @@ res = sqrt (res);
 return res;
 }
 
-void ecrireMomentTxt (char * filename , Moments mom  ) 
+void ecrireMomentTxt (char * filename , Moments mom  )
 {
     unsigned int  i , j;
     FILE * fichier = fopen (filename,"w");
