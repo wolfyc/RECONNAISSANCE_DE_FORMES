@@ -2,9 +2,7 @@
 #define MOMENT_GEOMETRIQUE_H_INCLUDED
 #include "linkage.h"
 #include "tools.h"
-/*#include "tools.h"
-#include "myBmpGris.h"
-//*/
+
 // Moment geometrique equation (2)
 /**
   * @param img image binaire
