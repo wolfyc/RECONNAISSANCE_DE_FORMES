@@ -295,16 +295,15 @@
 	"listeSC.h"
 	"img_reconstruct.h"
 
-1641559529 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
+1641640563 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
 
 1639748975 c:\users\khale\desktop\last\reconnaissance_de_formes\mybmpgris.h
 	<stdlib.h>
 	<stdio.h>
 
-1640118405 c:\users\khale\desktop\last\reconnaissance_de_formes\moment_geometrique.h
+1641577520 c:\users\khale\desktop\last\reconnaissance_de_formes\moment_geometrique.h
 	"linkage.h"
 	"tools.h"
-	"myBmpGris.h"
 
 1641400468 c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.h
 	"linkage.h"
@@ -336,7 +335,7 @@
 1641555994 source:c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.c
 	"legendre.h"
 
-1641559529 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
+1641641286 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tools.h"
