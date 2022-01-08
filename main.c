@@ -8,7 +8,7 @@ int main(void)
 //De-commentez la prochaine ligne pour re-créer la Base de Données
   //imgTotxt();
 //chaine de caractère de la source vers l'image a testé
-    char * input_path="InputImg/B_test.bmp";
+    char * input_path="InputImg/A_test.bmp";
 //double pour stocké la distance entre les images stocké et l'image à testé
     double Mindist;
 //chaine de caractère qui le nom du prediction du program
@@ -18,7 +18,7 @@ int main(void)
 //creation de la list chainé et l'affecter à bdd
     bdd = chainageListeBDD(sourcetxtDB);
 // De-commentez la prochaine ligne pour re-créer la Base de Données Pour afficher la Base de Données
-// afficherListe(bdd.images);
+//afficherBdd(&bdd);
 //lecture de l'image
     BmpImg InputImg=readBmpImage(input_path);
 //creation du moment de l'image

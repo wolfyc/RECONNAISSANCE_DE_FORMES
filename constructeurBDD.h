@@ -3,7 +3,7 @@
 
 #include "tools.h"
 
-typedef struct { 
+typedef struct {
     ListeSC * images;
 } DataBase ;
 
@@ -18,6 +18,13 @@ DataBase creerBDD();
   *
   * @param bdd pointeur vers la base de donné
   * @return void
+  */
+void afficherBdd (DataBase* bdd);
+// Afficher La base de données
+/**
+  *
+  * @param bdd pointeur vers la base de donné
+  * @return Void
   */
 void freeBDD(DataBase *bdd);
 

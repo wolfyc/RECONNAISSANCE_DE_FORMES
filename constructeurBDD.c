@@ -10,9 +10,11 @@ DataBase creerBDD(){
 void freeBDD(DataBase *bdd){
     freeListe(bdd->images);
 }
-
+void afficherBdd (DataBase* bdd){
+afficherListe(bdd->images);
+}
 void imgTotxt(){
-    
+
     Moments momImg ;
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
@@ -80,4 +82,5 @@ DataBase chainageListeBDD(char* sourcetxt){
     printf("Done\n");
     return data_base;
 }
+
 
