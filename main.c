@@ -28,7 +28,6 @@ int main(void)
     Mindist = distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->root->data)->leg,N);
     output = ((Moments*)bdd.images->root->data)->label;
     for(bdd.images->current=bdd.images->root;hasNext(bdd.images);getNext(bdd.images)){
-            printf("%s \t %lf\n" ,((Moments*)bdd.images->current->data)->label,distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N));
         if (Mindist>distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N)){
             Mindist=distanceEuclidienne(InputMom.leg,((Moments*)bdd.images->current->data)->leg,N);
             output = ((Moments*)bdd.images->current->data)->label;
@@ -37,7 +36,7 @@ int main(void)
         }
     }
 //affichage du resultat
-printf("%s \t %lf\n" ,output,Mindist);
+printf("La forme la plus proche de l'image %s est : %s \nLes distance eucledienne entre leurs moments de Legendre est : %lf\n" ,input_path,output,Mindist);
 FreeMoments(&InputMom);
 //desallocation dynamique de la BDD
 freeBDD(&bdd);
