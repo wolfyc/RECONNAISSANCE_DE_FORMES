@@ -36,7 +36,7 @@ int main(void)
         }
     }
 //affichage du resultat
-printf("La forme la plus proche de l'image %s est : %s \nLes distance eucledienne entre leurs moments de Legendre est : %lf\n" ,input_path,output,Mindist);
+printf("La forme la plus proche de l'image %s est : %s \nLa distance euclidienne entre leurs moments de Legendre est : %lf\n" ,input_path,output,Mindist);
 FreeMoments(&InputMom);
 //desallocation dynamique de la BDD
 freeBDD(&bdd);
