@@ -7,6 +7,10 @@ int main(void)
 {
 //De-commentez la prochaine ligne pour re-créer la Base de Données
   //imgTotxt();
+  // mise a jour ? bdd
+    //liste d'image a reconnaitre fait ton choix
+        // reconstruire ?
+        
 //chaine de caractère de la source vers l'image a testé
     char * input_path="InputImg/A_test.bmp";
 //double pour stocké la distance entre les images stocké et l'image à testé
