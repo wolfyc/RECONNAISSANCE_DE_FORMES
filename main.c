@@ -8,22 +8,16 @@
 
 int main(void)
 {
-<<<<<<< HEAD
+
     int a;
     char  tmp[20] ;
     char  input_path[]= TestDir;
     char c[]=destDB ;
-=======
-//De-commentez la prochaine ligne pour re-créer la Base de Données
-  //imgTotxt();
-  // mise a jour ? bdd
-    //liste d'image a reconnaitre fait ton choix
-        // reconstruire ?
-        
-//chaine de caractère de la source vers l'image a testé
-    char * input_path="InputImg/A_test.bmp";
+
+
+
 //double pour stocké la distance entre les images stocké et l'image à testé
->>>>>>> 1f4ebe403c1120feebcbc08f2140118c73c84651
+
     double Mindist;
     char * output;
 
