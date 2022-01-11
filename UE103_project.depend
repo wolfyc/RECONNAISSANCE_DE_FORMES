@@ -277,7 +277,7 @@
 	"myBmpGris.h"
 	"constructeurBDD.h"
 
-1641654807 source:c:\users\khale\desktop\last\reconnaissance_de_formes\constructeurbdd.c
+1641921744 source:c:\users\khale\desktop\last\reconnaissance_de_formes\constructeurbdd.c
 	"constructeurBDD.h"
 
 1641654799 c:\users\khale\desktop\last\reconnaissance_de_formes\constructeurbdd.h
@@ -295,7 +295,7 @@
 	"listeSC.h"
 	"img_reconstruct.h"
 
-1641640563 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
+1641921464 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
 
 1639748975 c:\users\khale\desktop\last\reconnaissance_de_formes\mybmpgris.h
 	<stdlib.h>
@@ -317,7 +317,7 @@
 	"linkage.h"
 	"tools.h"
 
-1641403501 source:c:\users\khale\desktop\last\reconnaissance_de_formes\img_reconstruct.c
+1641922750 source:c:\users\khale\desktop\last\reconnaissance_de_formes\img_reconstruct.c
 	"img_reconstruct.h"
 
 1640118405 source:c:\users\khale\desktop\last\reconnaissance_de_formes\listesc.c
@@ -329,18 +329,19 @@
 1639748975 source:c:\users\khale\desktop\last\reconnaissance_de_formes\mybmpgris.c
 	"myBmpGris.h"
 
-1641560619 source:c:\users\khale\desktop\last\reconnaissance_de_formes\tools.c
+1641921131 source:c:\users\khale\desktop\last\reconnaissance_de_formes\tools.c
 	"tools.h"
 
 1641555994 source:c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.c
 	"legendre.h"
 
-1641753495 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
+1641922934 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tools.h"
 	"myBmpGris.h"
 	"constructeurBDD.h"
+	<string.h>
 
 1641501786 source:c:\users\hrf_m\onedrive\desktop\reconnaissance_de_formes\reconnaissance_de_formes\img_reconstruct.c
 	"img_reconstruct.h"

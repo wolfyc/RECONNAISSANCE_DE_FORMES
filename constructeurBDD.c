@@ -14,7 +14,7 @@ void afficherBdd (DataBase* bdd){
 afficherListe(bdd->images);
 }
 void imgTotxt(){
-
+    printf("Creation de la base de donnees en cours ... \n");
     Moments momImg ;
     BmpImg img;
     FILE *DB = fopen(sourceDB,"r");
@@ -29,7 +29,7 @@ void imgTotxt(){
             char *imgPath = calloc (20,sizeof(char));
             fscanf(DB,"%s %s",imgPath,imgName);
             img = readBmpImage(imgPath);
-            printf("%s" ,imgPath);
+         //   printf("%s" ,imgPath);
             momImg = getMoment(img,N);
             momImg.label = imgName;
             strcat(DBdest,imgName);
@@ -37,22 +37,24 @@ void imgTotxt(){
             fprintf(txtDB,"%s\n",DBdest);
 
             ecrireMomentTxt(DBdest,momImg);
-            printf("%s\n",imgName);
-            printf("image %s uploaded \n", imgName);
+           // printf("%s\n",imgName);
+         //   printf("image %s uploaded \n", imgName);
             free(imgName);
             free(imgPath);
 
             }
-        printf("\nBDD Text files succesfully created ! ;) \n");
+       // printf("\nBDD Text files succesfully created ! ;) \n");
         fclose(DB);
         fclose(txtDB);
     }else
         printf("ERROR DB FILE MISSING OR DAMMAGED");
     FreeMoments(&momImg);
+    printf(" base de donnees creer avec succes \n");
 
 }
 
 DataBase chainageListeBDD(char* sourcetxt){
+
     int i ;
     DataBase data_base = creerBDD();
     Moments momImg;
@@ -60,9 +62,8 @@ DataBase chainageListeBDD(char* sourcetxt){
     FILE *txtDB = fopen(sourcetxtDB,"r");
     if (txtDB != NULL){
         fscanf (txtDB,"%d\n",&fileCount);
-        printf("-----file count %d-------\n",fileCount);
         for ( i=1; i<=fileCount; i++){
-            printf("filepath of file %d aquired thus ",i);
+          //  printf("filepath of file %d aquired thus ",i);
             char* filePath = calloc (25,sizeof(char));
             fscanf(txtDB,"%s\n",filePath);
 
@@ -70,7 +71,7 @@ DataBase chainageListeBDD(char* sourcetxt){
 
             ajout(data_base.images,&momImg,2);
 
-        printf("%s added to liste\n",((Moments*)data_base.images->current->data)->label);
+        //printf("%s added to liste\n",((Moments*)data_base.images->current->data)->label);
         free(filePath);
 
         }
@@ -79,7 +80,6 @@ DataBase chainageListeBDD(char* sourcetxt){
         printf("ERROR DB FILE MISSING OR DAMMAGED\n");
     }
     fclose(txtDB);
-    printf("Done\n");
     return data_base;
 }
 

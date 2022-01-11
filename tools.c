@@ -57,7 +57,7 @@ void freeMatrice(double ***mat,unsigned int dim_x)
     }
     free(*mat);
     *mat = NULL;
-    if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
+  //  if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
 
@@ -128,8 +128,8 @@ void ecrireMomentTxt (char * filename , Moments mom  )
     }
 }
 else {printf("Error Opening File Please Fix the problem and retry \n");}
- if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
-
+ //if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
+fclose (fichier) ;
 }
 
 Moments lireMomentsTxt (char * filename ){
@@ -160,7 +160,8 @@ Moments lireMomentsTxt (char * filename ){
     else {
         printf("Error Opening File Please Fix the problem and retry \n");
     }
-    if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
+    //if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
+    fclose (fichier);
 return mom  ;
 }
 void afficherMoments (Moments mom, int legAndOrCenNor ){

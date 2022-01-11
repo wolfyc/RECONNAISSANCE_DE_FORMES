@@ -27,7 +27,8 @@ double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim
 }
 
 void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y)
-{
+{   printf("\n Reconstruction en cours ... \n" );
+
     double ** mat=reconstructionImg ( filemom,dim_x,dim_y );
 
     BmpImg img=createBmpImg("Result",dim_x,dim_y) ;
@@ -54,5 +55,6 @@ void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigne
     writeBmpImage(imgName,&img);
     freeMatrice(&mat,dim_x);
     freeBmpImg(&img);
+    printf("\n Image reconstruite avec Succes ! \n" );
 }
 
