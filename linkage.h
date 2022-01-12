@@ -2,9 +2,9 @@
 #define LINKAGE_H_INCLUDED
 
 #define N  46
-#define sourceDB "DATA/DB/DBimg.txt" //file of images repertoires
-#define sourcetxtDB "DATA/DB/txtDB.txt" // file  moments repertoires
-#define destDB "DATA/DB/" //Data Base directory
+#define sourceDB "DATA/DB/DBimg.txt" //repertoire du fichiers Map images
+#define sourcetxtDB "DATA/DB/txtDB.txt" //repertoire du fichiers Map Moment des images
+#define destDB "DATA/DB/" //repertoire du base de données
 #define dimRecx 32
 #define dimRecy 32
 #define Testfile "InputImg/TestImg.txt"

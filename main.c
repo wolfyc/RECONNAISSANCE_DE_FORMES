@@ -8,17 +8,20 @@
 
 int main(void)
 {
-
+//variable de commande sur l'interface.
     int a;
+//medium de concatenation 
     char  tmp[20] ;
+//le repertoire vers la source
     char  input_path[]= TestDir;
-    char c[]=destDB ;
+//initialisation vers le repertoire de la base de données 
+    char c[] = destDB ;
 
 
 
 //double pour stocké la distance entre les images stocké et l'image à testé
-
     double Mindist;
+// variable pour memorisé le nom de l'image reconue.
     char * output;
 
     printf(" Voulez-vous creer une nouvelle base de donnee ? [1/0] \n");
@@ -26,20 +29,20 @@ int main(void)
      while ((a != 1 )&&(a != 0 )){
     printf(" Veuillez rentrer 1 ou 0! [oui/non]:[1/0] \n");
     scanf("%d" ,&a);
-
     }
     if (a == 1) {
         imgTotxt();
     }
-    printf(" Voulez-vous faire une reconnaisssance de forme ?[1/0]\n");
+    printf("Voulez-vous faire une reconnaisssance de forme ?[1/0]\n");
     scanf("%d" ,&a);
-    while ((a != 1) &&(a != 0)){
-    printf(" Veuillez rentrer 1 ou 0! [oui/non]:[1/0] \n");
+    while ((a != 1) && (a != 0)){
+    printf("Veuillez rentrer 1 ou 0! [oui/non]:[1/0] \n");
     scanf("%d" ,&a);
     }
      if (a == 0) {
         exit(0);
     }
+    
     printf(" Veuillez choisir un nom d'image a reconnaitre de la liste suivante : \n \n ");
     FILE *fichier = fopen(Testfile,"r");
      if (fichier != NULL ) {
