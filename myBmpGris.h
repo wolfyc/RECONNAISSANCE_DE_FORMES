@@ -1,6 +1,6 @@
 #ifndef MYBMPGRIS_H_INCLUDED
 #define MYBMPGRIS_H_INCLUDED
-//#include "linkage.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 

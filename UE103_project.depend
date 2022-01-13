@@ -283,8 +283,7 @@
 1641654799 c:\users\khale\desktop\last\reconnaissance_de_formes\constructeurbdd.h
 	"tools.h"
 
-1641400468 c:\users\khale\desktop\last\reconnaissance_de_formes\tools.h
-	"linkage.h"
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\tools.h
 	<stdlib.h>
 	<stdio.h>
 	<math.h>
@@ -295,26 +294,22 @@
 	"listeSC.h"
 	"img_reconstruct.h"
 
-1641921464 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
+1642105285 c:\users\khale\desktop\last\reconnaissance_de_formes\linkage.h
 
-1639748975 c:\users\khale\desktop\last\reconnaissance_de_formes\mybmpgris.h
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\mybmpgris.h
 	<stdlib.h>
 	<stdio.h>
 
-1641577520 c:\users\khale\desktop\last\reconnaissance_de_formes\moment_geometrique.h
-	"linkage.h"
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\moment_geometrique.h
 	"tools.h"
 
-1641400468 c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.h
-	"linkage.h"
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.h
 	"tools.h"
 
-1639835294 c:\users\khale\desktop\last\reconnaissance_de_formes\listesc.h
-	"linkage.h"
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\listesc.h
 	"tools.h"
 
-1641400468 c:\users\khale\desktop\last\reconnaissance_de_formes\img_reconstruct.h
-	"linkage.h"
+1642105550 c:\users\khale\desktop\last\reconnaissance_de_formes\img_reconstruct.h
 	"tools.h"
 
 1641922750 source:c:\users\khale\desktop\last\reconnaissance_de_formes\img_reconstruct.c
@@ -335,7 +330,7 @@
 1641555994 source:c:\users\khale\desktop\last\reconnaissance_de_formes\legendre.c
 	"legendre.h"
 
-1641923486 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
+1642105550 source:c:\users\khale\desktop\last\reconnaissance_de_formes\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tools.h"

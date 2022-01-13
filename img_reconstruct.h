@@ -1,6 +1,6 @@
 #ifndef IMG_RECONSTRUCT_H_INCLUDED
 #define IMG_RECONSTRUCT_H_INCLUDED
-#include "linkage.h"
+
 #include "tools.h"
 
 
@@ -14,7 +14,7 @@
   */
 double** reconstructionImg (char * filename,unsigned int  dim_x,unsigned int  dim_y );
 
-// 
+//
 /**
   * @param filemom moment structure geom
   * @param imgName le nom de l'image

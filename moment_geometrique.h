@@ -1,6 +1,5 @@
 #ifndef MOMENT_GEOMETRIQUE_H_INCLUDED
 #define MOMENT_GEOMETRIQUE_H_INCLUDED
-#include "linkage.h"
 #include "tools.h"
 
 // Moment geometrique equation (2)

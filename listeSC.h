@@ -3,7 +3,7 @@
 	// Bibliotheques "standards"
 
 	// Bibliotheques personnelles (a completer si besoin)
-#include "linkage.h"
+
 #include "tools.h"
 
 	/// Partie specifique a implementer (par les etudiants)

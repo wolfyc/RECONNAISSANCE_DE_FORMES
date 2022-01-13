@@ -1,6 +1,6 @@
 #ifndef LEGENDRE_H_INCLUDED
 #define LEGENDRE_H_INCLUDED
-#include "linkage.h"
+
 #include "tools.h"
 
 // calculateur du coef de legendre
@@ -36,9 +36,9 @@ double** constantsDeNormalisation(unsigned int  n);
 
 /**
   * @param BmpImg string of char.
-  * @param p 
-  * @param q 
-  * @param n l'ordre du moment 
+  * @param p
+  * @param q
+  * @param n l'ordre du moment
   * @param co mat de coeficient de legendre
   * @param momg mat des moment geometrique
   * @param Cpq mat constants De Normalisation

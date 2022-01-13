@@ -1,7 +1,7 @@
 #ifndef TOOLS_H_INCLUDED
 #define TOOLS_H_INCLUDED
 
-#include "linkage.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -11,6 +11,21 @@
 #include "legendre.h"
 #include "listeSC.h"
 #include "img_reconstruct.h"
+
+#define N  46
+#define sourceDB "DATA/DB/DBimg.txt" //repertoire du fichiers Map images
+#define sourcetxtDB "DATA/DB/txtDB.txt" //repertoire du fichiers Map Moment des images
+#define destDB "DATA/DB/" //repertoire du base de données
+
+
+
+typedef struct {
+    int n;
+    double ** centres_norm;
+    double ** leg;
+    char* label;
+} Moments;
+
 
 // creation et allocation d'une Matrice
 /**
@@ -66,7 +81,7 @@ Moments creerMoments(unsigned int n );
 void FreeMoments (Moments *mom );
 /**
   * @param img une image
-  * @param n l'ordre 
+  * @param n l'ordre
   * @return le Moment de l'image
   */
 Moments getMoment(BmpImg img,unsigned int n);
@@ -78,29 +93,29 @@ Moments getMoment(BmpImg img,unsigned int n);
   * @return la distance euclidienne entre deux matrice
   */
 double distanceEuclidienne (double ** mat1 , double **mat2 ,unsigned int n );
- /** 
+ /**
   * @param aucun
   * @return ART butterfly
   * */
 void printButterfly();
 
-/** 
+/**
   * @param filename chaine de caractère du fichier txt à ecrire
   * @param mom Moment d'une image a ecrire dans un fichier txt
   * @return Nae
   * */
 void ecrireMomentTxt (char * filename , Moments mom  ) ;
 
-/** 
+/**
   * @param filename chaine de caractère du fichier txt à lire
   * @return un Moment lue a partir le fichier filename
   * */
 Moments lireMomentsTxt (char * filename );
 
-/** 
+/**
   * @param mom Moments
-  * @param legAndOrCenNor indice de fonctionalité 
+  * @param legAndOrCenNor indice de fonctionalité
   * @return si l'indice = 0 => legendre et centré normé si 1 => moment geometrique centré normé finalement 2=> moment de legendre
   * */
-void afficherMoments (Moments mom, int legAndOrCenNor ); 
+void afficherMoments (Moments mom, int legAndOrCenNor );
 #endif // TOOLS_H_INCLUDED

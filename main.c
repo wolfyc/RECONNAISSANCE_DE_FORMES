@@ -4,17 +4,20 @@
 #include "myBmpGris.h"
 #include"constructeurBDD.h"
 #include<string.h>
-
+#define dimRecx 32
+#define dimRecy 32
+#define Testfile "InputImg/TestImg.txt"
+#define TestDir "InputImg/"
 
 int main(void)
 {
 //variable de commande sur l'interface.
     int a;
-//medium de concatenation 
+//medium de concatenation
     char  tmp[20] ;
 //le repertoire vers la source
     char  input_path[]= TestDir;
-//initialisation vers le repertoire de la base de données 
+//initialisation vers le repertoire de la base de données
     char c[] = destDB ;
 
 
@@ -42,7 +45,7 @@ int main(void)
      if (a == 0) {
         exit(0);
     }
-    
+
     printf(" Veuillez choisir un nom d'image a reconnaitre de la liste suivante : \n \n ");
     FILE *fichier = fopen(Testfile,"r");
      if (fichier != NULL ) {
