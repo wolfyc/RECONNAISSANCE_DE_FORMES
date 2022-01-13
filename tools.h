@@ -19,7 +19,8 @@
 
 
 
-typedef struct {
+typedef struct
+{
     int n;
     double ** centres_norm;
     double ** leg;
@@ -35,12 +36,12 @@ typedef struct {
   */
 double ** creerMatrice (unsigned int dim_x, unsigned int dim_y) ;
 
-  /**
-  * @param dim dimxdim la dim de la mat
-  * @param pow_max l'ordre max de la mat
-  * @param moy la translation des pixel ie pour centr� les moment geo.
-  * @return une matrice de vandermonde de dimension dim
-  */
+/**
+* @param dim dimxdim la dim de la mat
+* @param pow_max l'ordre max de la mat
+* @param moy la translation des pixel ie pour centr� les moment geo.
+* @return une matrice de vandermonde de dimension dim
+*/
 double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy);
 
 // Matrice anti diagonle diagonale
@@ -92,11 +93,11 @@ Moments getMoment(BmpImg img,unsigned int n);
   * @param n l'ordre
   * @return la distance euclidienne entre deux matrice
   */
-double distanceEuclidienne (double ** mat1 , double **mat2 ,unsigned int n );
- /**
-  * @param aucun
-  * @return ART butterfly
-  * */
+double distanceEuclidienne (double ** mat1, double **mat2,unsigned int n );
+/**
+ * @param aucun
+ * @return ART butterfly
+ * */
 void printButterfly();
 
 /**
@@ -104,7 +105,7 @@ void printButterfly();
   * @param mom Moment d'une image a ecrire dans un fichier txt
   * @return Nae
   * */
-void ecrireMomentTxt (char * filename , Moments mom  ) ;
+void ecrireMomentTxt (char * filename, Moments mom  ) ;
 
 /**
   * @param filename chaine de caractère du fichier txt à lire

@@ -22,6 +22,6 @@ double** reconstructionImg (char * filename,unsigned int  dim_x,unsigned int  di
   * @param dim_y dimension Y
   * @return Nae
   */
-void reconstructionBmp (char* filemom , char* imgName,unsigned int dim_x , unsigned int dim_y);
+void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y);
 
 #endif // IMG_RECONSTRUCT_H_INCLUDED

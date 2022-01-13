@@ -3,7 +3,8 @@
 
 #include "tools.h"
 
-typedef struct {
+typedef struct
+{
     ListeSC * images;
 } DataBase ;
 

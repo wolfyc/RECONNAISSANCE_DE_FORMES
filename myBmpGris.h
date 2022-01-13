@@ -5,20 +5,21 @@
 #include <stdio.h>
 
 typedef struct BmpImg_s BmpImg;
-struct BmpImg_s {
-	unsigned char** img;	// Image en niveaux de gris
-	unsigned int dimX;		// Dimension en x (hauteur)
-	unsigned int dimY;		// Dimension en y (largeur)
+struct BmpImg_s
+{
+    unsigned char** img;	// Image en niveaux de gris
+    unsigned int dimX;		// Dimension en x (hauteur)
+    unsigned int dimY;		// Dimension en y (largeur)
 
-	char* nomImg;				// Nom de l'image
-	unsigned int fileSize;		// Taille du fichier en octet
-	unsigned int headerSize;	// Taille de l'header en octet
-  unsigned int bmpSize;		// Taille de l'header BMP en octet
-	unsigned int dibSize;		// Taille de l'header DIB en octet
-	unsigned int imgSize;		// Taille de l'image en octet
+    char* nomImg;				// Nom de l'image
+    unsigned int fileSize;		// Taille du fichier en octet
+    unsigned int headerSize;	// Taille de l'header en octet
+    unsigned int bmpSize;		// Taille de l'header BMP en octet
+    unsigned int dibSize;		// Taille de l'header DIB en octet
+    unsigned int imgSize;		// Taille de l'image en octet
 
-	unsigned char* dibHeader;	// La taille du DIB varie selon que l'on stocke ou non la colormap
-	unsigned char bmpHeader[14];	// Bmp Header fait toujours 14 octets (soit 14 char)
+    unsigned char* dibHeader;	// La taille du DIB varie selon que l'on stocke ou non la colormap
+    unsigned char bmpHeader[14];	// Bmp Header fait toujours 14 octets (soit 14 char)
 };
 
 

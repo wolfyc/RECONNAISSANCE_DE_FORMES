@@ -44,16 +44,19 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
     {
         for (i=0; i<=x; i++)
         {
-             if (i==0)
+            if (i==0)
             {
                 a[x][i]=-((double)x-1)/((double)x) *a[x-2][0];
             }
-            else {
-                if (i>= x-1){
+            else
+            {
+                if (i>= x-1)
+                {
                     a[x][i]=((2*((double)x-1)+1)/(double)x)* a[x-1][i-1];
                 }
-                else {
-                     a[x][i]=((2*((double)x-1)+1)/x)* a[x-1][i-1] +(-((double)x-1)/(double)x)*a[x-2][i];
+                else
+                {
+                    a[x][i]=((2*((double)x-1)+1)/x)* a[x-1][i-1] +(-((double)x-1)/(double)x)*a[x-2][i];
                 }
             }
         }
@@ -61,7 +64,7 @@ double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
     return a;
 }
 
-double polyLegendre(double x,unsigned int  n, double ** co )  
+double polyLegendre(double x,unsigned int  n, double ** co )
 {
     unsigned int i ;
     double poly =0.00;
@@ -73,28 +76,32 @@ double polyLegendre(double x,unsigned int  n, double ** co )
     return poly;
 }
 
-double** constantsDeNormalisation(unsigned int  n) 
+double** constantsDeNormalisation(unsigned int  n)
 {
-     double** C=creerMatAntiDiagonal(n+1);
-     unsigned int p,q;
-    for (p=0 ; p<=n ; p++ ){
-        for (q=0 ; q<=n-p;q++){
+    double** C=creerMatAntiDiagonal(n+1);
+    unsigned int p,q;
+    for (p=0 ; p<=n ; p++ )
+    {
+        for (q=0 ; q<=n-p; q++)
+        {
 
             C[p][q]=(2*p + 1)*(2*q + 1)/(4.);
 
         }
     }
-return C;
+    return C;
 }
 //equation 9
-double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n , double ** co , double ** momg, double ** Cpq) 
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n, double ** co, double ** momg, double ** Cpq)
 {
     unsigned int  i,j;
     double res=0.00;
 
 
-    for (i=0 ; i<= p ; i++){
-        for (j=0 ; j<= q; j++ ){
+    for (i=0 ; i<= p ; i++)
+    {
+        for (j=0 ; j<= q; j++ )
+        {
 
             res += co[p][i]*co[q][j] * momg[i][j]   ;
 
@@ -104,15 +111,17 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
 
     return res ;
 }
-double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg ) 
+double ** matMomentsDeLegendre (BmpImg img, unsigned int  n, double ** momg )
 {
     double ** mat = creerMatAntiDiagonal(n+1);
     double ** co= matCoefficientLegendre(n);
     double ** Cpq=constantsDeNormalisation(n);
     unsigned int  p,q;
 
-    for (p=0 ; p<=n ; p++ ){
-        for (q=0 ; q<=n-p;q++){
+    for (p=0 ; p<=n ; p++ )
+    {
+        for (q=0 ; q<=n-p; q++)
+        {
 
             mat[p][q]=momentDeLegendre (img, p,q,n,co,momg,Cpq);
 

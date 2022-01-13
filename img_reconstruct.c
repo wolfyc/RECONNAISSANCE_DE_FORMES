@@ -27,7 +27,8 @@ double** reconstructionImg (char * filename,unsigned int dim_x,unsigned int  dim
 }
 
 void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigned int dim_y)
-{   printf("\n Reconstruction en cours ... \n" );
+{
+    printf("\n Reconstruction en cours ... \n" );
 
     double ** mat=reconstructionImg ( filemom,dim_x,dim_y );
 
@@ -40,17 +41,20 @@ void reconstructionBmp (char* filemom, char* imgName,unsigned int dim_x, unsigne
     {
         for ( j =0 ; j<dim_y; j++)
         {
-            if (mat[i][j]< 0 ){
-                    mat[i][j]=0;
-                    }
-            else {
-                if ((mat[i][j])>1 ) {
+            if (mat[i][j]< 0 )
+            {
+                mat[i][j]=0;
+            }
+            else
+            {
+                if ((mat[i][j])>1 )
+                {
                     mat[i][j]=1;
                 }
-                }
-             setPixel(img,(int)(255*mat[i][j]),i,j);
-
             }
+            setPixel(img,(int)(255*mat[i][j]),i,j);
+
+        }
     }
     writeBmpImage(imgName,&img);
     freeMatrice(&mat,dim_x);

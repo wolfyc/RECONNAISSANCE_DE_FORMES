@@ -57,13 +57,14 @@ void freeMatrice(double ***mat,unsigned int dim_x)
     }
     free(*mat);
     *mat = NULL;
-  //  if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
+    //  if ((*mat)==NULL) printf( "Functions succesfully Freed \n");
 }
 
 
 
 
-Moments creerMoments(unsigned int n ){
+Moments creerMoments(unsigned int n )
+{
     Moments mom ;
     mom.n = n ;
     mom.centres_norm= creerMatAntiDiagonal(n+1) ;
@@ -72,7 +73,8 @@ Moments creerMoments(unsigned int n ){
     return mom ;
 }
 
-void FreeMoments (Moments *mom ){
+void FreeMoments (Moments *mom )
+{
 
     freeMatrice (&(mom->centres_norm),mom->n+1);
     freeMatrice(&(mom->leg),mom->n+1);
@@ -91,99 +93,125 @@ Moments getMoment(BmpImg img,unsigned int  n)
 
 }
 
-double distanceEuclidienne (double ** mat1 , double **mat2 , unsigned int  n ) {
+double distanceEuclidienne (double ** mat1, double **mat2, unsigned int  n )
+{
 
-unsigned int  p,q;
-double res = 0.00 ;
-    for (p=0 ; p<=n ; p++ ){
-        for (q=0 ; q<=n-p;q++){
+    unsigned int  p,q;
+    double res = 0.00 ;
+    for (p=0 ; p<=n ; p++ )
+    {
+        for (q=0 ; q<=n-p; q++)
+        {
             res+= pow(mat1[p][q]-mat2[p][q],2);
         }
     }
-res = sqrt (res);
+    res = sqrt (res);
 
-return res;
+    return res;
 }
 
-void ecrireMomentTxt (char * filename , Moments mom  )
+void ecrireMomentTxt (char * filename, Moments mom  )
 {
-    unsigned int  i , j;
+    unsigned int  i, j;
     FILE * fichier = fopen (filename,"w");
-    if ( fichier != NULL ) {
-        fprintf(fichier , "%d \n" , mom.n);
-        fprintf(fichier , "%s \n" , mom.label);
-        fprintf(fichier , "Moments geometrique centres, normes : \n");
-    for (i=0 ; i<= mom.n  ; i++ ){
-        for (j=0 ; j<= mom.n-i ; j++){
-            fprintf(fichier , "%lf " , mom.centres_norm[i][j]);
-        }
-        fprintf(fichier, "\n");
-    }
-     fprintf(fichier , "Moments de Legendre : \n");
-        for (i=0 ; i<= mom.n ; i++ ){
-            for (j=0 ; j<=mom.n-i ; j++){
-                fprintf(fichier , "%lf " , mom.leg[i][j]);
+    if ( fichier != NULL )
+    {
+        fprintf(fichier, "%d \n", mom.n);
+        fprintf(fichier, "%s \n", mom.label);
+        fprintf(fichier, "Moments geometrique centres, normes : \n");
+        for (i=0 ; i<= mom.n  ; i++ )
+        {
+            for (j=0 ; j<= mom.n-i ; j++)
+            {
+                fprintf(fichier, "%lf ", mom.centres_norm[i][j]);
             }
             fprintf(fichier, "\n");
+        }
+        fprintf(fichier, "Moments de Legendre : \n");
+        for (i=0 ; i<= mom.n ; i++ )
+        {
+            for (j=0 ; j<=mom.n-i ; j++)
+            {
+                fprintf(fichier, "%lf ", mom.leg[i][j]);
+            }
+            fprintf(fichier, "\n");
+        }
     }
-}
-else {printf("Error Opening File Please Fix the problem and retry \n");}
- //if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
-fclose (fichier) ;
+    else
+    {
+        printf("Error Opening File Please Fix the problem and retry \n");
+    }
+//if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
+    fclose (fichier) ;
 }
 
-Moments lireMomentsTxt (char * filename ){
-    unsigned int  i , j;
+Moments lireMomentsTxt (char * filename )
+{
+    unsigned int  i, j;
     unsigned int  n ;
     Moments mom ;
     mom.label = filename;
     FILE * fichier = fopen (filename,"r");
-    if ( fichier != NULL ) {
-        fscanf(fichier , "%d \n" , &n);
+    if ( fichier != NULL )
+    {
+        fscanf(fichier, "%d \n", &n);
         mom = creerMoments(n);
-        fscanf(fichier , "%s \n" , mom.label);
-        fscanf(fichier , "Moments geometrique centres, normes : \n");
-    for (i=0 ; i<= n ; i++ ){
-        for (j=0 ; j<=n-i ; j++){
-            fscanf(fichier , "%lf" , &mom.centres_norm[i][j]);
+        fscanf(fichier, "%s \n", mom.label);
+        fscanf(fichier, "Moments geometrique centres, normes : \n");
+        for (i=0 ; i<= n ; i++ )
+        {
+            for (j=0 ; j<=n-i ; j++)
+            {
+                fscanf(fichier, "%lf", &mom.centres_norm[i][j]);
+            }
+            fscanf(fichier, "\n");
         }
-        fscanf(fichier, "\n");
-        }
-    fscanf(fichier , "Moments de Legendre : \n");
-    for (i=0 ; i<= n ; i++ ){
-        for (j=0 ; j<= n-i ; j++){
-            fscanf(fichier , "%lf" , &mom.leg[i][j]);
-        }
-        fscanf(fichier, "\n");
+        fscanf(fichier, "Moments de Legendre : \n");
+        for (i=0 ; i<= n ; i++ )
+        {
+            for (j=0 ; j<= n-i ; j++)
+            {
+                fscanf(fichier, "%lf", &mom.leg[i][j]);
+            }
+            fscanf(fichier, "\n");
         }
     }
-    else {
+    else
+    {
         printf("Error Opening File Please Fix the problem and retry \n");
     }
     //if( fclose (fichier)== 0) {printf("\nsuccessfully close \n");}
     fclose (fichier);
-return mom  ;
+    return mom  ;
 }
-void afficherMoments (Moments mom, int legAndOrCenNor ){
+void afficherMoments (Moments mom, int legAndOrCenNor )
+{
     unsigned int i,j;
-    if ( legAndOrCenNor == 1|| legAndOrCenNor == 0){
+    if ( legAndOrCenNor == 1|| legAndOrCenNor == 0)
+    {
         printf("Moments geometrique centres, normes de %s sont : \n",mom.label);
-        for ( i = 0 ; i<= mom.n ; i++ ){
-            for ( j =0;j<= mom.n-i ; j++){
-                printf("%lf " ,mom.centres_norm[i][j]);
+        for ( i = 0 ; i<= mom.n ; i++ )
+        {
+            for ( j =0; j<= mom.n-i ; j++)
+            {
+                printf("%lf ",mom.centres_norm[i][j]);
             }
             printf("\n");
         }
-        }
-    if ( legAndOrCenNor == 2 || legAndOrCenNor == 0 ){
-        printf("Moments de Legendre de %s sont: \n", mom.label);
-        for ( i = 0 ; i<=mom.n ; i++ ){
-            for ( j =0;j<=mom.n-i ; j++){
-                printf("%lf " ,mom.leg[i][j]);
-            }
-            printf("\n");
     }
+    if ( legAndOrCenNor == 2 || legAndOrCenNor == 0 )
+    {
+        printf("Moments de Legendre de %s sont: \n", mom.label);
+        for ( i = 0 ; i<=mom.n ; i++ )
+        {
+            for ( j =0; j<=mom.n-i ; j++)
+            {
+                printf("%lf ",mom.leg[i][j]);
+            }
+            printf("\n");
+        }
 
-}}
+    }
+}
 
 

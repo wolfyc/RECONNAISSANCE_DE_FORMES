@@ -44,7 +44,7 @@ double** constantsDeNormalisation(unsigned int  n);
   * @param Cpq mat constants De Normalisation
   * @return un moment de legendre.
   */
-double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n, double ** co , double ** momg, double ** Cpq);
+double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n, double ** co, double ** momg, double ** Cpq);
 
 /**
   * @param BmpImg image a convertir
@@ -52,7 +52,7 @@ double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned in
   * @param momg matrice moment geomtique centres normes
   * @return matrice de moment de legendre
   */
-double ** matMomentsDeLegendre (BmpImg img, unsigned int  n ,double ** momg );
+double ** matMomentsDeLegendre (BmpImg img, unsigned int  n,double ** momg );
 
 
 #endif // LEGENDRE_H_INCLUDED
