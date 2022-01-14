@@ -20,7 +20,7 @@ double ** matCoefficientLegendre (unsigned int  n);
 
 // calculateur de polynome de legendre
 /**
-  * @param x une entrée
+  * @param x une entree
   * @param n l'ordre
   * @param co coeficient
   * @return la valeur de legendre en x a l'ordre n

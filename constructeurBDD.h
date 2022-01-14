@@ -8,7 +8,7 @@ typedef struct
     ListeSC * images;
 } DataBase ;
 
-// allocation de base de donn�es
+// allocation de base de donnees
 /**
   * .
   * @return une base de données initialisé

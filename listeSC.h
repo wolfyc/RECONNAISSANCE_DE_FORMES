@@ -19,7 +19,7 @@ void afficherData( void *d );
 
 
 
-/// Partie generique deja implementee (par les enseignants)
+///Partie generique deja implementee (par les enseignants)
 // Definition de la liste
 // Definition des types
 typedef struct Maille Maille;	// Element de la liste

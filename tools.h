@@ -39,7 +39,7 @@ double ** creerMatrice (unsigned int dim_x, unsigned int dim_y) ;
 /**
 * @param dim dimxdim la dim de la mat
 * @param pow_max l'ordre max de la mat
-* @param moy la translation des pixel ie pour centr� les moment geo.
+* @param moy la translation des pixel ie pour centre les moment geo.
 * @return une matrice de vandermonde de dimension dim
 */
 double ** matVandermonde (unsigned int dim,unsigned int pow_max,double moy);
