@@ -50,7 +50,7 @@ int main(void)
         exit(0);
     }
 
-    printf(" Veuillez choisir un nom d'image a reconnaitre de la liste suivante : \n \n ");
+    printf(" Veuillez choisir un nom d'image a reconnaitre de la liste suivante :\n**IMPORTANT** LES IMAGES ECRITENT COMME SUIT XX_d.BMP SONT DES IMAGES DECALEES \n \n ");
     FILE *fichier = fopen(Testfile,"r");
     if (fichier != NULL )
     {
