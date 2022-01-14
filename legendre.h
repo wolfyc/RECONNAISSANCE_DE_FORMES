@@ -3,7 +3,7 @@
 
 #include "tools.h"
 
-// calculateur du coef de legendre
+// calculateur du coef de legendre  eq. 5.3
 /**
   * @param x la valeur du coeff_legendre et sa position de ligne
   * @param i l'ordre et la position dans la colonne de la matrice
@@ -34,7 +34,7 @@ double polyLegendre(double x,unsigned int  n, double ** co );
   */
 double** constantsDeNormalisation(unsigned int  n);
 
-/**
+/** moment de legendre
   * @param BmpImg string of char.
   * @param p
   * @param q

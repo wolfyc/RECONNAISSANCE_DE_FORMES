@@ -2,7 +2,7 @@
 #define MOMENT_GEOMETRIQUE_H_INCLUDED
 #include "tools.h"
 
-// Moment geometrique equation (2)
+// Moment geometrique eq 5.1
 /**
   * @param img image binaire
   * @param p l'ordre de x
@@ -11,7 +11,7 @@
   */
 double MomentGeometrique (BmpImg img, unsigned int p, unsigned int q, unsigned int n );
 
-// Moment geometrique centr� (vandermonde) et norm� equation (6)
+// Moment geometrique centr� normé eq.5.2
 /**
   * @param img image binaire
   * @param p l'ordre de x

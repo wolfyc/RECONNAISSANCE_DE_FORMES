@@ -1,6 +1,6 @@
 #include "legendre.h"
 
-double coefficientLegendre (unsigned int  x, unsigned int  i)  // Tested OK 2.0
+double coefficientLegendre (unsigned int  x, unsigned int  i)  
 {
     if (x==0 && i==0)
     {
@@ -33,7 +33,7 @@ double coefficientLegendre (unsigned int  x, unsigned int  i)  // Tested OK 2.0
     }
 }
 
-double ** matCoefficientLegendre (unsigned int n )  // Tested OK 2.0
+double ** matCoefficientLegendre (unsigned int n ) 
 {
     double ** a = creerMatDiagonale(n+1);
     unsigned int  x,i;
@@ -91,7 +91,7 @@ double** constantsDeNormalisation(unsigned int  n)
     }
     return C;
 }
-//equation 9
+
 double momentDeLegendre (BmpImg img,unsigned int  p,unsigned int  q, unsigned int  n, double ** co, double ** momg, double ** Cpq)
 {
     unsigned int  i,j;

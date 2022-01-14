@@ -5,7 +5,7 @@
 
 
 
-// reconstruction de l'image
+// reconstruction de l'image eq.5.4
 /**
   * @param filename le nom du fichiers qui comporte les moments
   * @param dim_x dimension X
